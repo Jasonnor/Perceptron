@@ -3,7 +3,8 @@ import javax.swing.filechooser.FileNameExtensionFilter;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.io.File;
+import java.io.*;
+import java.util.ArrayList;
 
 public class Perceptron {
     private JPanel layoutPanel;
@@ -21,6 +22,8 @@ public class Perceptron {
     private JLabel loadValue;
     private JLabel weightsLabel;
     private JLabel weightsValue;
+    private ArrayList<Float[]> input = new ArrayList<>();
+    private ArrayList<Float> output = new ArrayList<>();
 
     public Perceptron() {
         loadButton.addActionListener(new ActionListener() {
@@ -32,6 +35,23 @@ public class Perceptron {
                 if (fileChooser.showOpenDialog(layoutPanel) == JFileChooser.APPROVE_OPTION) {
                     File loadedFile = fileChooser.getSelectedFile();
                     loadValue.setText(loadedFile.getPath());
+                    input.clear();
+                    output.clear();
+                    try(BufferedReader br = new BufferedReader(new FileReader(loadedFile))) {
+                        String line = br.readLine();
+                        while (line != null) {
+                            String[] lineSplit = line.split("\\s+");
+                            Float[] numbers = new Float[lineSplit.length - 1];
+                            for (int i = 0; i < lineSplit.length - 1; i++) {
+                                numbers[i] = Float.parseFloat(lineSplit[i]);
+                            }
+                            input.add(numbers);
+                            output.add(Float.parseFloat(lineSplit[lineSplit.length - 1]));
+                            line = br.readLine();
+                        }
+                    } catch (IOException e1) {
+                        e1.printStackTrace();
+                    }
                 }
             }
         });

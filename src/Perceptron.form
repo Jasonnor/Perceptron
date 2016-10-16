@@ -16,14 +16,6 @@
           <text value="Learning Rate"/>
         </properties>
       </component>
-      <component id="4d245" class="javax.swing.JLabel">
-        <constraints>
-          <grid row="3" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
-        </constraints>
-        <properties>
-          <text value="Initial Threshold"/>
-        </properties>
-      </component>
       <component id="742c5" class="javax.swing.JLabel">
         <constraints>
           <grid row="9" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
@@ -40,14 +32,6 @@
           <text value="Testing Recognition Rate"/>
         </properties>
       </component>
-      <component id="3bbd6" class="javax.swing.JTextField" binding="thresholdTextField">
-        <constraints>
-          <grid row="3" column="3" row-span="1" col-span="3" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false"/>
-        </constraints>
-        <properties>
-          <text value="0"/>
-        </properties>
-      </component>
       <component id="f6d45" class="javax.swing.JTextField" binding="learningTextField">
         <constraints>
           <grid row="2" column="3" row-span="1" col-span="3" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false"/>
@@ -61,7 +45,7 @@
           <grid row="0" column="2" row-span="1" col-span="4" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
         </constraints>
         <properties>
-          <text value="Load"/>
+          <text value="&amp;Load"/>
         </properties>
       </component>
       <grid id="8afd3" binding="coordinatePanel" custom-create="true" layout-manager="GridLayoutManager" row-count="1" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
@@ -136,7 +120,7 @@
         </constraints>
         <properties>
           <enabled value="false"/>
-          <text value="Generate"/>
+          <text value="&amp;Generate"/>
         </properties>
       </component>
       <component id="440d1" class="javax.swing.JLabel">
@@ -241,6 +225,22 @@
         </constraints>
         <properties>
           <text value="~"/>
+        </properties>
+      </component>
+      <component id="3bbd6" class="javax.swing.JTextField" binding="thresholdTextField">
+        <constraints>
+          <grid row="3" column="3" row-span="1" col-span="3" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <text value="0"/>
+        </properties>
+      </component>
+      <component id="4d245" class="javax.swing.JLabel">
+        <constraints>
+          <grid row="3" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <text value="Initial Threshold"/>
         </properties>
       </component>
     </children>

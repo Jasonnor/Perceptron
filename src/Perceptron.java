@@ -31,9 +31,10 @@ public class Perceptron {
     private JLabel zoomerLabel;
     private DecimalFormat df = new DecimalFormat("####0.00");
     private Color[] colorArray = {Color.BLUE, Color.RED, Color.GREEN, Color.YELLOW, Color.CYAN, Color.PINK};
-    private ArrayList<Float[]> weight = new ArrayList<>();
+    private Float[] yTable = {1.0f, -1.0f, 1.0f, -1.0f, 1.0f, -1.0f};
     private ArrayList<Float[]> input = new ArrayList<>();
     private ArrayList<Float> output = new ArrayList<>();
+    private ArrayList<Float> weight = new ArrayList<>();
     private Float[] weightFinal;
     private Point mouse;
     private int magnification = 50;
@@ -42,7 +43,7 @@ public class Perceptron {
     // TODO - Editable
     private int rangeMin = -1;
     private int rangeMax = 1;
-    private int maxTrainTimes = 10000;
+    private int maxTrainTimes = 1000;
 
     private Perceptron() {
         loadButton.addActionListener(e -> {
@@ -120,9 +121,9 @@ public class Perceptron {
     private void loadFile(JFileChooser fileChooser) {
         File loadedFile = fileChooser.getSelectedFile();
         loadValue.setText(loadedFile.getPath());
-        weight.clear();
         input.clear();
         output.clear();
+        weight.clear();
         weightFinal = null;
         try (BufferedReader br = new BufferedReader(new FileReader(loadedFile))) {
             String line = br.readLine();
@@ -133,17 +134,20 @@ public class Perceptron {
                 lineSplit = Arrays.stream(lineSplit).
                         filter(s -> (s != null && s.length() > 0)).
                         toArray(String[]::new);
-                Float[] numbers = new Float[lineSplit.length - 1];
-                Float[] randomWeights = new Float[lineSplit.length - 1];
+                Float[] numbers = new Float[lineSplit.length];
                 for (int i = 0; i < lineSplit.length - 1; i++) {
                     numbers[i] = Float.parseFloat(lineSplit[i]);
-                    randomWeights[i] = (float) getRandomNumber();
                 }
-                weight.add(randomWeights);
+                numbers[lineSplit.length - 1] = -1.0f;
                 input.add(numbers);
                 output.add(Float.parseFloat(lineSplit[lineSplit.length - 1]));
                 line = br.readLine();
             }
+            weight.add(threshold);
+            for (int i = 0; i < input.get(0).length - 1; i++) {
+                weight.add((float) getRandomNumber());
+            }
+            // TODO check it again, can I change it?
             if (!output.contains(0f)) {
                 for (int i = 0; i < output.size(); i++) {
                     output.set(i, output.get(i) - 1);
@@ -157,59 +161,37 @@ public class Perceptron {
     }
 
     private void trainPerceptron() {
-        int times = 0, cycle = 0, correct = 0;
+        int times = 0, correct = 0;
         while (times < maxTrainTimes) {
+            correct = 0;
+            for (int cycle = 0; cycle < input.size(); cycle++) {
+                Float[] x = input.get(cycle);
+                Float sum = 0f;
+                for (int i = 0; i < weight.size(); i++) {
+                    sum += weight.get(i) * x[i];
+                }
+                Float fx = Math.signum(sum);
+                Float y = yTable[Math.round(output.get(cycle))];
+                Float e = y - fx;
+                if (e == 0) ++correct;
+                for (int i = 0; i < weight.size(); i++) {
+                    weight.set(i, weight.get(i) + rate * e * x[i]);
+                }
+            }
+            if (correct == input.size()) break;
             ++times;
-            Float[] w = weight.get(cycle);
-            Float[] x = input.get(cycle);
-            Float sum = 0f;
-            for (int i = 0; i < w.length; i++) {
-                sum += w[i] * x[i];
-            }
-            Float y = Math.signum(sum - threshold);
-            if (output.get(cycle) == 0 && y < 0) {
-                Float[] wNext = new Float[w.length];
-                for (int i = 0; i < wNext.length; i++) {
-                    wNext[i] = w[i] + rate * x[i];
-                }
-                if (cycle < input.size() - 1)
-                    weight.set(cycle + 1, wNext);
-                else
-                    weight.set(0, wNext);
-            } else if (output.get(cycle) == 1 && y >= 0) {
-                Float[] wNext = new Float[w.length];
-                for (int i = 0; i < wNext.length; i++) {
-                    wNext[i] = w[i] - rate * x[i];
-                }
-                if (cycle < input.size() - 1)
-                    weight.set(cycle + 1, wNext);
-                else
-                    weight.set(0, wNext);
-            } else if ((output.get(cycle) == 0 && y >= 0) || (output.get(cycle) == 1 && y < 0)) {
-                if (cycle < input.size() - 1)
-                    weight.set(cycle + 1, w);
-                else
-                    weight.set(0, w);
-                ++correct;
-            }
-            ++cycle;
-            if (cycle == input.size()) {
-                if (correct == cycle) break;
-                cycle = 0;
-                correct = 0;
-            }
         }
         StringBuilder weightOutput = new StringBuilder("(");
-        weightFinal = weight.get(weight.size() - 1);
+        weightFinal = weight.toArray(new Float[weight.size()]);
         weightOutput.append(df.format(weightFinal[0]));
-        for (int i = 1; i < weightFinal.length; i++) {
+        for (int i = 1; i < weightFinal.length - 1; i++) {
             weightOutput.append(", ").append(df.format(weightFinal[i]));
         }
         weightOutput.append(")");
         System.out.println("Convergence Times: " + times);
         System.out.println("Synaptic Weights: " + weightOutput);
+        System.out.println("Final Threshold: " + weightFinal[weightFinal.length - 1]);
         System.out.println("Training Recognition Rate: " + (float) correct / input.size() * 100 + "%");
-        coordinatePanel.repaint();
     }
 
     private int getRandomNumber() {
@@ -264,7 +246,7 @@ public class Perceptron {
                 g2.drawString("(" + df.format(mouse_x) + ", " + df.format(mouse_y) + ")", 420, 20);
             }
             // Draw point of file
-            if (input.size() > 0 && input.get(0).length == 2 && input.size() == output.size()) {
+            if (input.size() > 0 && input.get(0).length == 3 && input.size() == output.size()) {
                 for (int i = 0; i < input.size() && i < output.size(); i++) {
                     Float[] point = convertCoordinate(input.get(i));
                     g2.setColor(colorArray[Math.round(output.get(i))]);
@@ -272,14 +254,14 @@ public class Perceptron {
                 }
             }
             // Draw line of perceptron
-            if (weightFinal != null && weightFinal.length == 2) {
+            if (weightFinal != null && weightFinal.length == 3) {
                 g2.setColor(Color.MAGENTA);
                 Float[] lineStart = convertCoordinate(
                         new Float[]{-250.0f / magnification,
-                                (threshold + 250.0f / magnification * weightFinal[0]) / weightFinal[1]});
+                                (weightFinal[2] + 250.0f / magnification * weightFinal[0]) / weightFinal[1]});
                 Float[] lineEnd = convertCoordinate(
                         new Float[]{250.0f / magnification,
-                                (threshold - 250.0f / magnification * weightFinal[0]) / weightFinal[1]});
+                                (weightFinal[2] - 250.0f / magnification * weightFinal[0]) / weightFinal[1]});
                 g2.draw(new Line2D.Double(lineStart[0], lineStart[1], lineEnd[0], lineEnd[1]));
             }
         }

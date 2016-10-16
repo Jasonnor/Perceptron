@@ -9,7 +9,7 @@ import java.io.*;
 import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.concurrent.ThreadLocalRandom;
+import java.util.Random;
 
 public class Perceptron {
     private JPanel layoutPanel;
@@ -29,6 +29,15 @@ public class Perceptron {
     private JLabel weightsValue;
     private JSlider zoomerSlider;
     private JLabel zoomerLabel;
+    private JLabel timesLabel;
+    private JLabel timesValue;
+    private JLabel fThresholdLabel;
+    private JLabel fThresholdValue;
+    private JLabel maxTimesLabel;
+    private JTextField maxTimesValue;
+    private JLabel wRangeLabel;
+    private JTextField wRangeMinValue;
+    private JTextField wRangeMaxValue;
     private DecimalFormat df = new DecimalFormat("####0.00");
     private Color[] colorArray = {Color.BLUE, Color.RED, Color.GREEN, Color.YELLOW, Color.CYAN, Color.PINK};
     private Float[] yTable = {1.0f, -1.0f, 1.0f, -1.0f, 1.0f, -1.0f};
@@ -38,12 +47,11 @@ public class Perceptron {
     private Float[] weightFinal;
     private Point mouse;
     private int magnification = 50;
-    private float rate = 0.5f;
+    private float rate = 0.1f;
     private float threshold = 0;
-    // TODO - Editable
-    private int rangeMin = -1;
-    private int rangeMax = 1;
-    private int maxTrainTimes = 1000;
+    private float minRange = -0.5f;
+    private float maxRange = 0.5f;
+    private int maxTimes = 1000;
 
     private Perceptron() {
         loadButton.addActionListener(e -> {
@@ -90,7 +98,6 @@ public class Perceptron {
                     rate = Float.valueOf(learningTextField.getText());
                     trainPerceptron();
                 } catch (NumberFormatException e) {
-                    System.out.println("Error learning rate input!");
                     rate = 0.5f;
                 }
             }
@@ -113,8 +120,73 @@ public class Perceptron {
                     threshold = Float.valueOf(thresholdTextField.getText());
                     trainPerceptron();
                 } catch (NumberFormatException e) {
-                    System.out.println("Error threshold input!");
                     threshold = 0;
+                }
+            }
+        });
+        maxTimesValue.getDocument().addDocumentListener(new DocumentListener() {
+            public void changedUpdate(DocumentEvent e) {
+                changeMaxTimes();
+            }
+
+            public void removeUpdate(DocumentEvent e) {
+                changeMaxTimes();
+            }
+
+            public void insertUpdate(DocumentEvent e) {
+                changeMaxTimes();
+            }
+
+            void changeMaxTimes() {
+                try {
+                    maxTimes = Integer.valueOf(maxTimesValue.getText());
+                    trainPerceptron();
+                } catch (NumberFormatException e) {
+                    maxTimes = 1000;
+                }
+            }
+        });
+        wRangeMinValue.getDocument().addDocumentListener(new DocumentListener() {
+            public void changedUpdate(DocumentEvent e) {
+                changeMinRange();
+            }
+
+            public void removeUpdate(DocumentEvent e) {
+                changeMinRange();
+            }
+
+            public void insertUpdate(DocumentEvent e) {
+                changeMinRange();
+            }
+
+            void changeMinRange() {
+                try {
+                    minRange = Float.valueOf(wRangeMinValue.getText());
+                    trainPerceptron();
+                } catch (NumberFormatException e) {
+                    minRange = -0.5f;
+                }
+            }
+        });
+        wRangeMaxValue.getDocument().addDocumentListener(new DocumentListener() {
+            public void changedUpdate(DocumentEvent e) {
+                changeMaxRange();
+            }
+
+            public void removeUpdate(DocumentEvent e) {
+                changeMaxRange();
+            }
+
+            public void insertUpdate(DocumentEvent e) {
+                changeMaxRange();
+            }
+
+            void changeMaxRange() {
+                try {
+                    maxRange = Float.valueOf(wRangeMaxValue.getText());
+                    trainPerceptron();
+                } catch (NumberFormatException e) {
+                    maxRange = 0.5f;
                 }
             }
         });
@@ -149,6 +221,7 @@ public class Perceptron {
                     output.set(i, output.get(i) - 1);
                 }
             }
+            generateButton.setEnabled(true);
             trainPerceptron();
         } catch (IOException e1) {
             e1.printStackTrace();
@@ -160,10 +233,10 @@ public class Perceptron {
         weight.clear();
         weight.add(threshold);
         for (int i = 0; i < input.get(0).length - 1; i++) {
-            weight.add((float) getRandomNumber());
+            weight.add(getRandomNumber());
         }
         int times = 0, correct = 0;
-        while (times < maxTrainTimes) {
+        while (times < maxTimes) {
             correct = 0;
             for (int cycle = 0; cycle < input.size(); cycle++) {
                 Float[] x = input.get(cycle);
@@ -189,15 +262,16 @@ public class Perceptron {
             weightOutput.append(", ").append(df.format(weightFinal[i]));
         }
         weightOutput.append(")");
-        System.out.println("Convergence Times: " + times);
-        System.out.println("Synaptic Weights: " + weightOutput);
-        System.out.println("Final Threshold: " + weightFinal[weightFinal.length - 1]);
-        System.out.println("Training Recognition Rate: " + (float) correct / input.size() * 100 + "%");
+        timesValue.setText(String.valueOf(times));
+        weightsValue.setText(weightOutput.toString());
+        fThresholdValue.setText(weightFinal[weightFinal.length - 1].toString());
+        trainingValue.setText((float) correct / input.size() * 100 + "%");
         coordinatePanel.repaint();
     }
 
-    private int getRandomNumber() {
-        return ThreadLocalRandom.current().nextInt(rangeMin, rangeMax + 1);
+    private Float getRandomNumber() {
+        Random r = new Random();
+        return minRange + (maxRange - minRange) * r.nextFloat();
     }
 
     private void createUIComponents() {

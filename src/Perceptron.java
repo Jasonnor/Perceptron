@@ -302,6 +302,13 @@ public class Perceptron {
         return minRange + (maxRange - minRange) * r.nextFloat();
     }
 
+    private Float[] convertCoordinate(Float[] oldPoint) {
+        Float[] newPoint = new Float[2];
+        newPoint[0] = (oldPoint[0] * magnification) + 250;
+        newPoint[1] = 250 - (oldPoint[1] * magnification);
+        return newPoint;
+    }
+
     private void createUIComponents() {
         coordinatePanel = new GPanel();
         zoomerSlider = new JSlider();
@@ -310,11 +317,22 @@ public class Perceptron {
                         Integer.toString(zoomerSlider.getValue()), CENTER, DEFAULT_POSITION));
     }
 
-    private Float[] convertCoordinate(Float[] oldPoint) {
-        Float[] newPoint = new Float[2];
-        newPoint[0] = (oldPoint[0] * magnification) + 250;
-        newPoint[1] = 250 - (oldPoint[1] * magnification);
-        return newPoint;
+    private static void changeLAF(String name, JFrame frame) {
+        try {
+            if (name.equals("Nimbus")) {
+                for (UIManager.LookAndFeelInfo info : UIManager.getInstalledLookAndFeels())
+                    if ("Nimbus".equals(info.getName())) {
+                        UIManager.setLookAndFeel(info.getClassName());
+                        break;
+                    }
+            } else {
+                UIManager.setLookAndFeel(name);
+            }
+            SwingUtilities.updateComponentTreeUI(frame);
+            frame.pack();
+        } catch (ClassNotFoundException | InstantiationException | IllegalAccessException | UnsupportedLookAndFeelException e1) {
+            System.out.println("Failed to load the skin!");
+        }
     }
 
     public static void main(String[] args) {
@@ -372,24 +390,6 @@ public class Perceptron {
         changeLAF("Nimbus", frame);
         frame.setVisible(true);
         frame.setLocationRelativeTo(null);
-    }
-
-    private static void changeLAF(String name, JFrame frame) {
-        try {
-            if (name.equals("Nimbus")) {
-                for (UIManager.LookAndFeelInfo info : UIManager.getInstalledLookAndFeels())
-                    if ("Nimbus".equals(info.getName())) {
-                        UIManager.setLookAndFeel(info.getClassName());
-                        break;
-                    }
-            } else {
-                UIManager.setLookAndFeel(name);
-            }
-            SwingUtilities.updateComponentTreeUI(frame);
-            frame.pack();
-        } catch (ClassNotFoundException | InstantiationException | IllegalAccessException | UnsupportedLookAndFeelException e1) {
-            System.out.println("Failed to load the skin!");
-        }
     }
 
     private class GPanel extends JPanel {

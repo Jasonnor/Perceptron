@@ -25,8 +25,8 @@
       <file leaf-file-name="Perceptron.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Perceptron.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="510">
-              <caret line="31" column="30" selection-start-line="31" selection-start-column="30" selection-end-line="31" selection-end-column="30" />
+            <state relative-caret-position="240">
+              <caret line="234" column="67" selection-start-line="234" selection-start-column="67" selection-end-line="234" selection-end-column="67" />
               <folding>
                 <element signature="method#Perceptron#0;class#Perceptron#0" expanded="false" />
                 <element signature="class#3567:4307" expanded="false" />
@@ -36,8 +36,10 @@
                 <element signature="class#7046:8001" expanded="false" />
                 <element signature="method#alertBackground#0;class#Perceptron#0" expanded="false" />
                 <element signature="method#getRandomNumber#0;class#Perceptron#0" expanded="false" />
-                <element signature="method#createUIComponents#0;class#Perceptron#0" expanded="false" />
                 <element signature="method#convertCoordinate#0;class#Perceptron#0" expanded="false" />
+                <element signature="method#createUIComponents#0;class#Perceptron#0" expanded="false" />
+                <element signature="method#changeLAF#0;class#Perceptron#0" expanded="false" />
+                <element signature="method#main#0;class#Perceptron#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -666,15 +668,15 @@
       <workItem from="1476540429401" duration="617000" />
       <workItem from="1476541054521" duration="12852000" />
       <workItem from="1476582198053" duration="32063000" />
-      <workItem from="1476625394003" duration="6961000" />
+      <workItem from="1476625394003" duration="7145000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="60161000" />
+    <option name="totallyTimeSpent" value="60345000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1696" height="1026" extended-state="7" />
+    <frame x="-8" y="-8" width="1696" height="1026" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -744,8 +746,10 @@
             <element signature="class#7046:8001" expanded="false" />
             <element signature="method#alertBackground#0;class#Perceptron#0" expanded="false" />
             <element signature="method#getRandomNumber#0;class#Perceptron#0" expanded="false" />
-            <element signature="method#createUIComponents#0;class#Perceptron#0" expanded="false" />
             <element signature="method#convertCoordinate#0;class#Perceptron#0" expanded="false" />
+            <element signature="method#createUIComponents#0;class#Perceptron#0" expanded="false" />
+            <element signature="method#changeLAF#0;class#Perceptron#0" expanded="false" />
+            <element signature="method#main#0;class#Perceptron#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -771,8 +775,10 @@
             <element signature="class#7046:8001" expanded="false" />
             <element signature="method#alertBackground#0;class#Perceptron#0" expanded="false" />
             <element signature="method#getRandomNumber#0;class#Perceptron#0" expanded="false" />
-            <element signature="method#createUIComponents#0;class#Perceptron#0" expanded="false" />
             <element signature="method#convertCoordinate#0;class#Perceptron#0" expanded="false" />
+            <element signature="method#createUIComponents#0;class#Perceptron#0" expanded="false" />
+            <element signature="method#changeLAF#0;class#Perceptron#0" expanded="false" />
+            <element signature="method#main#0;class#Perceptron#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -798,8 +804,10 @@
             <element signature="class#7046:8001" expanded="false" />
             <element signature="method#alertBackground#0;class#Perceptron#0" expanded="false" />
             <element signature="method#getRandomNumber#0;class#Perceptron#0" expanded="false" />
-            <element signature="method#createUIComponents#0;class#Perceptron#0" expanded="false" />
             <element signature="method#convertCoordinate#0;class#Perceptron#0" expanded="false" />
+            <element signature="method#createUIComponents#0;class#Perceptron#0" expanded="false" />
+            <element signature="method#changeLAF#0;class#Perceptron#0" expanded="false" />
+            <element signature="method#main#0;class#Perceptron#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -825,8 +833,10 @@
             <element signature="class#7046:8001" expanded="false" />
             <element signature="method#alertBackground#0;class#Perceptron#0" expanded="false" />
             <element signature="method#getRandomNumber#0;class#Perceptron#0" expanded="false" />
-            <element signature="method#createUIComponents#0;class#Perceptron#0" expanded="false" />
             <element signature="method#convertCoordinate#0;class#Perceptron#0" expanded="false" />
+            <element signature="method#createUIComponents#0;class#Perceptron#0" expanded="false" />
+            <element signature="method#changeLAF#0;class#Perceptron#0" expanded="false" />
+            <element signature="method#main#0;class#Perceptron#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -889,8 +899,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Perceptron.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="510">
-          <caret line="31" column="30" selection-start-line="31" selection-start-column="30" selection-end-line="31" selection-end-column="30" />
+        <state relative-caret-position="240">
+          <caret line="234" column="67" selection-start-line="234" selection-start-column="67" selection-end-line="234" selection-end-column="67" />
           <folding>
             <element signature="method#Perceptron#0;class#Perceptron#0" expanded="false" />
             <element signature="class#3567:4307" expanded="false" />
@@ -900,8 +910,10 @@
             <element signature="class#7046:8001" expanded="false" />
             <element signature="method#alertBackground#0;class#Perceptron#0" expanded="false" />
             <element signature="method#getRandomNumber#0;class#Perceptron#0" expanded="false" />
-            <element signature="method#createUIComponents#0;class#Perceptron#0" expanded="false" />
             <element signature="method#convertCoordinate#0;class#Perceptron#0" expanded="false" />
+            <element signature="method#createUIComponents#0;class#Perceptron#0" expanded="false" />
+            <element signature="method#changeLAF#0;class#Perceptron#0" expanded="false" />
+            <element signature="method#main#0;class#Perceptron#0" expanded="false" />
           </folding>
         </state>
       </provider>

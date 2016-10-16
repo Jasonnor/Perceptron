@@ -1,13 +1,15 @@
 import javax.swing.*;
+import javax.swing.event.DocumentEvent;
+import javax.swing.event.DocumentListener;
 import javax.swing.filechooser.FileNameExtensionFilter;
 import java.awt.*;
-import java.awt.event.MouseEvent;
-import java.awt.event.MouseMotionAdapter;
+import java.awt.event.*;
 import java.awt.geom.Line2D;
 import java.io.*;
 import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.concurrent.ThreadLocalRandom;
 
 public class Perceptron {
     private JPanel layoutPanel;
@@ -27,11 +29,20 @@ public class Perceptron {
     private JLabel weightsValue;
     private JSlider zoomerSlider;
     private JLabel zoomerLabel;
+    private DecimalFormat df = new DecimalFormat("####0.00");
+    private Color[] colorArray = {Color.BLUE, Color.RED, Color.GREEN, Color.YELLOW, Color.CYAN, Color.PINK};
+    private ArrayList<Float[]> weight = new ArrayList<>();
     private ArrayList<Float[]> input = new ArrayList<>();
     private ArrayList<Float> output = new ArrayList<>();
-    private Color[] colorArray = {Color.CYAN, Color.RED, Color.BLUE, Color.GREEN, Color.YELLOW, Color.PINK};
+    private Float[] weightFinal;
     private Point mouse;
-    private int Magnification = 50;
+    private int magnification = 50;
+    private float rate = 0.5f;
+    private float threshold = 0;
+    // TODO - Editable
+    private int rangeMin = -1;
+    private int rangeMax = 1;
+    private int maxTrainTimes = 10000;
 
     private Perceptron() {
         loadButton.addActionListener(e -> {
@@ -48,7 +59,7 @@ public class Perceptron {
                             Integer.toString(zoomerSlider.getValue()),
                             javax.swing.border.TitledBorder.CENTER,
                             javax.swing.border.TitledBorder.DEFAULT_POSITION));
-            Magnification = zoomerSlider.getValue();
+            magnification = zoomerSlider.getValue();
             coordinatePanel.repaint();
         });
         coordinatePanel.addMouseMotionListener(new MouseMotionAdapter() {
@@ -59,13 +70,60 @@ public class Perceptron {
                 coordinatePanel.repaint();
             }
         });
+        learningTextField.getDocument().addDocumentListener(new DocumentListener() {
+            public void changedUpdate(DocumentEvent e) {
+                changeRate();
+            }
+
+            public void removeUpdate(DocumentEvent e) {
+                changeRate();
+            }
+
+            public void insertUpdate(DocumentEvent e) {
+                changeRate();
+            }
+
+            void changeRate() {
+                try {
+                    rate = Float.valueOf(learningTextField.getText());
+                } catch (NumberFormatException e) {
+                    System.out.println("Error learning rate input!");
+                    rate = 0.5f;
+                }
+            }
+        });
+
+        thresholdTextField.getDocument().addDocumentListener(new DocumentListener() {
+            public void changedUpdate(DocumentEvent e) {
+                changeThreshold();
+            }
+
+            public void removeUpdate(DocumentEvent e) {
+                changeThreshold();
+            }
+
+            public void insertUpdate(DocumentEvent e) {
+                changeThreshold();
+            }
+
+            void changeThreshold() {
+                try {
+                    threshold = Float.valueOf(thresholdTextField.getText());
+                } catch (NumberFormatException e) {
+                    System.out.println("Error threshold input!");
+                    threshold = 0;
+                }
+            }
+        });
     }
 
     private void loadFile(JFileChooser fileChooser) {
         File loadedFile = fileChooser.getSelectedFile();
         loadValue.setText(loadedFile.getPath());
+        weight.clear();
         input.clear();
         output.clear();
+        weightFinal = null;
         try (BufferedReader br = new BufferedReader(new FileReader(loadedFile))) {
             String line = br.readLine();
             while (line != null) {
@@ -76,17 +134,86 @@ public class Perceptron {
                         filter(s -> (s != null && s.length() > 0)).
                         toArray(String[]::new);
                 Float[] numbers = new Float[lineSplit.length - 1];
+                Float[] randomWeights = new Float[lineSplit.length - 1];
                 for (int i = 0; i < lineSplit.length - 1; i++) {
                     numbers[i] = Float.parseFloat(lineSplit[i]);
+                    randomWeights[i] = (float) getRandomNumber();
                 }
+                weight.add(randomWeights);
                 input.add(numbers);
                 output.add(Float.parseFloat(lineSplit[lineSplit.length - 1]));
                 line = br.readLine();
             }
+            if (!output.contains(0f)) {
+                for (int i = 0; i < output.size(); i++) {
+                    output.set(i, output.get(i) - 1);
+                }
+            }
+            trainPerceptron();
             coordinatePanel.repaint();
         } catch (IOException e1) {
             e1.printStackTrace();
         }
+    }
+
+    private void trainPerceptron() {
+        int times = 0, cycle = 0, correct = 0;
+        while (times < maxTrainTimes) {
+            ++times;
+            Float[] w = weight.get(cycle);
+            Float[] x = input.get(cycle);
+            Float sum = 0f;
+            for (int i = 0; i < w.length; i++) {
+                sum += w[i] * x[i];
+            }
+            Float y = Math.signum(sum - threshold);
+            if (output.get(cycle) == 0 && y < 0) {
+                Float[] wNext = new Float[w.length];
+                for (int i = 0; i < wNext.length; i++) {
+                    wNext[i] = w[i] + rate * x[i];
+                }
+                if (cycle < input.size() - 1)
+                    weight.set(cycle + 1, wNext);
+                else
+                    weight.set(0, wNext);
+            } else if (output.get(cycle) == 1 && y >= 0) {
+                Float[] wNext = new Float[w.length];
+                for (int i = 0; i < wNext.length; i++) {
+                    wNext[i] = w[i] - rate * x[i];
+                }
+                if (cycle < input.size() - 1)
+                    weight.set(cycle + 1, wNext);
+                else
+                    weight.set(0, wNext);
+            } else if ((output.get(cycle) == 0 && y >= 0) || (output.get(cycle) == 1 && y < 0)) {
+                if (cycle < input.size() - 1)
+                    weight.set(cycle + 1, w);
+                else
+                    weight.set(0, w);
+                ++correct;
+            }
+            ++cycle;
+            if (cycle == input.size()) {
+                if (correct == cycle) break;
+                cycle = 0;
+                correct = 0;
+            }
+        }
+        StringBuilder weightOutput = new StringBuilder("(");
+        weightFinal = weight.get(weight.size() - 1);
+        weightOutput.append(df.format(weightFinal[0]));
+        for (int i = 1; i < weightFinal.length; i++) {
+            weightOutput.append(", ").append(df.format(weightFinal[i]));
+        }
+        weightOutput.append(")");
+        System.out.println("Convergence Times: " + times);
+        System.out.println("Synaptic Weights: " + weightOutput);
+        System.out.println("Training Recognition Rate: " + (float) correct / input.size() * 100 + "%");
+        coordinatePanel.repaint();
+    }
+
+    private int getRandomNumber() {
+        return ThreadLocalRandom.current().nextInt(rangeMin, rangeMax + 1);
     }
 
     private void createUIComponents() {
@@ -101,8 +228,8 @@ public class Perceptron {
 
     private Float[] convertCoordinate(Float[] oldPoint) {
         Float[] newPoint = new Float[2];
-        newPoint[0] = (oldPoint[0] * Magnification) + 250;
-        newPoint[1] = 250 - (oldPoint[1] * Magnification);
+        newPoint[0] = (oldPoint[0] * magnification) + 250;
+        newPoint[1] = 250 - (oldPoint[1] * magnification);
         return newPoint;
     }
 
@@ -127,22 +254,33 @@ public class Perceptron {
             super.paintComponent(g);
             g.drawLine(250, 0, 250, 500);
             g.drawLine(0, 250, 500, 250);
+            //TODO - option for scale and grid
             Graphics2D g2 = (Graphics2D) g;
+            g2.setStroke(new BasicStroke(2));
             // Draw mouse position
             if (mouse != null) {
-                Double mouse_x = (mouse.getX() - 250) / Magnification;
-                Double mouse_y = (250 - mouse.getY()) / Magnification;
-                DecimalFormat df = new DecimalFormat("####0.00");
-                g2.drawString("(" + df.format(mouse_x) + ", " + df.format(mouse_y) + ")", 425, 20);
+                Double mouse_x = (mouse.getX() - 250) / magnification;
+                Double mouse_y = (250 - mouse.getY()) / magnification;
+                g2.drawString("(" + df.format(mouse_x) + ", " + df.format(mouse_y) + ")", 420, 20);
             }
             // Draw point of file
             if (input.size() > 0 && input.get(0).length == 2 && input.size() == output.size()) {
-                g2.setStroke(new BasicStroke(2));
                 for (int i = 0; i < input.size() && i < output.size(); i++) {
                     Float[] point = convertCoordinate(input.get(i));
                     g2.setColor(colorArray[Math.round(output.get(i))]);
                     g2.draw(new Line2D.Double(point[0], point[1], point[0], point[1]));
                 }
+            }
+            // Draw line of perceptron
+            if (weightFinal != null && weightFinal.length == 2) {
+                g2.setColor(Color.MAGENTA);
+                Float[] lineStart = convertCoordinate(
+                        new Float[]{-250.0f / magnification,
+                                (threshold + 250.0f / magnification * weightFinal[0]) / weightFinal[1]});
+                Float[] lineEnd = convertCoordinate(
+                        new Float[]{250.0f / magnification,
+                                (threshold - 250.0f / magnification * weightFinal[0]) / weightFinal[1]});
+                g2.draw(new Line2D.Double(lineStart[0], lineStart[1], lineEnd[0], lineEnd[1]));
             }
         }
     }

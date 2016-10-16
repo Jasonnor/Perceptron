@@ -294,6 +294,8 @@ public class Perceptron {
         weightsValue.setText(weightOutput.toString());
         fThresholdValue.setText(weightFinal[weightFinal.length - 1].toString());
         trainingValue.setText((float) correct / input.size() * 100 + "%");
+        //TODO - 2/3 data for training, 1/3 data for testing
+        testingValue.setText((float) correct / input.size() * 100 + "%");
         coordinatePanel.repaint();
     }
 
@@ -398,9 +400,15 @@ public class Perceptron {
             super.paintComponent(g);
             g.drawLine(250, 0, 250, 500);
             g.drawLine(0, 250, 500, 250);
-            //TODO - option for scale and grid
             Graphics2D g2 = (Graphics2D) g;
-            g2.setStroke(new BasicStroke(2));
+            // Draw scale
+            for (Float i = 250.0f; i >= 0; i -= 5.0f * magnification / 10) {
+                drawScale(g2, i);
+            }
+            for (Float i = 250.0f; i <= 500; i += 5.0f * magnification / 10) {
+                drawScale(g2, i);
+            }
+            g2.setStroke(new BasicStroke(3));
             // Draw mouse position
             if (mouse != null) {
                 Double mouse_x = (mouse.getX() - 250) / magnification;
@@ -415,6 +423,7 @@ public class Perceptron {
                     g2.draw(new Line2D.Double(point[0], point[1], point[0], point[1]));
                 }
             }
+            g2.setStroke(new BasicStroke(2));
             // Draw line of perceptron
             if (weightFinal != null && weightFinal.length == 3) {
                 g2.setColor(Color.MAGENTA);
@@ -434,6 +443,17 @@ public class Perceptron {
                 }
                 g2.draw(new Line2D.Double(lineStart[0], lineStart[1], lineEnd[0], lineEnd[1]));
             }
+        }
+
+        private void drawScale(Graphics2D g2, Float i) {
+            Float[] top, btn;
+            Float scaleLength = (i % (5.0f * magnification / 5) == 0) ? 2.0f * magnification / 20 : 1.0f * magnification / 20;
+            top = convertCoordinate(new Float[]{(i - 250) / magnification, scaleLength / magnification});
+            btn = convertCoordinate(new Float[]{(i - 250) / magnification, -scaleLength / magnification});
+            g2.draw(new Line2D.Double(top[0], top[1], btn[0], btn[1]));
+            top = convertCoordinate(new Float[]{-scaleLength / magnification, (250 - i) / magnification});
+            btn = convertCoordinate(new Float[]{scaleLength / magnification, (250 - i) / magnification});
+            g2.draw(new Line2D.Double(top[0], top[1], btn[0], btn[1]));
         }
     }
 }

@@ -72,6 +72,14 @@ public class Perceptron {
                 changeLAF(UIManager.getCrossPlatformLookAndFeelClassName(), frame);
             } else if (e.getActionCommand().equals("Default")) {
                 changeLAF(UIManager.getSystemLookAndFeelClassName(), frame);
+            } else if (e.getActionCommand().equals("Motif")) {
+                changeLAF("com.sun.java.swing.plaf.motif.MotifLookAndFeel", frame);
+            } else if (e.getActionCommand().equals("GTK")) {
+                changeLAF("com.sun.java.swing.plaf.gtk.GTKLookAndFeel", frame);
+            } else if (e.getActionCommand().equals("Windows")) {
+                changeLAF("com.sun.java.swing.plaf.windows.WindowsLookAndFeel", frame);
+            } else if (e.getActionCommand().equals("Nimbus")) {
+                changeLAF("Nimbus", frame);
             }
         });
         generateButton.addActionListener(e -> trainPerceptron());
@@ -223,7 +231,15 @@ public class Perceptron {
 
     private void changeLAF(String name, JFrame frame) {
         try {
-            UIManager.setLookAndFeel(name);
+            if (name.equals("Nimbus")) {
+                for (UIManager.LookAndFeelInfo info : UIManager.getInstalledLookAndFeels())
+                    if ("Nimbus".equals(info.getName())) {
+                        UIManager.setLookAndFeel(info.getClassName());
+                        break;
+                    }
+            } else {
+                UIManager.setLookAndFeel(name);
+            }
             SwingUtilities.updateComponentTreeUI(frame);
             frame.pack();
         } catch (ClassNotFoundException | InstantiationException | IllegalAccessException | UnsupportedLookAndFeelException e1) {
@@ -356,6 +372,22 @@ public class Perceptron {
         group.add(stylesMenuItem);
         stylesMenuItem = new JRadioButtonMenuItem("Default");
         stylesMenuItem.setMnemonic(KeyEvent.VK_D);
+        stylesMenu.add(stylesMenuItem);
+        group.add(stylesMenuItem);
+        stylesMenuItem = new JRadioButtonMenuItem("Motif");
+        stylesMenuItem.setMnemonic(KeyEvent.VK_M);
+        stylesMenu.add(stylesMenuItem);
+        group.add(stylesMenuItem);
+        stylesMenuItem = new JRadioButtonMenuItem("GTK");
+        stylesMenuItem.setMnemonic(KeyEvent.VK_G);
+        stylesMenu.add(stylesMenuItem);
+        group.add(stylesMenuItem);
+        stylesMenuItem = new JRadioButtonMenuItem("Windows");
+        stylesMenuItem.setMnemonic(KeyEvent.VK_W);
+        stylesMenu.add(stylesMenuItem);
+        group.add(stylesMenuItem);
+        stylesMenuItem = new JRadioButtonMenuItem("Nimbus");
+        stylesMenuItem.setMnemonic(KeyEvent.VK_N);
         stylesMenu.add(stylesMenuItem);
         group.add(stylesMenuItem);
         menuBar.add(stylesMenu);

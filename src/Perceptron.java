@@ -17,25 +17,15 @@ public class Perceptron {
     private JButton loadButton;
     private JLabel loadValue;
     private JButton generateButton;
-    private JLabel learningLabel;
     private JTextField learningTextField;
-    private JLabel thresholdLabel;
     private JTextField thresholdTextField;
-    private JLabel trainingLabel;
     private JLabel trainingValue;
-    private JLabel testingLabel;
     private JLabel testingValue;
-    private JLabel weightsLabel;
     private JLabel weightsValue;
     private JSlider zoomerSlider;
-    private JLabel zoomerLabel;
-    private JLabel timesLabel;
     private JLabel timesValue;
-    private JLabel fThresholdLabel;
     private JLabel fThresholdValue;
-    private JLabel maxTimesLabel;
     private JTextField maxTimesValue;
-    private JLabel wRangeLabel;
     private JTextField wRangeMinValue;
     private JTextField wRangeMaxValue;
     private DecimalFormat df = new DecimalFormat("####0.00");
@@ -95,9 +85,11 @@ public class Perceptron {
 
             void changeRate() {
                 try {
+                    alertBackground(learningTextField, false);
                     rate = Float.valueOf(learningTextField.getText());
                     trainPerceptron();
                 } catch (NumberFormatException e) {
+                    alertBackground(learningTextField, true);
                     rate = 0.5f;
                 }
             }
@@ -117,9 +109,11 @@ public class Perceptron {
 
             void changeThreshold() {
                 try {
+                    alertBackground(thresholdTextField, false);
                     threshold = Float.valueOf(thresholdTextField.getText());
                     trainPerceptron();
                 } catch (NumberFormatException e) {
+                    alertBackground(thresholdTextField, true);
                     threshold = 0;
                 }
             }
@@ -139,9 +133,11 @@ public class Perceptron {
 
             void changeMaxTimes() {
                 try {
+                    alertBackground(maxTimesValue, false);
                     maxTimes = Integer.valueOf(maxTimesValue.getText());
                     trainPerceptron();
                 } catch (NumberFormatException e) {
+                    alertBackground(maxTimesValue, true);
                     maxTimes = 1000;
                 }
             }
@@ -161,9 +157,15 @@ public class Perceptron {
 
             void changeMinRange() {
                 try {
-                    minRange = Float.valueOf(wRangeMinValue.getText());
-                    trainPerceptron();
+                    if (Float.valueOf(wRangeMinValue.getText()) > maxRange)
+                        alertBackground(wRangeMinValue, true);
+                    else {
+                        alertBackground(wRangeMinValue, false);
+                        minRange = Float.valueOf(wRangeMinValue.getText());
+                        trainPerceptron();
+                    }
                 } catch (NumberFormatException e) {
+                    alertBackground(wRangeMinValue, true);
                     minRange = -0.5f;
                 }
             }
@@ -183,13 +185,26 @@ public class Perceptron {
 
             void changeMaxRange() {
                 try {
-                    maxRange = Float.valueOf(wRangeMaxValue.getText());
-                    trainPerceptron();
+                    if (Float.valueOf(wRangeMaxValue.getText()) < minRange)
+                        alertBackground(wRangeMaxValue, true);
+                    else {
+                        alertBackground(wRangeMaxValue, false);
+                        maxRange = Float.valueOf(wRangeMaxValue.getText());
+                        trainPerceptron();
+                    }
                 } catch (NumberFormatException e) {
+                    alertBackground(wRangeMaxValue, true);
                     maxRange = 0.5f;
                 }
             }
         });
+    }
+
+    private void alertBackground(JTextField textField, boolean alert) {
+        if (alert)
+            textField.setBackground(Color.PINK);
+        else
+            textField.setBackground(Color.WHITE);
     }
 
     private void loadFile(JFileChooser fileChooser) {
@@ -229,6 +244,7 @@ public class Perceptron {
     }
 
     private void trainPerceptron() {
+        if (input.size() == 0) return;
         weightFinal = null;
         weight.clear();
         weight.add(threshold);

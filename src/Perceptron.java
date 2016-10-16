@@ -1,8 +1,11 @@
 import javax.swing.*;
 import javax.swing.filechooser.FileNameExtensionFilter;
 import java.awt.*;
+import java.awt.event.MouseEvent;
+import java.awt.event.MouseMotionAdapter;
 import java.awt.geom.Line2D;
 import java.io.*;
+import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.Arrays;
 
@@ -26,8 +29,9 @@ public class Perceptron {
     private JLabel zoomerLabel;
     private ArrayList<Float[]> input = new ArrayList<>();
     private ArrayList<Float> output = new ArrayList<>();
-    private int Magnification = 50;
     private Color[] colorArray = {Color.CYAN, Color.RED, Color.BLUE, Color.GREEN, Color.YELLOW, Color.PINK};
+    private Point mouse;
+    private int Magnification = 50;
 
     private Perceptron() {
         loadButton.addActionListener(e -> {
@@ -46,6 +50,14 @@ public class Perceptron {
                             javax.swing.border.TitledBorder.DEFAULT_POSITION));
             Magnification = zoomerSlider.getValue();
             coordinatePanel.repaint();
+        });
+        coordinatePanel.addMouseMotionListener(new MouseMotionAdapter() {
+            @Override
+            public void mouseMoved(MouseEvent e) {
+                super.mouseMoved(e);
+                mouse = e.getPoint();
+                coordinatePanel.repaint();
+            }
         });
     }
 
@@ -115,8 +127,16 @@ public class Perceptron {
             super.paintComponent(g);
             g.drawLine(250, 0, 250, 500);
             g.drawLine(0, 250, 500, 250);
+            Graphics2D g2 = (Graphics2D) g;
+            // Draw mouse position
+            if (mouse != null) {
+                Double mouse_x = (mouse.getX() - 250) / Magnification;
+                Double mouse_y = (250 - mouse.getY()) / Magnification;
+                DecimalFormat df = new DecimalFormat("####0.00");
+                g2.drawString("(" + df.format(mouse_x) + ", " + df.format(mouse_y) + ")", 425, 20);
+            }
+            // Draw point of file
             if (input.size() > 0 && input.get(0).length == 2 && input.size() == output.size()) {
-                Graphics2D g2 = (Graphics2D) g;
                 g2.setStroke(new BasicStroke(2));
                 for (int i = 0; i < input.size() && i < output.size(); i++) {
                     Float[] point = convertCoordinate(input.get(i));

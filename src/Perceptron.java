@@ -54,6 +54,7 @@ public class Perceptron {
                 loadFile(fileChooser);
             }
         });
+        generateButton.addActionListener(e -> trainPerceptron());
         zoomerSlider.addChangeListener(e -> {
             zoomerSlider.setBorder(
                     BorderFactory.createTitledBorder(null,
@@ -87,13 +88,13 @@ public class Perceptron {
             void changeRate() {
                 try {
                     rate = Float.valueOf(learningTextField.getText());
+                    trainPerceptron();
                 } catch (NumberFormatException e) {
                     System.out.println("Error learning rate input!");
                     rate = 0.5f;
                 }
             }
         });
-
         thresholdTextField.getDocument().addDocumentListener(new DocumentListener() {
             public void changedUpdate(DocumentEvent e) {
                 changeThreshold();
@@ -110,6 +111,7 @@ public class Perceptron {
             void changeThreshold() {
                 try {
                     threshold = Float.valueOf(thresholdTextField.getText());
+                    trainPerceptron();
                 } catch (NumberFormatException e) {
                     System.out.println("Error threshold input!");
                     threshold = 0;
@@ -123,8 +125,6 @@ public class Perceptron {
         loadValue.setText(loadedFile.getPath());
         input.clear();
         output.clear();
-        weight.clear();
-        weightFinal = null;
         try (BufferedReader br = new BufferedReader(new FileReader(loadedFile))) {
             String line = br.readLine();
             while (line != null) {
@@ -143,10 +143,6 @@ public class Perceptron {
                 output.add(Float.parseFloat(lineSplit[lineSplit.length - 1]));
                 line = br.readLine();
             }
-            weight.add(threshold);
-            for (int i = 0; i < input.get(0).length - 1; i++) {
-                weight.add((float) getRandomNumber());
-            }
             // TODO check it again, can I change it?
             if (!output.contains(0f)) {
                 for (int i = 0; i < output.size(); i++) {
@@ -154,13 +150,18 @@ public class Perceptron {
                 }
             }
             trainPerceptron();
-            coordinatePanel.repaint();
         } catch (IOException e1) {
             e1.printStackTrace();
         }
     }
 
     private void trainPerceptron() {
+        weightFinal = null;
+        weight.clear();
+        weight.add(threshold);
+        for (int i = 0; i < input.get(0).length - 1; i++) {
+            weight.add((float) getRandomNumber());
+        }
         int times = 0, correct = 0;
         while (times < maxTrainTimes) {
             correct = 0;
@@ -192,6 +193,7 @@ public class Perceptron {
         System.out.println("Synaptic Weights: " + weightOutput);
         System.out.println("Final Threshold: " + weightFinal[weightFinal.length - 1]);
         System.out.println("Training Recognition Rate: " + (float) correct / input.size() * 100 + "%");
+        coordinatePanel.repaint();
     }
 
     private int getRandomNumber() {

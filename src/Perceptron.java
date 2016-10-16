@@ -11,7 +11,14 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Random;
 
+import static javax.swing.border.TitledBorder.CENTER;
+import static javax.swing.border.TitledBorder.DEFAULT_POSITION;
+
 public class Perceptron {
+    private static JMenuItem loadMenuItem;
+    private static JMenuItem generateMenuItem;
+    private static JRadioButtonMenuItem stylesMenuItem;
+    private static JFrame frame;
     private JPanel layoutPanel;
     private JPanel coordinatePanel;
     private JButton loadButton;
@@ -52,13 +59,27 @@ public class Perceptron {
                 loadFile(fileChooser);
             }
         });
+        loadMenuItem.addActionListener(e -> {
+            JFileChooser fileChooser = new JFileChooser();
+            FileNameExtensionFilter filter = new FileNameExtensionFilter("Text Files(*.txt)", "txt", "text");
+            fileChooser.setFileFilter(filter);
+            if (fileChooser.showOpenDialog(layoutPanel) == JFileChooser.APPROVE_OPTION) {
+                loadFile(fileChooser);
+            }
+        });
+        stylesMenuItem.addActionListener(e -> {
+            if (e.getActionCommand().equals("Metal")) {
+                changeLAF(UIManager.getCrossPlatformLookAndFeelClassName(), frame);
+            } else if (e.getActionCommand().equals("Default")) {
+                changeLAF(UIManager.getSystemLookAndFeelClassName(), frame);
+            }
+        });
         generateButton.addActionListener(e -> trainPerceptron());
+        generateMenuItem.addActionListener(e -> trainPerceptron());
         zoomerSlider.addChangeListener(e -> {
             zoomerSlider.setBorder(
                     BorderFactory.createTitledBorder(null,
-                            Integer.toString(zoomerSlider.getValue()),
-                            javax.swing.border.TitledBorder.CENTER,
-                            javax.swing.border.TitledBorder.DEFAULT_POSITION));
+                            Integer.toString(zoomerSlider.getValue()), CENTER, DEFAULT_POSITION));
             magnification = zoomerSlider.getValue();
             coordinatePanel.repaint();
         });
@@ -200,6 +221,16 @@ public class Perceptron {
         });
     }
 
+    private void changeLAF(String name, JFrame frame) {
+        try {
+            UIManager.setLookAndFeel(name);
+            SwingUtilities.updateComponentTreeUI(frame);
+            frame.pack();
+        } catch (ClassNotFoundException | InstantiationException | IllegalAccessException | UnsupportedLookAndFeelException e1) {
+            e1.printStackTrace();
+        }
+    }
+
     private void alertBackground(JTextField textField, boolean alert) {
         if (alert)
             textField.setBackground(Color.PINK);
@@ -230,7 +261,6 @@ public class Perceptron {
                 output.add(Float.parseFloat(lineSplit[lineSplit.length - 1]));
                 line = br.readLine();
             }
-            // TODO check it again, can I change it?
             if (!output.contains(0f)) {
                 for (int i = 0; i < output.size(); i++) {
                     output.set(i, output.get(i) - 1);
@@ -295,9 +325,7 @@ public class Perceptron {
         zoomerSlider = new JSlider();
         zoomerSlider.setBorder(
                 BorderFactory.createTitledBorder(null,
-                        Integer.toString(zoomerSlider.getValue()),
-                        javax.swing.border.TitledBorder.CENTER,
-                        javax.swing.border.TitledBorder.DEFAULT_POSITION));
+                        Integer.toString(zoomerSlider.getValue()), CENTER, DEFAULT_POSITION));
     }
 
     private Float[] convertCoordinate(Float[] oldPoint) {
@@ -308,15 +336,35 @@ public class Perceptron {
     }
 
     public static void main(String[] args) {
-        try {
-            UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
-        } catch (ClassNotFoundException | InstantiationException | IllegalAccessException | UnsupportedLookAndFeelException e) {
-            e.printStackTrace();
-        }
-        JFrame frame = new JFrame("Perceptron");
+        JMenu stylesMenu = new JMenu("Styles");
+        JMenu filesMenu = new JMenu("Files");
+        JMenuBar menuBar = new JMenuBar();
+        // Files menu
+        loadMenuItem = new JMenuItem("Load", KeyEvent.VK_L);
+        generateMenuItem = new JMenuItem("Generate", KeyEvent.VK_G);
+        filesMenu.setMnemonic(KeyEvent.VK_F);
+        filesMenu.add(loadMenuItem);
+        filesMenu.add(generateMenuItem);
+        menuBar.add(filesMenu);
+        // Styles menu
+        stylesMenu.setMnemonic(KeyEvent.VK_S);
+        ButtonGroup group = new ButtonGroup();
+        stylesMenuItem = new JRadioButtonMenuItem("Metal");
+        stylesMenuItem.setMnemonic(KeyEvent.VK_M);
+        stylesMenuItem.setSelected(true);
+        stylesMenu.add(stylesMenuItem);
+        group.add(stylesMenuItem);
+        stylesMenuItem = new JRadioButtonMenuItem("Default");
+        stylesMenuItem.setMnemonic(KeyEvent.VK_D);
+        stylesMenu.add(stylesMenuItem);
+        group.add(stylesMenuItem);
+        menuBar.add(stylesMenu);
+        // Main frame
+        frame = new JFrame("Perceptron");
         frame.setContentPane(new Perceptron().layoutPanel);
         frame.setIconImage(Toolkit.getDefaultToolkit().getImage("src/icon.png"));
         frame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
+        frame.setJMenuBar(menuBar);
         frame.pack();
         frame.setVisible(true);
         frame.setLocationRelativeTo(null);

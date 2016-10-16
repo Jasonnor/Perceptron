@@ -17,7 +17,6 @@ import static javax.swing.border.TitledBorder.DEFAULT_POSITION;
 public class Perceptron {
     private static JMenuItem loadMenuItem;
     private static JMenuItem generateMenuItem;
-    private static JRadioButtonMenuItem stylesMenuItem;
     private static JFrame frame;
     private JPanel layoutPanel;
     private JPanel coordinatePanel;
@@ -65,21 +64,6 @@ public class Perceptron {
             fileChooser.setFileFilter(filter);
             if (fileChooser.showOpenDialog(layoutPanel) == JFileChooser.APPROVE_OPTION) {
                 loadFile(fileChooser);
-            }
-        });
-        stylesMenuItem.addActionListener(e -> {
-            if (e.getActionCommand().equals("Metal")) {
-                changeLAF(UIManager.getCrossPlatformLookAndFeelClassName(), frame);
-            } else if (e.getActionCommand().equals("Default")) {
-                changeLAF(UIManager.getSystemLookAndFeelClassName(), frame);
-            } else if (e.getActionCommand().equals("Motif")) {
-                changeLAF("com.sun.java.swing.plaf.motif.MotifLookAndFeel", frame);
-            } else if (e.getActionCommand().equals("GTK")) {
-                changeLAF("com.sun.java.swing.plaf.gtk.GTKLookAndFeel", frame);
-            } else if (e.getActionCommand().equals("Windows")) {
-                changeLAF("com.sun.java.swing.plaf.windows.WindowsLookAndFeel", frame);
-            } else if (e.getActionCommand().equals("Nimbus")) {
-                changeLAF("Nimbus", frame);
             }
         });
         generateButton.addActionListener(e -> trainPerceptron());
@@ -229,24 +213,6 @@ public class Perceptron {
         });
     }
 
-    private void changeLAF(String name, JFrame frame) {
-        try {
-            if (name.equals("Nimbus")) {
-                for (UIManager.LookAndFeelInfo info : UIManager.getInstalledLookAndFeels())
-                    if ("Nimbus".equals(info.getName())) {
-                        UIManager.setLookAndFeel(info.getClassName());
-                        break;
-                    }
-            } else {
-                UIManager.setLookAndFeel(name);
-            }
-            SwingUtilities.updateComponentTreeUI(frame);
-            frame.pack();
-        } catch (ClassNotFoundException | InstantiationException | IllegalAccessException | UnsupportedLookAndFeelException e1) {
-            e1.printStackTrace();
-        }
-    }
-
     private void alertBackground(JTextField textField, boolean alert) {
         if (alert)
             textField.setBackground(Color.PINK);
@@ -352,9 +318,9 @@ public class Perceptron {
     }
 
     public static void main(String[] args) {
-        JMenu stylesMenu = new JMenu("Styles");
-        JMenu filesMenu = new JMenu("Files");
         JMenuBar menuBar = new JMenuBar();
+        JMenu filesMenu = new JMenu("Files");
+        JMenu skinsMenu = new JMenu("Skins");
         // Files menu
         loadMenuItem = new JMenuItem("Load", KeyEvent.VK_L);
         generateMenuItem = new JMenuItem("Generate", KeyEvent.VK_G);
@@ -362,44 +328,68 @@ public class Perceptron {
         filesMenu.add(loadMenuItem);
         filesMenu.add(generateMenuItem);
         menuBar.add(filesMenu);
-        // Styles menu
-        stylesMenu.setMnemonic(KeyEvent.VK_S);
+        // Skins menu
+        skinsMenu.setMnemonic(KeyEvent.VK_S);
         ButtonGroup group = new ButtonGroup();
-        stylesMenuItem = new JRadioButtonMenuItem("Metal");
-        stylesMenuItem.setMnemonic(KeyEvent.VK_M);
-        stylesMenuItem.setSelected(true);
-        stylesMenu.add(stylesMenuItem);
-        group.add(stylesMenuItem);
-        stylesMenuItem = new JRadioButtonMenuItem("Default");
-        stylesMenuItem.setMnemonic(KeyEvent.VK_D);
-        stylesMenu.add(stylesMenuItem);
-        group.add(stylesMenuItem);
-        stylesMenuItem = new JRadioButtonMenuItem("Motif");
-        stylesMenuItem.setMnemonic(KeyEvent.VK_M);
-        stylesMenu.add(stylesMenuItem);
-        group.add(stylesMenuItem);
-        stylesMenuItem = new JRadioButtonMenuItem("GTK");
-        stylesMenuItem.setMnemonic(KeyEvent.VK_G);
-        stylesMenu.add(stylesMenuItem);
-        group.add(stylesMenuItem);
-        stylesMenuItem = new JRadioButtonMenuItem("Windows");
-        stylesMenuItem.setMnemonic(KeyEvent.VK_W);
-        stylesMenu.add(stylesMenuItem);
-        group.add(stylesMenuItem);
-        stylesMenuItem = new JRadioButtonMenuItem("Nimbus");
-        stylesMenuItem.setMnemonic(KeyEvent.VK_N);
-        stylesMenu.add(stylesMenuItem);
-        group.add(stylesMenuItem);
-        menuBar.add(stylesMenu);
+        JRadioButtonMenuItem skinsMetalMenuItem = new JRadioButtonMenuItem("Metal");
+        skinsMetalMenuItem.setMnemonic(KeyEvent.VK_M);
+        skinsMenu.add(skinsMetalMenuItem);
+        group.add(skinsMetalMenuItem);
+        skinsMetalMenuItem.addActionListener(e -> changeLAF(UIManager.getCrossPlatformLookAndFeelClassName(), frame));
+        JRadioButtonMenuItem skinsDefaultMenuItem = new JRadioButtonMenuItem("Default");
+        skinsDefaultMenuItem.setMnemonic(KeyEvent.VK_D);
+        skinsMenu.add(skinsDefaultMenuItem);
+        group.add(skinsDefaultMenuItem);
+        skinsDefaultMenuItem.addActionListener(e -> changeLAF(UIManager.getSystemLookAndFeelClassName(), frame));
+        JRadioButtonMenuItem skinsMotifMenuItem = new JRadioButtonMenuItem("Motif");
+        skinsMotifMenuItem.setMnemonic(KeyEvent.VK_M);
+        skinsMenu.add(skinsMotifMenuItem);
+        group.add(skinsMotifMenuItem);
+        skinsMotifMenuItem.addActionListener(e -> changeLAF("com.sun.java.swing.plaf.motif.MotifLookAndFeel", frame));
+        JRadioButtonMenuItem skinsGTKMenuItem = new JRadioButtonMenuItem("GTK");
+        skinsGTKMenuItem.setMnemonic(KeyEvent.VK_G);
+        skinsMenu.add(skinsGTKMenuItem);
+        group.add(skinsGTKMenuItem);
+        skinsGTKMenuItem.addActionListener(e -> changeLAF("com.sun.java.swing.plaf.gtk.GTKLookAndFeel", frame));
+        JRadioButtonMenuItem skinsWindowsMenuItem = new JRadioButtonMenuItem("Windows");
+        skinsWindowsMenuItem.setMnemonic(KeyEvent.VK_G);
+        skinsMenu.add(skinsWindowsMenuItem);
+        group.add(skinsWindowsMenuItem);
+        skinsWindowsMenuItem.addActionListener(e -> changeLAF("com.sun.java.swing.plaf.windows.WindowsLookAndFeel", frame));
+        JRadioButtonMenuItem skinsNimbusMenuItem = new JRadioButtonMenuItem("Nimbus");
+        skinsNimbusMenuItem.setMnemonic(KeyEvent.VK_N);
+        skinsNimbusMenuItem.setSelected(true);
+        skinsMenu.add(skinsNimbusMenuItem);
+        group.add(skinsNimbusMenuItem);
+        skinsNimbusMenuItem.addActionListener(e -> changeLAF("Nimbus", frame));
+        menuBar.add(skinsMenu);
         // Main frame
         frame = new JFrame("Perceptron");
         frame.setContentPane(new Perceptron().layoutPanel);
         frame.setIconImage(Toolkit.getDefaultToolkit().getImage("src/icon.png"));
         frame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         frame.setJMenuBar(menuBar);
-        frame.pack();
+        changeLAF("Nimbus", frame);
         frame.setVisible(true);
         frame.setLocationRelativeTo(null);
+    }
+
+    private static void changeLAF(String name, JFrame frame) {
+        try {
+            if (name.equals("Nimbus")) {
+                for (UIManager.LookAndFeelInfo info : UIManager.getInstalledLookAndFeels())
+                    if ("Nimbus".equals(info.getName())) {
+                        UIManager.setLookAndFeel(info.getClassName());
+                        break;
+                    }
+            } else {
+                UIManager.setLookAndFeel(name);
+            }
+            SwingUtilities.updateComponentTreeUI(frame);
+            frame.pack();
+        } catch (ClassNotFoundException | InstantiationException | IllegalAccessException | UnsupportedLookAndFeelException e1) {
+            System.out.println("Failed to load the skin!");
+        }
     }
 
     private class GPanel extends JPanel {

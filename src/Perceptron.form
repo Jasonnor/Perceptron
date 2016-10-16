@@ -1,18 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <form xmlns="http://www.intellij.com/uidesigner/form/" version="1" bind-to-class="Perceptron">
-  <grid id="27dc6" binding="layoutPanel" layout-manager="GridLayoutManager" row-count="8" column-count="3" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+  <grid id="27dc6" binding="layoutPanel" layout-manager="GridLayoutManager" row-count="9" column-count="3" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
     <margin top="20" left="20" bottom="20" right="20"/>
     <constraints>
-      <xy x="20" y="-16" width="861" height="544"/>
+      <xy x="20" y="-16" width="914" height="569"/>
     </constraints>
     <properties/>
     <border type="none"/>
     <children>
       <component id="91b67" class="javax.swing.JLabel" binding="learningLabel">
         <constraints>
-          <grid row="2" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false">
-            <preferred-size width="78" height="54"/>
-          </grid>
+          <grid row="2" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
         </constraints>
         <properties>
           <text value="Learning Rate"/>
@@ -20,9 +18,7 @@
       </component>
       <component id="4d245" class="javax.swing.JLabel" binding="thresholdLabel">
         <constraints>
-          <grid row="3" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false">
-            <preferred-size width="56" height="46"/>
-          </grid>
+          <grid row="3" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
         </constraints>
         <properties>
           <text value="Threshold"/>
@@ -62,9 +58,7 @@
       </component>
       <component id="3bbd6" class="javax.swing.JTextField" binding="thresholdTextField">
         <constraints>
-          <grid row="3" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
-            <preferred-size width="150" height="25"/>
-          </grid>
+          <grid row="3" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false"/>
         </constraints>
         <properties>
           <text value="1"/>
@@ -72,9 +66,7 @@
       </component>
       <component id="f6d45" class="javax.swing.JTextField" binding="learningTextField">
         <constraints>
-          <grid row="2" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
-            <preferred-size width="150" height="25"/>
-          </grid>
+          <grid row="2" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false"/>
         </constraints>
         <properties>
           <text value="0.5"/>
@@ -99,7 +91,7 @@
       <grid id="8afd3" binding="coordinatePanel" custom-create="true" layout-manager="GridLayoutManager" row-count="1" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
         <margin top="0" left="0" bottom="0" right="0"/>
         <constraints>
-          <grid row="0" column="0" row-span="8" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false">
+          <grid row="0" column="0" row-span="9" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false">
             <minimum-size width="500" height="500"/>
             <preferred-size width="500" height="500"/>
             <maximum-size width="500" height="500"/>
@@ -137,6 +129,34 @@
         <properties>
           <text value="?"/>
         </properties>
+      </component>
+      <component id="7389b" class="javax.swing.JLabel" binding="zoomerLabel">
+        <constraints>
+          <grid row="8" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <text value="Zoomer"/>
+        </properties>
+      </component>
+      <component id="9bedb" class="javax.swing.JSlider" binding="zoomerSlider" custom-create="true">
+        <constraints>
+          <grid row="8" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <inverted value="false"/>
+          <majorTickSpacing value="10"/>
+          <minimum value="10"/>
+          <minorTickSpacing value="5"/>
+          <paintLabels value="false"/>
+          <paintTicks value="true"/>
+          <snapToTicks value="false"/>
+          <value value="50"/>
+          <valueIsAdjusting value="false"/>
+        </properties>
+        <clientProperties>
+          <JSlider.isFilled class="java.lang.Boolean" value="false"/>
+          <Slider.paintThumbArrowShape class="java.lang.Boolean" value="false"/>
+        </clientProperties>
       </component>
     </children>
   </grid>

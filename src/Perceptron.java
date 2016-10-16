@@ -10,21 +10,22 @@ public class Perceptron {
     private JPanel layoutPanel;
     private JPanel coordinatePanel;
     private JButton loadButton;
+    private JLabel loadValue;
     private JButton generateButton;
-    private JTextField learningTextField;
     private JLabel learningLabel;
+    private JTextField learningTextField;
     private JLabel thresholdLabel;
     private JTextField thresholdTextField;
     private JLabel trainingLabel;
     private JLabel trainingValue;
     private JLabel testingLabel;
     private JLabel testingValue;
-    private JLabel loadValue;
     private JLabel weightsLabel;
     private JLabel weightsValue;
+    private JSlider zoomerSlider;
+    private JLabel zoomerLabel;
     private ArrayList<Float[]> input = new ArrayList<>();
     private ArrayList<Float> output = new ArrayList<>();
-    // TODO - Make it resizeable
     private int Magnification = 50;
     private Color[] colorArray = {Color.CYAN, Color.RED, Color.BLUE, Color.GREEN, Color.YELLOW, Color.PINK};
 
@@ -36,6 +37,15 @@ public class Perceptron {
             if (fileChooser.showOpenDialog(layoutPanel) == JFileChooser.APPROVE_OPTION) {
                 loadFile(fileChooser);
             }
+        });
+        zoomerSlider.addChangeListener(e -> {
+            zoomerSlider.setBorder(
+                    BorderFactory.createTitledBorder(null,
+                            Integer.toString(zoomerSlider.getValue()),
+                            javax.swing.border.TitledBorder.CENTER,
+                            javax.swing.border.TitledBorder.DEFAULT_POSITION));
+            Magnification = zoomerSlider.getValue();
+            coordinatePanel.repaint();
         });
     }
 
@@ -69,6 +79,12 @@ public class Perceptron {
 
     private void createUIComponents() {
         coordinatePanel = new GPanel();
+        zoomerSlider = new JSlider();
+        zoomerSlider.setBorder(
+                BorderFactory.createTitledBorder(null,
+                        Integer.toString(zoomerSlider.getValue()),
+                        javax.swing.border.TitledBorder.CENTER,
+                        javax.swing.border.TitledBorder.DEFAULT_POSITION));
     }
 
     private Float[] convertCoordinate(Float[] oldPoint) {

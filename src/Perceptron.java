@@ -418,12 +418,20 @@ public class Perceptron {
             // Draw line of perceptron
             if (weightFinal != null && weightFinal.length == 3) {
                 g2.setColor(Color.MAGENTA);
-                Float[] lineStart = convertCoordinate(
-                        new Float[]{-250.0f / magnification,
-                                (weightFinal[2] + 250.0f / magnification * weightFinal[0]) / weightFinal[1]});
-                Float[] lineEnd = convertCoordinate(
-                        new Float[]{250.0f / magnification,
-                                (weightFinal[2] - 250.0f / magnification * weightFinal[0]) / weightFinal[1]});
+                Float[] lineStart, lineEnd;
+                if (weightFinal[1] != 0) {
+                    lineStart = convertCoordinate(
+                            new Float[]{-250.0f / magnification,
+                                    (weightFinal[2] + 250.0f / magnification * weightFinal[0]) / weightFinal[1]});
+                    lineEnd = convertCoordinate(
+                            new Float[]{250.0f / magnification,
+                                    (weightFinal[2] - 250.0f / magnification * weightFinal[0]) / weightFinal[1]});
+                } else {
+                    lineStart = convertCoordinate(
+                            new Float[]{weightFinal[2] / weightFinal[0], 250.0f / magnification});
+                    lineEnd = convertCoordinate(
+                            new Float[]{weightFinal[2] / weightFinal[0], -250.0f / magnification});
+                }
                 g2.draw(new Line2D.Double(lineStart[0], lineStart[1], lineEnd[0], lineEnd[1]));
             }
         }

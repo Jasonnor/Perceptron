@@ -69,7 +69,7 @@
       <component id="df0a" class="javax.swing.JLabel" binding="loadValue">
         <constraints>
           <grid row="1" column="2" row-span="1" col-span="4" vsize-policy="0" hsize-policy="0" anchor="0" fill="0" indent="0" use-parent-layout="false">
-            <minimum-size width="300" height="-1"/>
+            <preferred-size width="400" height="-1"/>
           </grid>
         </constraints>
         <properties>
@@ -163,14 +163,6 @@
           <text value="1000"/>
         </properties>
       </component>
-      <component id="15e2b" class="javax.swing.JLabel">
-        <constraints>
-          <grid row="5" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
-        </constraints>
-        <properties>
-          <text value="Initial Weights Range"/>
-        </properties>
-      </component>
       <component id="3f310" class="javax.swing.JTextField" binding="wRangeMinValue">
         <constraints>
           <grid row="5" column="3" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false"/>
@@ -241,6 +233,14 @@
         </constraints>
         <properties>
           <text value="Initial Threshold"/>
+        </properties>
+      </component>
+      <component id="15e2b" class="javax.swing.JLabel">
+        <constraints>
+          <grid row="5" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <text value="Initial Weights Range"/>
         </properties>
       </component>
     </children>

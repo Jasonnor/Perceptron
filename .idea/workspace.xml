@@ -25,21 +25,54 @@
       <file leaf-file-name="Perceptron.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Perceptron.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="540">
-              <caret line="437" column="24" selection-start-line="437" selection-start-column="24" selection-end-line="437" selection-end-column="24" />
+            <state relative-caret-position="-169">
+              <caret line="272" column="38" selection-start-line="272" selection-start-column="38" selection-end-line="272" selection-end-column="38" />
               <folding>
-                <element signature="method#Perceptron#0;class#Perceptron#0" expanded="false" />
-                <element signature="class#3567:4307" expanded="false" />
-                <element signature="class#4375:5145" expanded="false" />
-                <element signature="class#5208:5962" expanded="false" />
-                <element signature="class#6026:6982" expanded="false" />
-                <element signature="class#7046:8001" expanded="false" />
+                <element signature="e#3326#3567#0" expanded="true" />
+                <element signature="e#3566#3567#0" expanded="true" />
+                <element signature="class#3634:4375" expanded="false" />
+                <element signature="e#3710#3711#0" expanded="true" />
+                <element signature="e#3754#3755#0" expanded="true" />
+                <element signature="e#3811#3812#0" expanded="true" />
+                <element signature="e#3855#3856#0" expanded="true" />
+                <element signature="e#3912#3913#0" expanded="true" />
+                <element signature="e#3956#3957#0" expanded="true" />
+                <element signature="class#4443:5214" expanded="false" />
+                <element signature="e#4519#4520#0" expanded="true" />
+                <element signature="e#4568#4569#0" expanded="true" />
+                <element signature="e#4625#4626#0" expanded="true" />
+                <element signature="e#4674#4675#0" expanded="true" />
+                <element signature="e#4731#4732#0" expanded="true" />
+                <element signature="e#4780#4781#0" expanded="true" />
+                <element signature="class#5277:6031" expanded="false" />
+                <element signature="e#5353#5354#0" expanded="true" />
+                <element signature="e#5401#5402#0" expanded="true" />
+                <element signature="e#5458#5459#0" expanded="true" />
+                <element signature="e#5506#5507#0" expanded="true" />
+                <element signature="e#5563#5564#0" expanded="true" />
+                <element signature="e#5611#5612#0" expanded="true" />
+                <element signature="class#6095:7053" expanded="false" />
+                <element signature="e#6171#6172#0" expanded="true" />
+                <element signature="e#6219#6220#0" expanded="true" />
+                <element signature="e#6276#6277#0" expanded="true" />
+                <element signature="e#6324#6325#0" expanded="true" />
+                <element signature="e#6381#6382#0" expanded="true" />
+                <element signature="e#6429#6430#0" expanded="true" />
+                <element signature="class#7117:8074" expanded="false" />
+                <element signature="e#7193#7194#0" expanded="true" />
+                <element signature="e#7241#7242#0" expanded="true" />
+                <element signature="e#7298#7299#0" expanded="true" />
+                <element signature="e#7346#7347#0" expanded="true" />
+                <element signature="e#7403#7404#0" expanded="true" />
+                <element signature="e#7451#7452#0" expanded="true" />
                 <element signature="method#alertBackground#0;class#Perceptron#0" expanded="false" />
+                <element signature="method#resetFrame#0;class#Perceptron#0" expanded="false" />
                 <element signature="method#getRandomNumber#0;class#Perceptron#0" expanded="false" />
                 <element signature="method#convertCoordinate#0;class#Perceptron#0" expanded="false" />
                 <element signature="method#createUIComponents#0;class#Perceptron#0" expanded="false" />
                 <element signature="method#changeLAF#0;class#Perceptron#0" expanded="false" />
                 <element signature="method#main#0;class#Perceptron#0" expanded="false" />
+                <element signature="class#GPanel#0;class#Perceptron#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -142,6 +175,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="PackagesPane" />
       <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
@@ -178,28 +212,9 @@
               <option name="myItemId" value="src" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Perceptron" />
-              <option name="myItemType" value="com.intellij.uiDesigner.projectView.FormNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Perceptron" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Perceptron" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
       <pane id="Scratches" />
     </panes>
   </component>
@@ -675,11 +690,12 @@
       <workItem from="1476541054521" duration="12852000" />
       <workItem from="1476582198053" duration="32063000" />
       <workItem from="1476625394003" duration="12530000" />
+      <workItem from="1476670439829" duration="10805000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="65730000" />
+    <option name="totallyTimeSpent" value="76535000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1696" height="1026" extended-state="6" />
@@ -692,25 +708,25 @@
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.14519651" sideWeight="0.50476193" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24017467" sideWeight="0.4952381" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.23934427" sideWeight="0.4952381" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.14166667" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Inspection Results" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32969433" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3293348" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="WINDOWED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" x="616" y="277" width="450" height="456" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.360262" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.35956284" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Inspection Results" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32969433" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3293348" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="Vcs.Log.UiProperties">
@@ -726,12 +742,16 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="43" />
+      <option name="time" value="55" />
     </breakpoint-manager>
     <watches-manager>
       <configuration name="Application">
         <watch expression="x" language="JAVA" />
+        <watch expression="input" language="JAVA" />
+        <watch expression="input" language="JAVA" />
+        <watch expression="input" language="JAVA" />
         <watch expression="weight" language="JAVA" />
+        <watch expression="(double) correct / input.size() * 100 + &quot;%&quot;" language="JAVA" />
       </configuration>
     </watches-manager>
   </component>
@@ -745,18 +765,51 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="method#Perceptron#0;class#Perceptron#0" expanded="false" />
-            <element signature="class#3567:4307" expanded="false" />
-            <element signature="class#4375:5145" expanded="false" />
-            <element signature="class#5208:5962" expanded="false" />
-            <element signature="class#6026:6982" expanded="false" />
-            <element signature="class#7046:8001" expanded="false" />
+            <element signature="e#3326#3567#0" expanded="true" />
+            <element signature="e#3566#3567#0" expanded="true" />
+            <element signature="class#3634:4375" expanded="false" />
+            <element signature="e#3710#3711#0" expanded="true" />
+            <element signature="e#3754#3755#0" expanded="true" />
+            <element signature="e#3811#3812#0" expanded="true" />
+            <element signature="e#3855#3856#0" expanded="true" />
+            <element signature="e#3912#3913#0" expanded="true" />
+            <element signature="e#3956#3957#0" expanded="true" />
+            <element signature="class#4443:5214" expanded="false" />
+            <element signature="e#4519#4520#0" expanded="true" />
+            <element signature="e#4568#4569#0" expanded="true" />
+            <element signature="e#4625#4626#0" expanded="true" />
+            <element signature="e#4674#4675#0" expanded="true" />
+            <element signature="e#4731#4732#0" expanded="true" />
+            <element signature="e#4780#4781#0" expanded="true" />
+            <element signature="class#5277:6031" expanded="false" />
+            <element signature="e#5353#5354#0" expanded="true" />
+            <element signature="e#5401#5402#0" expanded="true" />
+            <element signature="e#5458#5459#0" expanded="true" />
+            <element signature="e#5506#5507#0" expanded="true" />
+            <element signature="e#5563#5564#0" expanded="true" />
+            <element signature="e#5611#5612#0" expanded="true" />
+            <element signature="class#6095:7053" expanded="false" />
+            <element signature="e#6171#6172#0" expanded="true" />
+            <element signature="e#6219#6220#0" expanded="true" />
+            <element signature="e#6276#6277#0" expanded="true" />
+            <element signature="e#6324#6325#0" expanded="true" />
+            <element signature="e#6381#6382#0" expanded="true" />
+            <element signature="e#6429#6430#0" expanded="true" />
+            <element signature="class#7117:8074" expanded="false" />
+            <element signature="e#7193#7194#0" expanded="true" />
+            <element signature="e#7241#7242#0" expanded="true" />
+            <element signature="e#7298#7299#0" expanded="true" />
+            <element signature="e#7346#7347#0" expanded="true" />
+            <element signature="e#7403#7404#0" expanded="true" />
+            <element signature="e#7451#7452#0" expanded="true" />
             <element signature="method#alertBackground#0;class#Perceptron#0" expanded="false" />
+            <element signature="method#resetFrame#0;class#Perceptron#0" expanded="false" />
             <element signature="method#getRandomNumber#0;class#Perceptron#0" expanded="false" />
             <element signature="method#convertCoordinate#0;class#Perceptron#0" expanded="false" />
             <element signature="method#createUIComponents#0;class#Perceptron#0" expanded="false" />
             <element signature="method#changeLAF#0;class#Perceptron#0" expanded="false" />
             <element signature="method#main#0;class#Perceptron#0" expanded="false" />
+            <element signature="class#GPanel#0;class#Perceptron#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -774,18 +827,51 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="method#Perceptron#0;class#Perceptron#0" expanded="false" />
-            <element signature="class#3567:4307" expanded="false" />
-            <element signature="class#4375:5145" expanded="false" />
-            <element signature="class#5208:5962" expanded="false" />
-            <element signature="class#6026:6982" expanded="false" />
-            <element signature="class#7046:8001" expanded="false" />
+            <element signature="e#3326#3567#0" expanded="true" />
+            <element signature="e#3566#3567#0" expanded="true" />
+            <element signature="class#3634:4375" expanded="false" />
+            <element signature="e#3710#3711#0" expanded="true" />
+            <element signature="e#3754#3755#0" expanded="true" />
+            <element signature="e#3811#3812#0" expanded="true" />
+            <element signature="e#3855#3856#0" expanded="true" />
+            <element signature="e#3912#3913#0" expanded="true" />
+            <element signature="e#3956#3957#0" expanded="true" />
+            <element signature="class#4443:5214" expanded="false" />
+            <element signature="e#4519#4520#0" expanded="true" />
+            <element signature="e#4568#4569#0" expanded="true" />
+            <element signature="e#4625#4626#0" expanded="true" />
+            <element signature="e#4674#4675#0" expanded="true" />
+            <element signature="e#4731#4732#0" expanded="true" />
+            <element signature="e#4780#4781#0" expanded="true" />
+            <element signature="class#5277:6031" expanded="false" />
+            <element signature="e#5353#5354#0" expanded="true" />
+            <element signature="e#5401#5402#0" expanded="true" />
+            <element signature="e#5458#5459#0" expanded="true" />
+            <element signature="e#5506#5507#0" expanded="true" />
+            <element signature="e#5563#5564#0" expanded="true" />
+            <element signature="e#5611#5612#0" expanded="true" />
+            <element signature="class#6095:7053" expanded="false" />
+            <element signature="e#6171#6172#0" expanded="true" />
+            <element signature="e#6219#6220#0" expanded="true" />
+            <element signature="e#6276#6277#0" expanded="true" />
+            <element signature="e#6324#6325#0" expanded="true" />
+            <element signature="e#6381#6382#0" expanded="true" />
+            <element signature="e#6429#6430#0" expanded="true" />
+            <element signature="class#7117:8074" expanded="false" />
+            <element signature="e#7193#7194#0" expanded="true" />
+            <element signature="e#7241#7242#0" expanded="true" />
+            <element signature="e#7298#7299#0" expanded="true" />
+            <element signature="e#7346#7347#0" expanded="true" />
+            <element signature="e#7403#7404#0" expanded="true" />
+            <element signature="e#7451#7452#0" expanded="true" />
             <element signature="method#alertBackground#0;class#Perceptron#0" expanded="false" />
+            <element signature="method#resetFrame#0;class#Perceptron#0" expanded="false" />
             <element signature="method#getRandomNumber#0;class#Perceptron#0" expanded="false" />
             <element signature="method#convertCoordinate#0;class#Perceptron#0" expanded="false" />
             <element signature="method#createUIComponents#0;class#Perceptron#0" expanded="false" />
             <element signature="method#changeLAF#0;class#Perceptron#0" expanded="false" />
             <element signature="method#main#0;class#Perceptron#0" expanded="false" />
+            <element signature="class#GPanel#0;class#Perceptron#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -803,18 +889,51 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="method#Perceptron#0;class#Perceptron#0" expanded="false" />
-            <element signature="class#3567:4307" expanded="false" />
-            <element signature="class#4375:5145" expanded="false" />
-            <element signature="class#5208:5962" expanded="false" />
-            <element signature="class#6026:6982" expanded="false" />
-            <element signature="class#7046:8001" expanded="false" />
+            <element signature="e#3326#3567#0" expanded="true" />
+            <element signature="e#3566#3567#0" expanded="true" />
+            <element signature="class#3634:4375" expanded="false" />
+            <element signature="e#3710#3711#0" expanded="true" />
+            <element signature="e#3754#3755#0" expanded="true" />
+            <element signature="e#3811#3812#0" expanded="true" />
+            <element signature="e#3855#3856#0" expanded="true" />
+            <element signature="e#3912#3913#0" expanded="true" />
+            <element signature="e#3956#3957#0" expanded="true" />
+            <element signature="class#4443:5214" expanded="false" />
+            <element signature="e#4519#4520#0" expanded="true" />
+            <element signature="e#4568#4569#0" expanded="true" />
+            <element signature="e#4625#4626#0" expanded="true" />
+            <element signature="e#4674#4675#0" expanded="true" />
+            <element signature="e#4731#4732#0" expanded="true" />
+            <element signature="e#4780#4781#0" expanded="true" />
+            <element signature="class#5277:6031" expanded="false" />
+            <element signature="e#5353#5354#0" expanded="true" />
+            <element signature="e#5401#5402#0" expanded="true" />
+            <element signature="e#5458#5459#0" expanded="true" />
+            <element signature="e#5506#5507#0" expanded="true" />
+            <element signature="e#5563#5564#0" expanded="true" />
+            <element signature="e#5611#5612#0" expanded="true" />
+            <element signature="class#6095:7053" expanded="false" />
+            <element signature="e#6171#6172#0" expanded="true" />
+            <element signature="e#6219#6220#0" expanded="true" />
+            <element signature="e#6276#6277#0" expanded="true" />
+            <element signature="e#6324#6325#0" expanded="true" />
+            <element signature="e#6381#6382#0" expanded="true" />
+            <element signature="e#6429#6430#0" expanded="true" />
+            <element signature="class#7117:8074" expanded="false" />
+            <element signature="e#7193#7194#0" expanded="true" />
+            <element signature="e#7241#7242#0" expanded="true" />
+            <element signature="e#7298#7299#0" expanded="true" />
+            <element signature="e#7346#7347#0" expanded="true" />
+            <element signature="e#7403#7404#0" expanded="true" />
+            <element signature="e#7451#7452#0" expanded="true" />
             <element signature="method#alertBackground#0;class#Perceptron#0" expanded="false" />
+            <element signature="method#resetFrame#0;class#Perceptron#0" expanded="false" />
             <element signature="method#getRandomNumber#0;class#Perceptron#0" expanded="false" />
             <element signature="method#convertCoordinate#0;class#Perceptron#0" expanded="false" />
             <element signature="method#createUIComponents#0;class#Perceptron#0" expanded="false" />
             <element signature="method#changeLAF#0;class#Perceptron#0" expanded="false" />
             <element signature="method#main#0;class#Perceptron#0" expanded="false" />
+            <element signature="class#GPanel#0;class#Perceptron#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -832,18 +951,113 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="method#Perceptron#0;class#Perceptron#0" expanded="false" />
-            <element signature="class#3567:4307" expanded="false" />
-            <element signature="class#4375:5145" expanded="false" />
-            <element signature="class#5208:5962" expanded="false" />
-            <element signature="class#6026:6982" expanded="false" />
-            <element signature="class#7046:8001" expanded="false" />
+            <element signature="e#3326#3567#0" expanded="true" />
+            <element signature="e#3566#3567#0" expanded="true" />
+            <element signature="class#3634:4375" expanded="false" />
+            <element signature="e#3710#3711#0" expanded="true" />
+            <element signature="e#3754#3755#0" expanded="true" />
+            <element signature="e#3811#3812#0" expanded="true" />
+            <element signature="e#3855#3856#0" expanded="true" />
+            <element signature="e#3912#3913#0" expanded="true" />
+            <element signature="e#3956#3957#0" expanded="true" />
+            <element signature="class#4443:5214" expanded="false" />
+            <element signature="e#4519#4520#0" expanded="true" />
+            <element signature="e#4568#4569#0" expanded="true" />
+            <element signature="e#4625#4626#0" expanded="true" />
+            <element signature="e#4674#4675#0" expanded="true" />
+            <element signature="e#4731#4732#0" expanded="true" />
+            <element signature="e#4780#4781#0" expanded="true" />
+            <element signature="class#5277:6031" expanded="false" />
+            <element signature="e#5353#5354#0" expanded="true" />
+            <element signature="e#5401#5402#0" expanded="true" />
+            <element signature="e#5458#5459#0" expanded="true" />
+            <element signature="e#5506#5507#0" expanded="true" />
+            <element signature="e#5563#5564#0" expanded="true" />
+            <element signature="e#5611#5612#0" expanded="true" />
+            <element signature="class#6095:7053" expanded="false" />
+            <element signature="e#6171#6172#0" expanded="true" />
+            <element signature="e#6219#6220#0" expanded="true" />
+            <element signature="e#6276#6277#0" expanded="true" />
+            <element signature="e#6324#6325#0" expanded="true" />
+            <element signature="e#6381#6382#0" expanded="true" />
+            <element signature="e#6429#6430#0" expanded="true" />
+            <element signature="class#7117:8074" expanded="false" />
+            <element signature="e#7193#7194#0" expanded="true" />
+            <element signature="e#7241#7242#0" expanded="true" />
+            <element signature="e#7298#7299#0" expanded="true" />
+            <element signature="e#7346#7347#0" expanded="true" />
+            <element signature="e#7403#7404#0" expanded="true" />
+            <element signature="e#7451#7452#0" expanded="true" />
             <element signature="method#alertBackground#0;class#Perceptron#0" expanded="false" />
+            <element signature="method#resetFrame#0;class#Perceptron#0" expanded="false" />
             <element signature="method#getRandomNumber#0;class#Perceptron#0" expanded="false" />
             <element signature="method#convertCoordinate#0;class#Perceptron#0" expanded="false" />
             <element signature="method#createUIComponents#0;class#Perceptron#0" expanded="false" />
             <element signature="method#changeLAF#0;class#Perceptron#0" expanded="false" />
             <element signature="method#main#0;class#Perceptron#0" expanded="false" />
+            <element signature="class#GPanel#0;class#Perceptron#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Perceptron.form">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Perceptron.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="e#3326#3567#0" expanded="true" />
+            <element signature="e#3566#3567#0" expanded="true" />
+            <element signature="class#3634:4375" expanded="false" />
+            <element signature="e#3710#3711#0" expanded="true" />
+            <element signature="e#3754#3755#0" expanded="true" />
+            <element signature="e#3811#3812#0" expanded="true" />
+            <element signature="e#3855#3856#0" expanded="true" />
+            <element signature="e#3912#3913#0" expanded="true" />
+            <element signature="e#3956#3957#0" expanded="true" />
+            <element signature="class#4443:5214" expanded="false" />
+            <element signature="e#4519#4520#0" expanded="true" />
+            <element signature="e#4568#4569#0" expanded="true" />
+            <element signature="e#4625#4626#0" expanded="true" />
+            <element signature="e#4674#4675#0" expanded="true" />
+            <element signature="e#4731#4732#0" expanded="true" />
+            <element signature="e#4780#4781#0" expanded="true" />
+            <element signature="class#5277:6031" expanded="false" />
+            <element signature="e#5353#5354#0" expanded="true" />
+            <element signature="e#5401#5402#0" expanded="true" />
+            <element signature="e#5458#5459#0" expanded="true" />
+            <element signature="e#5506#5507#0" expanded="true" />
+            <element signature="e#5563#5564#0" expanded="true" />
+            <element signature="e#5611#5612#0" expanded="true" />
+            <element signature="class#6095:7053" expanded="false" />
+            <element signature="e#6171#6172#0" expanded="true" />
+            <element signature="e#6219#6220#0" expanded="true" />
+            <element signature="e#6276#6277#0" expanded="true" />
+            <element signature="e#6324#6325#0" expanded="true" />
+            <element signature="e#6381#6382#0" expanded="true" />
+            <element signature="e#6429#6430#0" expanded="true" />
+            <element signature="class#7117:8074" expanded="false" />
+            <element signature="e#7193#7194#0" expanded="true" />
+            <element signature="e#7241#7242#0" expanded="true" />
+            <element signature="e#7298#7299#0" expanded="true" />
+            <element signature="e#7346#7347#0" expanded="true" />
+            <element signature="e#7403#7404#0" expanded="true" />
+            <element signature="e#7451#7452#0" expanded="true" />
+            <element signature="method#alertBackground#0;class#Perceptron#0" expanded="false" />
+            <element signature="method#resetFrame#0;class#Perceptron#0" expanded="false" />
+            <element signature="method#getRandomNumber#0;class#Perceptron#0" expanded="false" />
+            <element signature="method#convertCoordinate#0;class#Perceptron#0" expanded="false" />
+            <element signature="method#createUIComponents#0;class#Perceptron#0" expanded="false" />
+            <element signature="method#changeLAF#0;class#Perceptron#0" expanded="false" />
+            <element signature="method#main#0;class#Perceptron#0" expanded="false" />
+            <element signature="class#GPanel#0;class#Perceptron#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -861,7 +1075,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="485">
           <caret line="49" column="16" selection-start-line="49" selection-start-column="16" selection-end-line="49" selection-end-column="16" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -894,33 +1107,66 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Perceptron.form">
-      <provider selected="true" editor-type-id="ui-designer">
-        <state />
-      </provider>
       <provider editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
+      <provider selected="true" editor-type-id="ui-designer">
+        <state />
+      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Perceptron.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="540">
-          <caret line="437" column="24" selection-start-line="437" selection-start-column="24" selection-end-line="437" selection-end-column="24" />
+        <state relative-caret-position="-169">
+          <caret line="272" column="38" selection-start-line="272" selection-start-column="38" selection-end-line="272" selection-end-column="38" />
           <folding>
-            <element signature="method#Perceptron#0;class#Perceptron#0" expanded="false" />
-            <element signature="class#3567:4307" expanded="false" />
-            <element signature="class#4375:5145" expanded="false" />
-            <element signature="class#5208:5962" expanded="false" />
-            <element signature="class#6026:6982" expanded="false" />
-            <element signature="class#7046:8001" expanded="false" />
+            <element signature="e#3326#3567#0" expanded="true" />
+            <element signature="e#3566#3567#0" expanded="true" />
+            <element signature="class#3634:4375" expanded="false" />
+            <element signature="e#3710#3711#0" expanded="true" />
+            <element signature="e#3754#3755#0" expanded="true" />
+            <element signature="e#3811#3812#0" expanded="true" />
+            <element signature="e#3855#3856#0" expanded="true" />
+            <element signature="e#3912#3913#0" expanded="true" />
+            <element signature="e#3956#3957#0" expanded="true" />
+            <element signature="class#4443:5214" expanded="false" />
+            <element signature="e#4519#4520#0" expanded="true" />
+            <element signature="e#4568#4569#0" expanded="true" />
+            <element signature="e#4625#4626#0" expanded="true" />
+            <element signature="e#4674#4675#0" expanded="true" />
+            <element signature="e#4731#4732#0" expanded="true" />
+            <element signature="e#4780#4781#0" expanded="true" />
+            <element signature="class#5277:6031" expanded="false" />
+            <element signature="e#5353#5354#0" expanded="true" />
+            <element signature="e#5401#5402#0" expanded="true" />
+            <element signature="e#5458#5459#0" expanded="true" />
+            <element signature="e#5506#5507#0" expanded="true" />
+            <element signature="e#5563#5564#0" expanded="true" />
+            <element signature="e#5611#5612#0" expanded="true" />
+            <element signature="class#6095:7053" expanded="false" />
+            <element signature="e#6171#6172#0" expanded="true" />
+            <element signature="e#6219#6220#0" expanded="true" />
+            <element signature="e#6276#6277#0" expanded="true" />
+            <element signature="e#6324#6325#0" expanded="true" />
+            <element signature="e#6381#6382#0" expanded="true" />
+            <element signature="e#6429#6430#0" expanded="true" />
+            <element signature="class#7117:8074" expanded="false" />
+            <element signature="e#7193#7194#0" expanded="true" />
+            <element signature="e#7241#7242#0" expanded="true" />
+            <element signature="e#7298#7299#0" expanded="true" />
+            <element signature="e#7346#7347#0" expanded="true" />
+            <element signature="e#7403#7404#0" expanded="true" />
+            <element signature="e#7451#7452#0" expanded="true" />
             <element signature="method#alertBackground#0;class#Perceptron#0" expanded="false" />
+            <element signature="method#resetFrame#0;class#Perceptron#0" expanded="false" />
             <element signature="method#getRandomNumber#0;class#Perceptron#0" expanded="false" />
             <element signature="method#convertCoordinate#0;class#Perceptron#0" expanded="false" />
             <element signature="method#createUIComponents#0;class#Perceptron#0" expanded="false" />
             <element signature="method#changeLAF#0;class#Perceptron#0" expanded="false" />
             <element signature="method#main#0;class#Perceptron#0" expanded="false" />
+            <element signature="class#GPanel#0;class#Perceptron#0" expanded="false" />
           </folding>
         </state>
       </provider>

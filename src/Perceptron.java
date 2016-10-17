@@ -36,17 +36,18 @@ public class Perceptron {
     private JTextField wRangeMaxValue;
     private DecimalFormat df = new DecimalFormat("####0.00");
     private Color[] colorArray = {Color.BLUE, Color.RED, Color.GREEN, Color.YELLOW, Color.CYAN, Color.PINK};
-    private Float[] yTable = {1.0f, -1.0f, 1.0f, -1.0f, 1.0f, -1.0f};
-    private ArrayList<Float[]> input = new ArrayList<>();
-    private ArrayList<Float> output = new ArrayList<>();
-    private ArrayList<Float> weight = new ArrayList<>();
-    private Float[] weightFinal;
+    private Double[] yTable = {1.0, -1.0, 1.0, -1.0, 1.0, -1.0};
+    private ArrayList<Double[]> input = new ArrayList<>();
+    private ArrayList<Double[]> trainData = new ArrayList<>();
+    private ArrayList<Double[]> testData = new ArrayList<>();
+    private ArrayList<Double> weight = new ArrayList<>();
+    private Double[] weightFinal;
     private Point mouse;
     private int magnification = 50;
-    private float rate = 0.1f;
-    private float threshold = 0;
-    private float minRange = -0.5f;
-    private float maxRange = 0.5f;
+    private double rate = 0.1;
+    private double threshold = 0;
+    private double minRange = -0.5;
+    private double maxRange = 0.5;
     private int maxTimes = 1000;
 
     private Perceptron() {
@@ -99,7 +100,7 @@ public class Perceptron {
             void changeRate() {
                 try {
                     alertBackground(learningTextField, false);
-                    rate = Float.valueOf(learningTextField.getText());
+                    rate = Double.valueOf(learningTextField.getText());
                     trainPerceptron();
                 } catch (NumberFormatException e) {
                     alertBackground(learningTextField, true);
@@ -123,7 +124,7 @@ public class Perceptron {
             void changeThreshold() {
                 try {
                     alertBackground(thresholdTextField, false);
-                    threshold = Float.valueOf(thresholdTextField.getText());
+                    threshold = Double.valueOf(thresholdTextField.getText());
                     trainPerceptron();
                 } catch (NumberFormatException e) {
                     alertBackground(thresholdTextField, true);
@@ -170,11 +171,11 @@ public class Perceptron {
 
             void changeMinRange() {
                 try {
-                    if (Float.valueOf(wRangeMinValue.getText()) > maxRange)
+                    if (Double.valueOf(wRangeMinValue.getText()) > maxRange)
                         alertBackground(wRangeMinValue, true);
                     else {
                         alertBackground(wRangeMinValue, false);
-                        minRange = Float.valueOf(wRangeMinValue.getText());
+                        minRange = Double.valueOf(wRangeMinValue.getText());
                         trainPerceptron();
                     }
                 } catch (NumberFormatException e) {
@@ -198,11 +199,11 @@ public class Perceptron {
 
             void changeMaxRange() {
                 try {
-                    if (Float.valueOf(wRangeMaxValue.getText()) < minRange)
+                    if (Double.valueOf(wRangeMaxValue.getText()) < minRange)
                         alertBackground(wRangeMaxValue, true);
                     else {
                         alertBackground(wRangeMaxValue, false);
-                        maxRange = Float.valueOf(wRangeMaxValue.getText());
+                        maxRange = Double.valueOf(wRangeMaxValue.getText());
                         trainPerceptron();
                     }
                 } catch (NumberFormatException e) {
@@ -223,8 +224,8 @@ public class Perceptron {
     private void loadFile(JFileChooser fileChooser) {
         File loadedFile = fileChooser.getSelectedFile();
         loadValue.setText(loadedFile.getPath());
+        resetFrame();
         input.clear();
-        output.clear();
         try (BufferedReader br = new BufferedReader(new FileReader(loadedFile))) {
             String line = br.readLine();
             while (line != null) {
@@ -234,19 +235,13 @@ public class Perceptron {
                 lineSplit = Arrays.stream(lineSplit).
                         filter(s -> (s != null && s.length() > 0)).
                         toArray(String[]::new);
-                Float[] numbers = new Float[lineSplit.length];
-                for (int i = 0; i < lineSplit.length - 1; i++) {
-                    numbers[i] = Float.parseFloat(lineSplit[i]);
+                Double[] numbers = new Double[lineSplit.length + 1];
+                numbers[0] = -1.0;
+                for (int i = 1; i <= lineSplit.length; i++) {
+                    numbers[i] = Double.parseDouble(lineSplit[i - 1]);
                 }
-                numbers[lineSplit.length - 1] = -1.0f;
                 input.add(numbers);
-                output.add(Float.parseFloat(lineSplit[lineSplit.length - 1]));
                 line = br.readLine();
-            }
-            if (!output.contains(0f)) {
-                for (int i = 0; i < output.size(); i++) {
-                    output.set(i, output.get(i) - 1);
-                }
             }
             generateButton.setEnabled(true);
             trainPerceptron();
@@ -260,21 +255,21 @@ public class Perceptron {
         weightFinal = null;
         weight.clear();
         weight.add(threshold);
-        for (int i = 0; i < input.get(0).length - 1; i++) {
+        for (int i = 0; i < input.get(0).length - 2; i++) {
             weight.add(getRandomNumber());
         }
         int times = 0, correct = 0;
         while (times < maxTimes) {
             correct = 0;
             for (int cycle = 0; cycle < input.size(); cycle++) {
-                Float[] x = input.get(cycle);
-                Float sum = 0f;
+                Double[] x = input.get(cycle);
+                Double sum = 0.0;
                 for (int i = 0; i < weight.size(); i++) {
                     sum += weight.get(i) * x[i];
                 }
-                Float fx = Math.signum(sum);
-                Float y = yTable[Math.round(output.get(cycle))];
-                Float e = y - fx;
+                Double fx = Math.signum(sum);
+                Double y = yTable[(int) Math.round(x[x.length - 1])];
+                Double e = y - fx;
                 if (e == 0) ++correct;
                 for (int i = 0; i < weight.size(); i++) {
                     weight.set(i, weight.get(i) + rate * e * x[i]);
@@ -284,28 +279,34 @@ public class Perceptron {
             ++times;
         }
         StringBuilder weightOutput = new StringBuilder("(");
-        weightFinal = weight.toArray(new Float[weight.size()]);
-        weightOutput.append(df.format(weightFinal[0]));
-        for (int i = 1; i < weightFinal.length - 1; i++) {
+        weightFinal = weight.toArray(new Double[weight.size()]);
+        weightOutput.append(df.format(weightFinal[1]));
+        for (int i = 2; i < weightFinal.length; i++) {
             weightOutput.append(", ").append(df.format(weightFinal[i]));
         }
         weightOutput.append(")");
         timesValue.setText(String.valueOf(times));
         weightsValue.setText(weightOutput.toString());
-        fThresholdValue.setText(weightFinal[weightFinal.length - 1].toString());
-        trainingValue.setText((float) correct / input.size() * 100 + "%");
+        fThresholdValue.setText(weightFinal[0].toString());
+        trainingValue.setText((double) correct / input.size() * 100 + "%");
         //TODO - 2/3 data for training, 1/3 data for testing
-        testingValue.setText((float) correct / input.size() * 100 + "%");
+        testingValue.setText((double) correct / input.size() * 100 + "%");
         coordinatePanel.repaint();
     }
 
-    private Float getRandomNumber() {
-        Random r = new Random();
-        return minRange + (maxRange - minRange) * r.nextFloat();
+    private static void resetFrame() {
+        SwingUtilities.updateComponentTreeUI(frame);
+        frame.pack();
+        frame.setLocationRelativeTo(null);
     }
 
-    private Float[] convertCoordinate(Float[] oldPoint) {
-        Float[] newPoint = new Float[2];
+    private Double getRandomNumber() {
+        Random r = new Random();
+        return minRange + (maxRange - minRange) * r.nextDouble();
+    }
+
+    private Double[] convertCoordinate(Double[] oldPoint) {
+        Double[] newPoint = new Double[2];
         newPoint[0] = (oldPoint[0] * magnification) + 250;
         newPoint[1] = 250 - (oldPoint[1] * magnification);
         return newPoint;
@@ -319,7 +320,7 @@ public class Perceptron {
                         Integer.toString(zoomerSlider.getValue()), CENTER, DEFAULT_POSITION));
     }
 
-    private static void changeLAF(String name, JFrame frame) {
+    private static void changeLAF(String name) {
         try {
             if (name.equals("Nimbus")) {
                 for (UIManager.LookAndFeelInfo info : UIManager.getInstalledLookAndFeels())
@@ -330,8 +331,7 @@ public class Perceptron {
             } else {
                 UIManager.setLookAndFeel(name);
             }
-            SwingUtilities.updateComponentTreeUI(frame);
-            frame.pack();
+            resetFrame();
         } catch (ClassNotFoundException | InstantiationException | IllegalAccessException | UnsupportedLookAndFeelException e1) {
             System.out.println("Failed to load the skin!");
         }
@@ -355,33 +355,33 @@ public class Perceptron {
         skinsMetalMenuItem.setMnemonic(KeyEvent.VK_M);
         skinsMenu.add(skinsMetalMenuItem);
         group.add(skinsMetalMenuItem);
-        skinsMetalMenuItem.addActionListener(e -> changeLAF(UIManager.getCrossPlatformLookAndFeelClassName(), frame));
+        skinsMetalMenuItem.addActionListener(e -> changeLAF(UIManager.getCrossPlatformLookAndFeelClassName()));
         JRadioButtonMenuItem skinsDefaultMenuItem = new JRadioButtonMenuItem("Default");
         skinsDefaultMenuItem.setMnemonic(KeyEvent.VK_D);
         skinsMenu.add(skinsDefaultMenuItem);
         group.add(skinsDefaultMenuItem);
-        skinsDefaultMenuItem.addActionListener(e -> changeLAF(UIManager.getSystemLookAndFeelClassName(), frame));
+        skinsDefaultMenuItem.addActionListener(e -> changeLAF(UIManager.getSystemLookAndFeelClassName()));
         JRadioButtonMenuItem skinsMotifMenuItem = new JRadioButtonMenuItem("Motif");
         skinsMotifMenuItem.setMnemonic(KeyEvent.VK_M);
         skinsMenu.add(skinsMotifMenuItem);
         group.add(skinsMotifMenuItem);
-        skinsMotifMenuItem.addActionListener(e -> changeLAF("com.sun.java.swing.plaf.motif.MotifLookAndFeel", frame));
+        skinsMotifMenuItem.addActionListener(e -> changeLAF("com.sun.java.swing.plaf.motif.MotifLookAndFeel"));
         JRadioButtonMenuItem skinsGTKMenuItem = new JRadioButtonMenuItem("GTK");
         skinsGTKMenuItem.setMnemonic(KeyEvent.VK_G);
         skinsMenu.add(skinsGTKMenuItem);
         group.add(skinsGTKMenuItem);
-        skinsGTKMenuItem.addActionListener(e -> changeLAF("com.sun.java.swing.plaf.gtk.GTKLookAndFeel", frame));
+        skinsGTKMenuItem.addActionListener(e -> changeLAF("com.sun.java.swing.plaf.gtk.GTKLookAndFeel"));
         JRadioButtonMenuItem skinsWindowsMenuItem = new JRadioButtonMenuItem("Windows");
         skinsWindowsMenuItem.setMnemonic(KeyEvent.VK_G);
         skinsMenu.add(skinsWindowsMenuItem);
         group.add(skinsWindowsMenuItem);
-        skinsWindowsMenuItem.addActionListener(e -> changeLAF("com.sun.java.swing.plaf.windows.WindowsLookAndFeel", frame));
+        skinsWindowsMenuItem.addActionListener(e -> changeLAF("com.sun.java.swing.plaf.windows.WindowsLookAndFeel"));
         JRadioButtonMenuItem skinsNimbusMenuItem = new JRadioButtonMenuItem("Nimbus");
         skinsNimbusMenuItem.setMnemonic(KeyEvent.VK_N);
         skinsNimbusMenuItem.setSelected(true);
         skinsMenu.add(skinsNimbusMenuItem);
         group.add(skinsNimbusMenuItem);
-        skinsNimbusMenuItem.addActionListener(e -> changeLAF("Nimbus", frame));
+        skinsNimbusMenuItem.addActionListener(e -> changeLAF("Nimbus"));
         menuBar.add(skinsMenu);
         // Main frame
         frame = new JFrame("Perceptron");
@@ -389,7 +389,7 @@ public class Perceptron {
         frame.setIconImage(Toolkit.getDefaultToolkit().getImage("src/icon.png"));
         frame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         frame.setJMenuBar(menuBar);
-        changeLAF("Nimbus", frame);
+        changeLAF("Nimbus");
         frame.setVisible(true);
         frame.setLocationRelativeTo(null);
     }
@@ -402,10 +402,10 @@ public class Perceptron {
             g.drawLine(0, 250, 500, 250);
             Graphics2D g2 = (Graphics2D) g;
             // Draw scale
-            for (Float i = 250.0f; i >= 0; i -= 5.0f * magnification / 10) {
+            for (Double i = 250.0; i >= 0; i -= 5.0 * magnification / 10) {
                 drawScale(g2, i);
             }
-            for (Float i = 250.0f; i <= 500; i += 5.0f * magnification / 10) {
+            for (Double i = 250.0; i <= 500; i += 5.0 * magnification / 10) {
                 drawScale(g2, i);
             }
             g2.setStroke(new BasicStroke(3));
@@ -416,10 +416,10 @@ public class Perceptron {
                 g2.drawString("(" + df.format(mouse_x) + ", " + df.format(mouse_y) + ")", 420, 20);
             }
             // Draw point of file
-            if (input.size() > 0 && input.get(0).length == 3 && input.size() == output.size()) {
-                for (int i = 0; i < input.size() && i < output.size(); i++) {
-                    Float[] point = convertCoordinate(input.get(i));
-                    g2.setColor(colorArray[Math.round(output.get(i))]);
+            if (input.size() > 0 && input.get(0).length == 4) {
+                for (int i = 0; i < input.size(); i++) {
+                    Double[] point = convertCoordinate(new Double[]{input.get(i)[1], input.get(i)[2]});
+                    g2.setColor(colorArray[(int) Math.round(input.get(i)[input.get(i).length - 1])]);
                     g2.draw(new Line2D.Double(point[0], point[1], point[0], point[1]));
                 }
             }
@@ -427,32 +427,32 @@ public class Perceptron {
             // Draw line of perceptron
             if (weightFinal != null && weightFinal.length == 3) {
                 g2.setColor(Color.MAGENTA);
-                Float[] lineStart, lineEnd;
-                if (weightFinal[1] != 0) {
+                Double[] lineStart, lineEnd;
+                if (weightFinal[2] != 0) {
                     lineStart = convertCoordinate(
-                            new Float[]{-250.0f / magnification,
-                                    (weightFinal[2] + 250.0f / magnification * weightFinal[0]) / weightFinal[1]});
+                            new Double[]{-250.0 / magnification,
+                                    (weightFinal[0] + 250.0 / magnification * weightFinal[1]) / weightFinal[2]});
                     lineEnd = convertCoordinate(
-                            new Float[]{250.0f / magnification,
-                                    (weightFinal[2] - 250.0f / magnification * weightFinal[0]) / weightFinal[1]});
+                            new Double[]{250.0 / magnification,
+                                    (weightFinal[0] - 250.0 / magnification * weightFinal[1]) / weightFinal[2]});
                 } else {
                     lineStart = convertCoordinate(
-                            new Float[]{weightFinal[2] / weightFinal[0], 250.0f / magnification});
+                            new Double[]{weightFinal[0] / weightFinal[1], 250.0 / magnification});
                     lineEnd = convertCoordinate(
-                            new Float[]{weightFinal[2] / weightFinal[0], -250.0f / magnification});
+                            new Double[]{weightFinal[0] / weightFinal[1], -250.0 / magnification});
                 }
                 g2.draw(new Line2D.Double(lineStart[0], lineStart[1], lineEnd[0], lineEnd[1]));
             }
         }
 
-        private void drawScale(Graphics2D g2, Float i) {
-            Float[] top, btn;
-            Float scaleLength = (i % (5.0f * magnification / 5) == 0) ? 2.0f * magnification / 20 : 1.0f * magnification / 20;
-            top = convertCoordinate(new Float[]{(i - 250) / magnification, scaleLength / magnification});
-            btn = convertCoordinate(new Float[]{(i - 250) / magnification, -scaleLength / magnification});
+        private void drawScale(Graphics2D g2, Double i) {
+            Double[] top, btn;
+            Double scaleLength = (i % (5.0 * magnification / 5) == 0) ? 2.0 * magnification / 20 : 1.0 * magnification / 20;
+            top = convertCoordinate(new Double[]{(i - 250) / magnification, scaleLength / magnification});
+            btn = convertCoordinate(new Double[]{(i - 250) / magnification, -scaleLength / magnification});
             g2.draw(new Line2D.Double(top[0], top[1], btn[0], btn[1]));
-            top = convertCoordinate(new Float[]{-scaleLength / magnification, (250 - i) / magnification});
-            btn = convertCoordinate(new Float[]{scaleLength / magnification, (250 - i) / magnification});
+            top = convertCoordinate(new Double[]{-scaleLength / magnification, (250 - i) / magnification});
+            btn = convertCoordinate(new Double[]{scaleLength / magnification, (250 - i) / magnification});
             g2.draw(new Line2D.Double(top[0], top[1], btn[0], btn[1]));
         }
     }

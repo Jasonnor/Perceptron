@@ -25,24 +25,24 @@
       <file leaf-file-name="Perceptron.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Perceptron.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="5045">
-              <caret line="294" column="33" selection-start-line="294" selection-start-column="33" selection-end-line="294" selection-end-column="33" />
+            <state relative-caret-position="557">
+              <caret line="38" column="29" selection-start-line="38" selection-start-column="29" selection-end-line="38" selection-end-column="29" />
               <folding>
-                <element signature="class#4671:5437" expanded="false" />
-                <element signature="class#5500:6249" expanded="false" />
-                <element signature="class#6313:7266" expanded="false" />
+                <element signature="class#4645:5411" expanded="false" />
+                <element signature="class#5474:6223" expanded="false" />
+                <element signature="class#6287:7240" expanded="false" />
                 <element signature="method#startTrain#0;class#Perceptron#0" expanded="false" />
                 <element signature="method#main#0;class#Perceptron#0" expanded="false" />
-                <marker date="1476723286653" expanded="false" signature="5575:5594" ph=" { " />
-                <marker date="1476723286653" expanded="false" signature="5680:5699" ph=" { " />
-                <marker date="1476723286653" expanded="false" signature="6493:6512" ph=" { " />
-                <marker date="1476723286653" expanded="false" signature="6598:6617" ph=" { " />
-                <marker date="1476723286653" expanded="false" signature="7441:7455" ph=" }" />
-                <marker date="1476723286653" expanded="false" signature="8362:8500" ph="{...}" />
-                <marker date="1476723286653" expanded="false" signature="14076:14201" ph="{...}" />
-                <marker date="1476723286653" expanded="false" signature="14240:14346" ph="{...}" />
-                <marker date="1476723286653" expanded="false" signature="14406:14599" ph="{...}" />
-                <marker date="1476723286653" expanded="false" signature="14955:15601" ph="{...}" />
+                <marker date="1476723921447" expanded="false" signature="5549:5568" ph=" { " />
+                <marker date="1476723921447" expanded="false" signature="5654:5673" ph=" { " />
+                <marker date="1476723921447" expanded="false" signature="6467:6486" ph=" { " />
+                <marker date="1476723921447" expanded="false" signature="6572:6591" ph=" { " />
+                <marker date="1476723921447" expanded="false" signature="7415:7429" ph=" }" />
+                <marker date="1476723921447" expanded="false" signature="8336:8474" ph="{...}" />
+                <marker date="1476723921447" expanded="false" signature="14063:14188" ph="{...}" />
+                <marker date="1476723921447" expanded="false" signature="14227:14333" ph="{...}" />
+                <marker date="1476723921447" expanded="false" signature="14393:14586" ph="{...}" />
+                <marker date="1476723921447" expanded="false" signature="14942:15588" ph="{...}" />
               </folding>
             </state>
           </provider>
@@ -88,7 +88,7 @@
   </component>
   <component name="ProjectFrameBounds">
     <option name="x" value="-8" />
-    <option name="y" value="2" />
+    <option name="y" value="-8" />
     <option name="width" value="1696" />
     <option name="height" value="1026" />
   </component>
@@ -643,15 +643,15 @@
       <workItem from="1476582198053" duration="32063000" />
       <workItem from="1476625394003" duration="12530000" />
       <workItem from="1476670439829" duration="10805000" />
-      <workItem from="1476703237776" duration="16958000" />
+      <workItem from="1476703237776" duration="17510000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="93493000" />
+    <option name="totallyTimeSpent" value="94045000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="2" width="1696" height="1026" extended-state="0" />
+    <frame x="-8" y="-8" width="1696" height="1026" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -746,21 +746,21 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="class#4671:5437" expanded="false" />
-            <element signature="class#5500:6249" expanded="false" />
-            <element signature="class#6313:7266" expanded="false" />
+            <element signature="class#4645:5411" expanded="false" />
+            <element signature="class#5474:6223" expanded="false" />
+            <element signature="class#6287:7240" expanded="false" />
             <element signature="method#startTrain#0;class#Perceptron#0" expanded="false" />
             <element signature="method#main#0;class#Perceptron#0" expanded="false" />
-            <marker date="1476723286653" expanded="false" signature="5575:5594" ph=" { " />
-            <marker date="1476723286653" expanded="false" signature="5680:5699" ph=" { " />
-            <marker date="1476723286653" expanded="false" signature="6493:6512" ph=" { " />
-            <marker date="1476723286653" expanded="false" signature="6598:6617" ph=" { " />
-            <marker date="1476723286653" expanded="false" signature="7441:7455" ph=" }" />
-            <marker date="1476723286653" expanded="false" signature="8362:8500" ph="{...}" />
-            <marker date="1476723286653" expanded="false" signature="14076:14201" ph="{...}" />
-            <marker date="1476723286653" expanded="false" signature="14240:14346" ph="{...}" />
-            <marker date="1476723286653" expanded="false" signature="14406:14599" ph="{...}" />
-            <marker date="1476723286653" expanded="false" signature="14955:15601" ph="{...}" />
+            <marker date="1476723921447" expanded="false" signature="5549:5568" ph=" { " />
+            <marker date="1476723921447" expanded="false" signature="5654:5673" ph=" { " />
+            <marker date="1476723921447" expanded="false" signature="6467:6486" ph=" { " />
+            <marker date="1476723921447" expanded="false" signature="6572:6591" ph=" { " />
+            <marker date="1476723921447" expanded="false" signature="7415:7429" ph=" }" />
+            <marker date="1476723921447" expanded="false" signature="8336:8474" ph="{...}" />
+            <marker date="1476723921447" expanded="false" signature="14063:14188" ph="{...}" />
+            <marker date="1476723921447" expanded="false" signature="14227:14333" ph="{...}" />
+            <marker date="1476723921447" expanded="false" signature="14393:14586" ph="{...}" />
+            <marker date="1476723921447" expanded="false" signature="14942:15588" ph="{...}" />
           </folding>
         </state>
       </provider>
@@ -778,21 +778,21 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="class#4671:5437" expanded="false" />
-            <element signature="class#5500:6249" expanded="false" />
-            <element signature="class#6313:7266" expanded="false" />
+            <element signature="class#4645:5411" expanded="false" />
+            <element signature="class#5474:6223" expanded="false" />
+            <element signature="class#6287:7240" expanded="false" />
             <element signature="method#startTrain#0;class#Perceptron#0" expanded="false" />
             <element signature="method#main#0;class#Perceptron#0" expanded="false" />
-            <marker date="1476723286653" expanded="false" signature="5575:5594" ph=" { " />
-            <marker date="1476723286653" expanded="false" signature="5680:5699" ph=" { " />
-            <marker date="1476723286653" expanded="false" signature="6493:6512" ph=" { " />
-            <marker date="1476723286653" expanded="false" signature="6598:6617" ph=" { " />
-            <marker date="1476723286653" expanded="false" signature="7441:7455" ph=" }" />
-            <marker date="1476723286653" expanded="false" signature="8362:8500" ph="{...}" />
-            <marker date="1476723286653" expanded="false" signature="14076:14201" ph="{...}" />
-            <marker date="1476723286653" expanded="false" signature="14240:14346" ph="{...}" />
-            <marker date="1476723286653" expanded="false" signature="14406:14599" ph="{...}" />
-            <marker date="1476723286653" expanded="false" signature="14955:15601" ph="{...}" />
+            <marker date="1476723921447" expanded="false" signature="5549:5568" ph=" { " />
+            <marker date="1476723921447" expanded="false" signature="5654:5673" ph=" { " />
+            <marker date="1476723921447" expanded="false" signature="6467:6486" ph=" { " />
+            <marker date="1476723921447" expanded="false" signature="6572:6591" ph=" { " />
+            <marker date="1476723921447" expanded="false" signature="7415:7429" ph=" }" />
+            <marker date="1476723921447" expanded="false" signature="8336:8474" ph="{...}" />
+            <marker date="1476723921447" expanded="false" signature="14063:14188" ph="{...}" />
+            <marker date="1476723921447" expanded="false" signature="14227:14333" ph="{...}" />
+            <marker date="1476723921447" expanded="false" signature="14393:14586" ph="{...}" />
+            <marker date="1476723921447" expanded="false" signature="14942:15588" ph="{...}" />
           </folding>
         </state>
       </provider>
@@ -810,21 +810,21 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="class#4671:5437" expanded="false" />
-            <element signature="class#5500:6249" expanded="false" />
-            <element signature="class#6313:7266" expanded="false" />
+            <element signature="class#4645:5411" expanded="false" />
+            <element signature="class#5474:6223" expanded="false" />
+            <element signature="class#6287:7240" expanded="false" />
             <element signature="method#startTrain#0;class#Perceptron#0" expanded="false" />
             <element signature="method#main#0;class#Perceptron#0" expanded="false" />
-            <marker date="1476723286653" expanded="false" signature="5575:5594" ph=" { " />
-            <marker date="1476723286653" expanded="false" signature="5680:5699" ph=" { " />
-            <marker date="1476723286653" expanded="false" signature="6493:6512" ph=" { " />
-            <marker date="1476723286653" expanded="false" signature="6598:6617" ph=" { " />
-            <marker date="1476723286653" expanded="false" signature="7441:7455" ph=" }" />
-            <marker date="1476723286653" expanded="false" signature="8362:8500" ph="{...}" />
-            <marker date="1476723286653" expanded="false" signature="14076:14201" ph="{...}" />
-            <marker date="1476723286653" expanded="false" signature="14240:14346" ph="{...}" />
-            <marker date="1476723286653" expanded="false" signature="14406:14599" ph="{...}" />
-            <marker date="1476723286653" expanded="false" signature="14955:15601" ph="{...}" />
+            <marker date="1476723921447" expanded="false" signature="5549:5568" ph=" { " />
+            <marker date="1476723921447" expanded="false" signature="5654:5673" ph=" { " />
+            <marker date="1476723921447" expanded="false" signature="6467:6486" ph=" { " />
+            <marker date="1476723921447" expanded="false" signature="6572:6591" ph=" { " />
+            <marker date="1476723921447" expanded="false" signature="7415:7429" ph=" }" />
+            <marker date="1476723921447" expanded="false" signature="8336:8474" ph="{...}" />
+            <marker date="1476723921447" expanded="false" signature="14063:14188" ph="{...}" />
+            <marker date="1476723921447" expanded="false" signature="14227:14333" ph="{...}" />
+            <marker date="1476723921447" expanded="false" signature="14393:14586" ph="{...}" />
+            <marker date="1476723921447" expanded="false" signature="14942:15588" ph="{...}" />
           </folding>
         </state>
       </provider>
@@ -842,21 +842,21 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="class#4671:5437" expanded="false" />
-            <element signature="class#5500:6249" expanded="false" />
-            <element signature="class#6313:7266" expanded="false" />
+            <element signature="class#4645:5411" expanded="false" />
+            <element signature="class#5474:6223" expanded="false" />
+            <element signature="class#6287:7240" expanded="false" />
             <element signature="method#startTrain#0;class#Perceptron#0" expanded="false" />
             <element signature="method#main#0;class#Perceptron#0" expanded="false" />
-            <marker date="1476723286653" expanded="false" signature="5575:5594" ph=" { " />
-            <marker date="1476723286653" expanded="false" signature="5680:5699" ph=" { " />
-            <marker date="1476723286653" expanded="false" signature="6493:6512" ph=" { " />
-            <marker date="1476723286653" expanded="false" signature="6598:6617" ph=" { " />
-            <marker date="1476723286653" expanded="false" signature="7441:7455" ph=" }" />
-            <marker date="1476723286653" expanded="false" signature="8362:8500" ph="{...}" />
-            <marker date="1476723286653" expanded="false" signature="14076:14201" ph="{...}" />
-            <marker date="1476723286653" expanded="false" signature="14240:14346" ph="{...}" />
-            <marker date="1476723286653" expanded="false" signature="14406:14599" ph="{...}" />
-            <marker date="1476723286653" expanded="false" signature="14955:15601" ph="{...}" />
+            <marker date="1476723921447" expanded="false" signature="5549:5568" ph=" { " />
+            <marker date="1476723921447" expanded="false" signature="5654:5673" ph=" { " />
+            <marker date="1476723921447" expanded="false" signature="6467:6486" ph=" { " />
+            <marker date="1476723921447" expanded="false" signature="6572:6591" ph=" { " />
+            <marker date="1476723921447" expanded="false" signature="7415:7429" ph=" }" />
+            <marker date="1476723921447" expanded="false" signature="8336:8474" ph="{...}" />
+            <marker date="1476723921447" expanded="false" signature="14063:14188" ph="{...}" />
+            <marker date="1476723921447" expanded="false" signature="14227:14333" ph="{...}" />
+            <marker date="1476723921447" expanded="false" signature="14393:14586" ph="{...}" />
+            <marker date="1476723921447" expanded="false" signature="14942:15588" ph="{...}" />
           </folding>
         </state>
       </provider>
@@ -874,21 +874,21 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="class#4671:5437" expanded="false" />
-            <element signature="class#5500:6249" expanded="false" />
-            <element signature="class#6313:7266" expanded="false" />
+            <element signature="class#4645:5411" expanded="false" />
+            <element signature="class#5474:6223" expanded="false" />
+            <element signature="class#6287:7240" expanded="false" />
             <element signature="method#startTrain#0;class#Perceptron#0" expanded="false" />
             <element signature="method#main#0;class#Perceptron#0" expanded="false" />
-            <marker date="1476723286653" expanded="false" signature="5575:5594" ph=" { " />
-            <marker date="1476723286653" expanded="false" signature="5680:5699" ph=" { " />
-            <marker date="1476723286653" expanded="false" signature="6493:6512" ph=" { " />
-            <marker date="1476723286653" expanded="false" signature="6598:6617" ph=" { " />
-            <marker date="1476723286653" expanded="false" signature="7441:7455" ph=" }" />
-            <marker date="1476723286653" expanded="false" signature="8362:8500" ph="{...}" />
-            <marker date="1476723286653" expanded="false" signature="14076:14201" ph="{...}" />
-            <marker date="1476723286653" expanded="false" signature="14240:14346" ph="{...}" />
-            <marker date="1476723286653" expanded="false" signature="14406:14599" ph="{...}" />
-            <marker date="1476723286653" expanded="false" signature="14955:15601" ph="{...}" />
+            <marker date="1476723921447" expanded="false" signature="5549:5568" ph=" { " />
+            <marker date="1476723921447" expanded="false" signature="5654:5673" ph=" { " />
+            <marker date="1476723921447" expanded="false" signature="6467:6486" ph=" { " />
+            <marker date="1476723921447" expanded="false" signature="6572:6591" ph=" { " />
+            <marker date="1476723921447" expanded="false" signature="7415:7429" ph=" }" />
+            <marker date="1476723921447" expanded="false" signature="8336:8474" ph="{...}" />
+            <marker date="1476723921447" expanded="false" signature="14063:14188" ph="{...}" />
+            <marker date="1476723921447" expanded="false" signature="14227:14333" ph="{...}" />
+            <marker date="1476723921447" expanded="false" signature="14393:14586" ph="{...}" />
+            <marker date="1476723921447" expanded="false" signature="14942:15588" ph="{...}" />
           </folding>
         </state>
       </provider>
@@ -906,21 +906,21 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="class#4671:5437" expanded="false" />
-            <element signature="class#5500:6249" expanded="false" />
-            <element signature="class#6313:7266" expanded="false" />
+            <element signature="class#4645:5411" expanded="false" />
+            <element signature="class#5474:6223" expanded="false" />
+            <element signature="class#6287:7240" expanded="false" />
             <element signature="method#startTrain#0;class#Perceptron#0" expanded="false" />
             <element signature="method#main#0;class#Perceptron#0" expanded="false" />
-            <marker date="1476723286653" expanded="false" signature="5575:5594" ph=" { " />
-            <marker date="1476723286653" expanded="false" signature="5680:5699" ph=" { " />
-            <marker date="1476723286653" expanded="false" signature="6493:6512" ph=" { " />
-            <marker date="1476723286653" expanded="false" signature="6598:6617" ph=" { " />
-            <marker date="1476723286653" expanded="false" signature="7441:7455" ph=" }" />
-            <marker date="1476723286653" expanded="false" signature="8362:8500" ph="{...}" />
-            <marker date="1476723286653" expanded="false" signature="14076:14201" ph="{...}" />
-            <marker date="1476723286653" expanded="false" signature="14240:14346" ph="{...}" />
-            <marker date="1476723286653" expanded="false" signature="14406:14599" ph="{...}" />
-            <marker date="1476723286653" expanded="false" signature="14955:15601" ph="{...}" />
+            <marker date="1476723921447" expanded="false" signature="5549:5568" ph=" { " />
+            <marker date="1476723921447" expanded="false" signature="5654:5673" ph=" { " />
+            <marker date="1476723921447" expanded="false" signature="6467:6486" ph=" { " />
+            <marker date="1476723921447" expanded="false" signature="6572:6591" ph=" { " />
+            <marker date="1476723921447" expanded="false" signature="7415:7429" ph=" }" />
+            <marker date="1476723921447" expanded="false" signature="8336:8474" ph="{...}" />
+            <marker date="1476723921447" expanded="false" signature="14063:14188" ph="{...}" />
+            <marker date="1476723921447" expanded="false" signature="14227:14333" ph="{...}" />
+            <marker date="1476723921447" expanded="false" signature="14393:14586" ph="{...}" />
+            <marker date="1476723921447" expanded="false" signature="14942:15588" ph="{...}" />
           </folding>
         </state>
       </provider>
@@ -983,24 +983,24 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Perceptron.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="5045">
-          <caret line="294" column="33" selection-start-line="294" selection-start-column="33" selection-end-line="294" selection-end-column="33" />
+        <state relative-caret-position="557">
+          <caret line="38" column="29" selection-start-line="38" selection-start-column="29" selection-end-line="38" selection-end-column="29" />
           <folding>
-            <element signature="class#4671:5437" expanded="false" />
-            <element signature="class#5500:6249" expanded="false" />
-            <element signature="class#6313:7266" expanded="false" />
+            <element signature="class#4645:5411" expanded="false" />
+            <element signature="class#5474:6223" expanded="false" />
+            <element signature="class#6287:7240" expanded="false" />
             <element signature="method#startTrain#0;class#Perceptron#0" expanded="false" />
             <element signature="method#main#0;class#Perceptron#0" expanded="false" />
-            <marker date="1476723286653" expanded="false" signature="5575:5594" ph=" { " />
-            <marker date="1476723286653" expanded="false" signature="5680:5699" ph=" { " />
-            <marker date="1476723286653" expanded="false" signature="6493:6512" ph=" { " />
-            <marker date="1476723286653" expanded="false" signature="6598:6617" ph=" { " />
-            <marker date="1476723286653" expanded="false" signature="7441:7455" ph=" }" />
-            <marker date="1476723286653" expanded="false" signature="8362:8500" ph="{...}" />
-            <marker date="1476723286653" expanded="false" signature="14076:14201" ph="{...}" />
-            <marker date="1476723286653" expanded="false" signature="14240:14346" ph="{...}" />
-            <marker date="1476723286653" expanded="false" signature="14406:14599" ph="{...}" />
-            <marker date="1476723286653" expanded="false" signature="14955:15601" ph="{...}" />
+            <marker date="1476723921447" expanded="false" signature="5549:5568" ph=" { " />
+            <marker date="1476723921447" expanded="false" signature="5654:5673" ph=" { " />
+            <marker date="1476723921447" expanded="false" signature="6467:6486" ph=" { " />
+            <marker date="1476723921447" expanded="false" signature="6572:6591" ph=" { " />
+            <marker date="1476723921447" expanded="false" signature="7415:7429" ph=" }" />
+            <marker date="1476723921447" expanded="false" signature="8336:8474" ph="{...}" />
+            <marker date="1476723921447" expanded="false" signature="14063:14188" ph="{...}" />
+            <marker date="1476723921447" expanded="false" signature="14227:14333" ph="{...}" />
+            <marker date="1476723921447" expanded="false" signature="14393:14586" ph="{...}" />
+            <marker date="1476723921447" expanded="false" signature="14942:15588" ph="{...}" />
           </folding>
         </state>
       </provider>

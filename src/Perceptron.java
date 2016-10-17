@@ -40,11 +40,11 @@ public class Perceptron {
     private DefaultTableModel trainTableModel = new DefaultTableModel();
     private DefaultTableModel testTableModel = new DefaultTableModel();
     private DecimalFormat df = new DecimalFormat("####0.00");
-    private Color[] colorArray = {Color.BLUE, Color.RED, Color.GREEN, Color.YELLOW, Color.CYAN, Color.PINK};
+    private Color[] colorArray = {Color.GREEN, Color.BLUE, Color.RED, Color.YELLOW, Color.CYAN, Color.PINK};
     private ArrayList<Double[]> input = new ArrayList<>();
     private ArrayList<Double[]> trainData = new ArrayList<>();
     private ArrayList<Double[]> testData = new ArrayList<>();
-    private ArrayList<Double[]> weight = new ArrayList<>(); //TODO - rename to weights
+    private ArrayList<Double[]> weights = new ArrayList<>();
     private ArrayList<Double> outputKinds = new ArrayList<>();
     private Point mouse;
     private int magnification = 50;
@@ -310,36 +310,36 @@ public class Perceptron {
         for (int i = 1; i < trainData.get(0).length - 1; i++)
             w[i] = getRandomNumber();
         int wi = outputKinds.indexOf(dy);
-        if (wi == 0) weight.clear();
-        weight.add(w);
+        if (wi == 0) weights.clear();
+        weights.add(w);
         int times = 0, correct = 0;
         while (times < maxTimes) {
             correct = 0;
             for (Double[] x : trainData) {
                 Double sum = 0.0;
-                for (int i = 0; i < weight.get(wi).length; i++) {
-                    sum += weight.get(wi)[i] * x[i];
+                for (int i = 0; i < weights.get(wi).length; i++) {
+                    sum += weights.get(wi)[i] * x[i];
                 }
                 Double fx = Math.signum(sum);
                 Double y = (x[x.length - 1].equals(dy)) ? 1.0 : -1.0;
                 Double e = y - fx;
                 if (e == 0) ++correct;
-                for (int i = 0; i < weight.get(wi).length; i++) {
-                    weight.get(wi)[i] = weight.get(wi)[i] + rate * e * x[i];
+                for (int i = 0; i < weights.get(wi).length; i++) {
+                    weights.get(wi)[i] = weights.get(wi)[i] + rate * e * x[i];
                 }
             }
             if (correct == trainData.size()) break;
             ++times;
         }
         StringBuilder weightOutput = new StringBuilder("(");
-        weightOutput.append(df.format(weight.get(wi)[1]));
-        for (int i = 2; i < weight.get(wi).length; i++) {
-            weightOutput.append(", ").append(df.format(weight.get(wi)[i]));
+        weightOutput.append(df.format(weights.get(wi)[1]));
+        for (int i = 2; i < weights.get(wi).length; i++) {
+            weightOutput.append(", ").append(df.format(weights.get(wi)[i]));
         }
         weightOutput.append(")");
         timesValue.setText(String.valueOf(times));
         weightsValue.setText(weightOutput.toString());
-        fThresholdValue.setText(weight.get(wi)[0].toString());
+        fThresholdValue.setText(weights.get(wi)[0].toString());
         trainingValue.setText((double) correct / trainData.size() * 100 + "%");
         testPerceptron(dy);
     }
@@ -350,8 +350,8 @@ public class Perceptron {
         int correct = 0;
         for (Double[] x : testData) {
             Double sum = 0.0;
-            for (int i = 0; i < weight.get(wi).length; i++) {
-                sum += weight.get(wi)[i] * x[i];
+            for (int i = 0; i < weights.get(wi).length; i++) {
+                sum += weights.get(wi)[i] * x[i];
             }
             Double fx = Math.signum(sum);
             Double y = (x[x.length - 1].equals(dy)) ? 1.0 : -1.0;
@@ -493,22 +493,22 @@ public class Perceptron {
             }
             g2.setStroke(new BasicStroke(2));
             // Draw line of perceptron
-            if (weight.size() != 0 && input.get(0).length == 4) {
+            if (weights.size() != 0 && input.get(0).length == 4) {
                 g2.setColor(Color.MAGENTA);
-                for (Double[] aWeight : weight) {// TODO - rename to weight
+                for (Double[] weight : weights) {
                     Double[] lineStart, lineEnd;
-                    if (aWeight[2] != 0) {
+                    if (weight[2] != 0) {
                         lineStart = convertCoordinate(
                                 new Double[]{-250.0 / magnification,
-                                        (aWeight[0] + 250.0 / magnification * aWeight[1]) / aWeight[2]});
+                                        (weight[0] + 250.0 / magnification * weight[1]) / weight[2]});
                         lineEnd = convertCoordinate(
                                 new Double[]{250.0 / magnification,
-                                        (aWeight[0] - 250.0 / magnification * aWeight[1]) / aWeight[2]});
+                                        (weight[0] - 250.0 / magnification * weight[1]) / weight[2]});
                     } else {
                         lineStart = convertCoordinate(
-                                new Double[]{aWeight[0] / aWeight[1], 250.0 / magnification});
+                                new Double[]{weight[0] / weight[1], 250.0 / magnification});
                         lineEnd = convertCoordinate(
-                                new Double[]{aWeight[0] / aWeight[1], -250.0 / magnification});
+                                new Double[]{weight[0] / weight[1], -250.0 / magnification});
                     }
                     g2.draw(new Line2D.Double(lineStart[0], lineStart[1], lineEnd[0], lineEnd[1]));
                 }

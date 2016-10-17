@@ -2,6 +2,8 @@ import javax.swing.*;
 import javax.swing.event.DocumentEvent;
 import javax.swing.event.DocumentListener;
 import javax.swing.filechooser.FileNameExtensionFilter;
+import javax.swing.table.DefaultTableModel;
+import javax.swing.table.TableColumn;
 import java.awt.*;
 import java.awt.event.*;
 import java.awt.geom.Line2D;
@@ -34,12 +36,17 @@ public class Perceptron {
     private JTextField maxTimesValue;
     private JTextField wRangeMinValue;
     private JTextField wRangeMaxValue;
+    private JTable trainTable;
+    private JTable testTable;
+    private DefaultTableModel trainTableModel = new DefaultTableModel();
+    private DefaultTableModel testTableModel = new DefaultTableModel();
     private DecimalFormat df = new DecimalFormat("####0.00");
     private Color[] colorArray = {Color.BLUE, Color.RED, Color.GREEN, Color.YELLOW, Color.CYAN, Color.PINK};
     private Double[] yTable = {1.0, -1.0, 1.0, -1.0, 1.0, -1.0};
     private ArrayList<Double[]> input = new ArrayList<>();
     private ArrayList<Double[]> trainData = new ArrayList<>();
     private ArrayList<Double[]> testData = new ArrayList<>();
+    private ArrayList<Double> outputKinds = new ArrayList<>();
     private ArrayList<Double> weight = new ArrayList<>();
     private Double[] weightFinal;
     private Point mouse;
@@ -226,6 +233,9 @@ public class Perceptron {
         loadValue.setText(loadedFile.getPath());
         resetFrame();
         input.clear();
+        trainData.clear();
+        testData.clear();
+        outputKinds.clear();
         try (BufferedReader br = new BufferedReader(new FileReader(loadedFile))) {
             String line = br.readLine();
             while (line != null) {
@@ -239,10 +249,34 @@ public class Perceptron {
                 numbers[0] = -1.0;
                 for (int i = 1; i <= lineSplit.length; i++) {
                     numbers[i] = Double.parseDouble(lineSplit[i - 1]);
+                    trainTableModel.addColumn((i == lineSplit.length) ? "yd" : "x" + i);
+                    testTableModel.addColumn((i == lineSplit.length) ? "yd" : "x" + i);
                 }
                 input.add(numbers);
                 line = br.readLine();
             }
+            for (Double[] x : input) {
+                Double output = x[x.length - 1];
+                if (!outputKinds.contains(output))
+                    outputKinds.add(output);
+            }
+            int[] trainKindTimes = new int[outputKinds.size()];
+            int[] testKindTimes = new int[outputKinds.size()];
+            for (Double[] x : input) {
+                Double output = x[x.length - 1];
+                int i;
+                for (i = 0; i < outputKinds.size(); i++)
+                    if (output.equals(outputKinds.get(i)))
+                        break;
+                if (trainKindTimes[i] == 0 || testKindTimes[i] >= trainKindTimes[i] / 2) {
+                    ++trainKindTimes[i];
+                    trainData.add(x);
+                } else {
+                    ++testKindTimes[i];
+                    testData.add(x);
+                }
+            }
+
             generateButton.setEnabled(true);
             trainPerceptron();
         } catch (IOException e1) {
@@ -251,18 +285,17 @@ public class Perceptron {
     }
 
     private void trainPerceptron() {
-        if (input.size() == 0) return;
+        if (trainData.size() == 0) return;
         weightFinal = null;
         weight.clear();
         weight.add(threshold);
-        for (int i = 0; i < input.get(0).length - 2; i++) {
+        for (int i = 0; i < trainData.get(0).length - 2; i++) {
             weight.add(getRandomNumber());
         }
         int times = 0, correct = 0;
         while (times < maxTimes) {
             correct = 0;
-            for (int cycle = 0; cycle < input.size(); cycle++) {
-                Double[] x = input.get(cycle);
+            for (Double[] x : trainData) {
                 Double sum = 0.0;
                 for (int i = 0; i < weight.size(); i++) {
                     sum += weight.get(i) * x[i];
@@ -275,7 +308,7 @@ public class Perceptron {
                     weight.set(i, weight.get(i) + rate * e * x[i]);
                 }
             }
-            if (correct == input.size()) break;
+            if (correct == trainData.size()) break;
             ++times;
         }
         StringBuilder weightOutput = new StringBuilder("(");
@@ -288,9 +321,24 @@ public class Perceptron {
         timesValue.setText(String.valueOf(times));
         weightsValue.setText(weightOutput.toString());
         fThresholdValue.setText(weightFinal[0].toString());
-        trainingValue.setText((double) correct / input.size() * 100 + "%");
-        //TODO - 2/3 data for training, 1/3 data for testing
-        testingValue.setText((double) correct / input.size() * 100 + "%");
+        trainingValue.setText((double) correct / trainData.size() * 100 + "%");
+        testPerceptron();
+    }
+
+    private void testPerceptron() {
+        if (testData.size() == 0) return;
+        int correct = 0;
+        for (Double[] x : testData) {
+            Double sum = 0.0;
+            for (int i = 0; i < weight.size(); i++) {
+                sum += weight.get(i) * x[i];
+            }
+            Double fx = Math.signum(sum);
+            Double y = yTable[(int) Math.round(x[x.length - 1])];
+            Double e = y - fx;
+            if (e == 0) ++correct;
+        }
+        testingValue.setText((double) correct / testData.size() * 100 + "%");
         coordinatePanel.repaint();
     }
 
@@ -318,6 +366,8 @@ public class Perceptron {
         zoomerSlider.setBorder(
                 BorderFactory.createTitledBorder(null,
                         Integer.toString(zoomerSlider.getValue()), CENTER, DEFAULT_POSITION));
+        trainTable = new JTable(trainTableModel);
+        testTable = new JTable(testTableModel);
     }
 
     private static void changeLAF(String name) {
@@ -417,9 +467,9 @@ public class Perceptron {
             }
             // Draw point of file
             if (input.size() > 0 && input.get(0).length == 4) {
-                for (int i = 0; i < input.size(); i++) {
-                    Double[] point = convertCoordinate(new Double[]{input.get(i)[1], input.get(i)[2]});
-                    g2.setColor(colorArray[(int) Math.round(input.get(i)[input.get(i).length - 1])]);
+                for (Double[] x : input) {
+                    Double[] point = convertCoordinate(new Double[]{x[1], x[2]});
+                    g2.setColor(colorArray[(int) Math.round(x[x.length - 1])]);
                     g2.draw(new Line2D.Double(point[0], point[1], point[0], point[1]));
                 }
             }

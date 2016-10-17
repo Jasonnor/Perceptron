@@ -236,6 +236,10 @@ public class Perceptron {
         trainData.clear();
         testData.clear();
         outputKinds.clear();
+        trainTableModel.setColumnCount(0);
+        trainTableModel.setRowCount(0);
+        testTableModel.setColumnCount(0);
+        testTableModel.setRowCount(0);
         try (BufferedReader br = new BufferedReader(new FileReader(loadedFile))) {
             String line = br.readLine();
             while (line != null) {
@@ -249,8 +253,6 @@ public class Perceptron {
                 numbers[0] = -1.0;
                 for (int i = 1; i <= lineSplit.length; i++) {
                     numbers[i] = Double.parseDouble(lineSplit[i - 1]);
-                    trainTableModel.addColumn((i == lineSplit.length) ? "yd" : "x" + i);
-                    testTableModel.addColumn((i == lineSplit.length) ? "yd" : "x" + i);
                 }
                 input.add(numbers);
                 line = br.readLine();
@@ -268,7 +270,7 @@ public class Perceptron {
                 for (i = 0; i < outputKinds.size(); i++)
                     if (output.equals(outputKinds.get(i)))
                         break;
-                if (trainKindTimes[i] == 0 || testKindTimes[i] >= trainKindTimes[i] / 2) {
+                if (trainKindTimes[i] == 0 || testKindTimes[i] > trainKindTimes[i] / 2) {
                     ++trainKindTimes[i];
                     trainData.add(x);
                 } else {
@@ -276,7 +278,19 @@ public class Perceptron {
                     testData.add(x);
                 }
             }
-
+            ArrayList<String> header = new ArrayList<>();
+            header.add("w");
+            for (int i = 1; i < trainData.get(0).length - 1; i++)
+                header.add("x" + i);
+            header.add("yd");
+            trainTableModel.setColumnIdentifiers(header.toArray());
+            testTableModel.setColumnIdentifiers(header.toArray());
+            for (Double[] x : trainData)
+                trainTableModel.addRow(x);
+            for (Double[] x : testData)
+                testTableModel.addRow(x);
+            trainTable.setModel(trainTableModel);
+            testTable.setModel(testTableModel);
             generateButton.setEnabled(true);
             trainPerceptron();
         } catch (IOException e1) {
@@ -366,8 +380,6 @@ public class Perceptron {
         zoomerSlider.setBorder(
                 BorderFactory.createTitledBorder(null,
                         Integer.toString(zoomerSlider.getValue()), CENTER, DEFAULT_POSITION));
-        trainTable = new JTable(trainTableModel);
-        testTable = new JTable(testTableModel);
     }
 
     private static void changeLAF(String name) {

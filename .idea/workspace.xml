@@ -25,8 +25,8 @@
       <file leaf-file-name="Perceptron.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Perceptron.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="258">
-              <caret line="253" column="17" selection-start-line="253" selection-start-column="17" selection-end-line="253" selection-end-column="17" />
+            <state relative-caret-position="653">
+              <caret line="287" column="33" selection-start-line="287" selection-start-column="33" selection-end-line="287" selection-end-column="33" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="method#Perceptron#0;class#Perceptron#0" expanded="false" />
@@ -36,12 +36,12 @@
                 <element signature="class#6446:7404" expanded="false" />
                 <element signature="class#7468:8425" expanded="false" />
                 <element signature="method#alertBackground#0;class#Perceptron#0" expanded="false" />
-                <element signature="method#testPerceptron#0;class#Perceptron#0" expanded="false" />
                 <element signature="method#getRandomNumber#0;class#Perceptron#0" expanded="false" />
                 <element signature="method#convertCoordinate#0;class#Perceptron#0" expanded="false" />
                 <element signature="method#changeLAF#0;class#Perceptron#0" expanded="false" />
                 <element signature="method#main#0;class#Perceptron#0" expanded="false" />
                 <element signature="class#GPanel#0;class#Perceptron#0" expanded="false" />
+                <marker date="1476712528529" expanded="false" signature="13841:13966" ph="{...}" />
               </folding>
             </state>
           </provider>
@@ -153,10 +153,6 @@
               <option name="myItemId" value="Perceptron" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="External Libraries" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ExternalLibrariesNode" />
-            </PATH_ELEMENT>
           </PATH>
           <PATH>
             <PATH_ELEMENT>
@@ -165,38 +161,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="Perceptron" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Perceptron" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Perceptron" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Perceptron" />
-              <option name="myItemType" value="com.intellij.uiDesigner.projectView.FormNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Perceptron" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Perceptron" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -678,12 +642,12 @@
       <workItem from="1476582198053" duration="32063000" />
       <workItem from="1476625394003" duration="12530000" />
       <workItem from="1476670439829" duration="10805000" />
-      <workItem from="1476703237776" duration="5937000" />
+      <workItem from="1476703237776" duration="9968000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="82472000" />
+    <option name="totallyTimeSpent" value="86503000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1696" height="1026" extended-state="6" />
@@ -697,7 +661,7 @@
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.14519651" sideWeight="0.50476193" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.23908296" sideWeight="0.4952381" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.23908296" sideWeight="0.4952381" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
@@ -716,6 +680,34 @@
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3293348" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
+    <layout-to-restore>
+      <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.14519651" sideWeight="0.50476193" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Inspection Results" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32969433" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="WINDOWED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" x="616" y="277" width="450" height="456" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.35917032" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3286026" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.23908296" sideWeight="0.4952381" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.14166667" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3293348" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="true" content_ui="tabs" />
+    </layout-to-restore>
   </component>
   <component name="Vcs.Log.UiProperties">
     <option name="RECENTLY_FILTERED_USER_GROUPS">
@@ -730,7 +722,7 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="59" />
+      <option name="time" value="60" />
     </breakpoint-manager>
     <watches-manager>
       <configuration name="Application">
@@ -759,12 +751,12 @@
             <element signature="class#6446:7404" expanded="false" />
             <element signature="class#7468:8425" expanded="false" />
             <element signature="method#alertBackground#0;class#Perceptron#0" expanded="false" />
-            <element signature="method#testPerceptron#0;class#Perceptron#0" expanded="false" />
             <element signature="method#getRandomNumber#0;class#Perceptron#0" expanded="false" />
             <element signature="method#convertCoordinate#0;class#Perceptron#0" expanded="false" />
             <element signature="method#changeLAF#0;class#Perceptron#0" expanded="false" />
             <element signature="method#main#0;class#Perceptron#0" expanded="false" />
             <element signature="class#GPanel#0;class#Perceptron#0" expanded="false" />
+            <marker date="1476712528529" expanded="false" signature="13841:13966" ph="{...}" />
           </folding>
         </state>
       </provider>
@@ -790,12 +782,12 @@
             <element signature="class#6446:7404" expanded="false" />
             <element signature="class#7468:8425" expanded="false" />
             <element signature="method#alertBackground#0;class#Perceptron#0" expanded="false" />
-            <element signature="method#testPerceptron#0;class#Perceptron#0" expanded="false" />
             <element signature="method#getRandomNumber#0;class#Perceptron#0" expanded="false" />
             <element signature="method#convertCoordinate#0;class#Perceptron#0" expanded="false" />
             <element signature="method#changeLAF#0;class#Perceptron#0" expanded="false" />
             <element signature="method#main#0;class#Perceptron#0" expanded="false" />
             <element signature="class#GPanel#0;class#Perceptron#0" expanded="false" />
+            <marker date="1476712528529" expanded="false" signature="13841:13966" ph="{...}" />
           </folding>
         </state>
       </provider>
@@ -821,12 +813,12 @@
             <element signature="class#6446:7404" expanded="false" />
             <element signature="class#7468:8425" expanded="false" />
             <element signature="method#alertBackground#0;class#Perceptron#0" expanded="false" />
-            <element signature="method#testPerceptron#0;class#Perceptron#0" expanded="false" />
             <element signature="method#getRandomNumber#0;class#Perceptron#0" expanded="false" />
             <element signature="method#convertCoordinate#0;class#Perceptron#0" expanded="false" />
             <element signature="method#changeLAF#0;class#Perceptron#0" expanded="false" />
             <element signature="method#main#0;class#Perceptron#0" expanded="false" />
             <element signature="class#GPanel#0;class#Perceptron#0" expanded="false" />
+            <marker date="1476712528529" expanded="false" signature="13841:13966" ph="{...}" />
           </folding>
         </state>
       </provider>
@@ -852,12 +844,12 @@
             <element signature="class#6446:7404" expanded="false" />
             <element signature="class#7468:8425" expanded="false" />
             <element signature="method#alertBackground#0;class#Perceptron#0" expanded="false" />
-            <element signature="method#testPerceptron#0;class#Perceptron#0" expanded="false" />
             <element signature="method#getRandomNumber#0;class#Perceptron#0" expanded="false" />
             <element signature="method#convertCoordinate#0;class#Perceptron#0" expanded="false" />
             <element signature="method#changeLAF#0;class#Perceptron#0" expanded="false" />
             <element signature="method#main#0;class#Perceptron#0" expanded="false" />
             <element signature="class#GPanel#0;class#Perceptron#0" expanded="false" />
+            <marker date="1476712528529" expanded="false" signature="13841:13966" ph="{...}" />
           </folding>
         </state>
       </provider>
@@ -883,12 +875,12 @@
             <element signature="class#6446:7404" expanded="false" />
             <element signature="class#7468:8425" expanded="false" />
             <element signature="method#alertBackground#0;class#Perceptron#0" expanded="false" />
-            <element signature="method#testPerceptron#0;class#Perceptron#0" expanded="false" />
             <element signature="method#getRandomNumber#0;class#Perceptron#0" expanded="false" />
             <element signature="method#convertCoordinate#0;class#Perceptron#0" expanded="false" />
             <element signature="method#changeLAF#0;class#Perceptron#0" expanded="false" />
             <element signature="method#main#0;class#Perceptron#0" expanded="false" />
             <element signature="class#GPanel#0;class#Perceptron#0" expanded="false" />
+            <marker date="1476712528529" expanded="false" signature="13841:13966" ph="{...}" />
           </folding>
         </state>
       </provider>
@@ -914,12 +906,12 @@
             <element signature="class#6446:7404" expanded="false" />
             <element signature="class#7468:8425" expanded="false" />
             <element signature="method#alertBackground#0;class#Perceptron#0" expanded="false" />
-            <element signature="method#testPerceptron#0;class#Perceptron#0" expanded="false" />
             <element signature="method#getRandomNumber#0;class#Perceptron#0" expanded="false" />
             <element signature="method#convertCoordinate#0;class#Perceptron#0" expanded="false" />
             <element signature="method#changeLAF#0;class#Perceptron#0" expanded="false" />
             <element signature="method#main#0;class#Perceptron#0" expanded="false" />
             <element signature="class#GPanel#0;class#Perceptron#0" expanded="false" />
+            <marker date="1476712528529" expanded="false" signature="13841:13966" ph="{...}" />
           </folding>
         </state>
       </provider>
@@ -963,8 +955,9 @@
     </entry>
     <entry file="jar://C:/Program Files/Java/jdk1.8.0_101/src.zip!/java/util/ArrayList.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="185">
-          <caret line="652" column="0" selection-start-line="652" selection-start-column="0" selection-end-line="652" selection-end-column="0" />
+        <state relative-caret-position="186">
+          <caret line="1003" column="0" selection-start-line="1003" selection-start-column="0" selection-end-line="1003" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -981,8 +974,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Perceptron.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="258">
-          <caret line="253" column="17" selection-start-line="253" selection-start-column="17" selection-end-line="253" selection-end-column="17" />
+        <state relative-caret-position="653">
+          <caret line="287" column="33" selection-start-line="287" selection-start-column="33" selection-end-line="287" selection-end-column="33" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="method#Perceptron#0;class#Perceptron#0" expanded="false" />
@@ -992,12 +985,12 @@
             <element signature="class#6446:7404" expanded="false" />
             <element signature="class#7468:8425" expanded="false" />
             <element signature="method#alertBackground#0;class#Perceptron#0" expanded="false" />
-            <element signature="method#testPerceptron#0;class#Perceptron#0" expanded="false" />
             <element signature="method#getRandomNumber#0;class#Perceptron#0" expanded="false" />
             <element signature="method#convertCoordinate#0;class#Perceptron#0" expanded="false" />
             <element signature="method#changeLAF#0;class#Perceptron#0" expanded="false" />
             <element signature="method#main#0;class#Perceptron#0" expanded="false" />
             <element signature="class#GPanel#0;class#Perceptron#0" expanded="false" />
+            <marker date="1476712528529" expanded="false" signature="13841:13966" ph="{...}" />
           </folding>
         </state>
       </provider>

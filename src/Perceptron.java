@@ -3,7 +3,6 @@ import javax.swing.event.DocumentEvent;
 import javax.swing.event.DocumentListener;
 import javax.swing.filechooser.FileNameExtensionFilter;
 import javax.swing.table.DefaultTableModel;
-import javax.swing.table.TableColumn;
 import java.awt.*;
 import java.awt.event.*;
 import java.awt.geom.Line2D;
@@ -42,13 +41,11 @@ public class Perceptron {
     private DefaultTableModel testTableModel = new DefaultTableModel();
     private DecimalFormat df = new DecimalFormat("####0.00");
     private Color[] colorArray = {Color.BLUE, Color.RED, Color.GREEN, Color.YELLOW, Color.CYAN, Color.PINK};
-    private Double[] yTable = {1.0, -1.0, 1.0, -1.0, 1.0, -1.0};
     private ArrayList<Double[]> input = new ArrayList<>();
     private ArrayList<Double[]> trainData = new ArrayList<>();
     private ArrayList<Double[]> testData = new ArrayList<>();
+    private ArrayList<Double[]> weight = new ArrayList<>(); //TODO - rename to weights
     private ArrayList<Double> outputKinds = new ArrayList<>();
-    private ArrayList<Double> weight = new ArrayList<>();
-    private Double[] weightFinal;
     private Point mouse;
     private int magnification = 50;
     private double rate = 0.1;
@@ -74,8 +71,8 @@ public class Perceptron {
                 loadFile(fileChooser);
             }
         });
-        generateButton.addActionListener(e -> trainPerceptron());
-        generateMenuItem.addActionListener(e -> trainPerceptron());
+        generateButton.addActionListener(e -> startTrain());
+        generateMenuItem.addActionListener(e -> startTrain());
         zoomerSlider.addChangeListener(e -> {
             zoomerSlider.setBorder(
                     BorderFactory.createTitledBorder(null,
@@ -108,7 +105,7 @@ public class Perceptron {
                 try {
                     alertBackground(learningTextField, false);
                     rate = Double.valueOf(learningTextField.getText());
-                    trainPerceptron();
+                    startTrain();
                 } catch (NumberFormatException e) {
                     alertBackground(learningTextField, true);
                     rate = 0.5f;
@@ -132,7 +129,7 @@ public class Perceptron {
                 try {
                     alertBackground(thresholdTextField, false);
                     threshold = Double.valueOf(thresholdTextField.getText());
-                    trainPerceptron();
+                    startTrain();
                 } catch (NumberFormatException e) {
                     alertBackground(thresholdTextField, true);
                     threshold = 0;
@@ -156,7 +153,7 @@ public class Perceptron {
                 try {
                     alertBackground(maxTimesValue, false);
                     maxTimes = Integer.valueOf(maxTimesValue.getText());
-                    trainPerceptron();
+                    startTrain();
                 } catch (NumberFormatException e) {
                     alertBackground(maxTimesValue, true);
                     maxTimes = 1000;
@@ -183,7 +180,7 @@ public class Perceptron {
                     else {
                         alertBackground(wRangeMinValue, false);
                         minRange = Double.valueOf(wRangeMinValue.getText());
-                        trainPerceptron();
+                        startTrain();
                     }
                 } catch (NumberFormatException e) {
                     alertBackground(wRangeMinValue, true);
@@ -211,7 +208,7 @@ public class Perceptron {
                     else {
                         alertBackground(wRangeMaxValue, false);
                         maxRange = Double.valueOf(wRangeMaxValue.getText());
-                        trainPerceptron();
+                        startTrain();
                     }
                 } catch (NumberFormatException e) {
                     alertBackground(wRangeMaxValue, true);
@@ -291,64 +288,73 @@ public class Perceptron {
                 testTableModel.addRow(x);
             trainTable.setModel(trainTableModel);
             testTable.setModel(testTableModel);
+            // TODO - show y result at data table
             generateButton.setEnabled(true);
-            trainPerceptron();
+            startTrain();
         } catch (IOException e1) {
             e1.printStackTrace();
         }
     }
 
-    private void trainPerceptron() {
+    private void startTrain() {
+        if (outputKinds.size() > 2)
+            outputKinds.forEach(this::trainPerceptron);
+        else
+            trainPerceptron(outputKinds.get(0));
+    }
+
+    private void trainPerceptron(Double dy) {
         if (trainData.size() == 0) return;
-        weightFinal = null;
-        weight.clear();
-        weight.add(threshold);
-        for (int i = 0; i < trainData.get(0).length - 2; i++) {
-            weight.add(getRandomNumber());
-        }
+        Double[] w = new Double[trainData.get(0).length - 1];
+        w[0] = threshold;
+        for (int i = 1; i < trainData.get(0).length - 1; i++)
+            w[i] = getRandomNumber();
+        int wi = outputKinds.indexOf(dy);
+        if (wi == 0) weight.clear();
+        weight.add(w);
         int times = 0, correct = 0;
         while (times < maxTimes) {
             correct = 0;
             for (Double[] x : trainData) {
                 Double sum = 0.0;
-                for (int i = 0; i < weight.size(); i++) {
-                    sum += weight.get(i) * x[i];
+                for (int i = 0; i < weight.get(wi).length; i++) {
+                    sum += weight.get(wi)[i] * x[i];
                 }
                 Double fx = Math.signum(sum);
-                Double y = yTable[(int) Math.round(x[x.length - 1])];
+                Double y = (x[x.length - 1].equals(dy)) ? 1.0 : -1.0;
                 Double e = y - fx;
                 if (e == 0) ++correct;
-                for (int i = 0; i < weight.size(); i++) {
-                    weight.set(i, weight.get(i) + rate * e * x[i]);
+                for (int i = 0; i < weight.get(wi).length; i++) {
+                    weight.get(wi)[i] = weight.get(wi)[i] + rate * e * x[i];
                 }
             }
             if (correct == trainData.size()) break;
             ++times;
         }
         StringBuilder weightOutput = new StringBuilder("(");
-        weightFinal = weight.toArray(new Double[weight.size()]);
-        weightOutput.append(df.format(weightFinal[1]));
-        for (int i = 2; i < weightFinal.length; i++) {
-            weightOutput.append(", ").append(df.format(weightFinal[i]));
+        weightOutput.append(df.format(weight.get(wi)[1]));
+        for (int i = 2; i < weight.get(wi).length; i++) {
+            weightOutput.append(", ").append(df.format(weight.get(wi)[i]));
         }
         weightOutput.append(")");
         timesValue.setText(String.valueOf(times));
         weightsValue.setText(weightOutput.toString());
-        fThresholdValue.setText(weightFinal[0].toString());
+        fThresholdValue.setText(weight.get(wi)[0].toString());
         trainingValue.setText((double) correct / trainData.size() * 100 + "%");
-        testPerceptron();
+        testPerceptron(dy);
     }
 
-    private void testPerceptron() {
+    private void testPerceptron(Double dy) {
         if (testData.size() == 0) return;
+        int wi = outputKinds.indexOf(dy);
         int correct = 0;
         for (Double[] x : testData) {
             Double sum = 0.0;
-            for (int i = 0; i < weight.size(); i++) {
-                sum += weight.get(i) * x[i];
+            for (int i = 0; i < weight.get(wi).length; i++) {
+                sum += weight.get(wi)[i] * x[i];
             }
             Double fx = Math.signum(sum);
-            Double y = yTable[(int) Math.round(x[x.length - 1])];
+            Double y = (x[x.length - 1].equals(dy)) ? 1.0 : -1.0;
             Double e = y - fx;
             if (e == 0) ++correct;
         }
@@ -487,23 +493,25 @@ public class Perceptron {
             }
             g2.setStroke(new BasicStroke(2));
             // Draw line of perceptron
-            if (weightFinal != null && weightFinal.length == 3) {
+            if (weight.size() != 0 && input.get(0).length == 4) {
                 g2.setColor(Color.MAGENTA);
-                Double[] lineStart, lineEnd;
-                if (weightFinal[2] != 0) {
-                    lineStart = convertCoordinate(
-                            new Double[]{-250.0 / magnification,
-                                    (weightFinal[0] + 250.0 / magnification * weightFinal[1]) / weightFinal[2]});
-                    lineEnd = convertCoordinate(
-                            new Double[]{250.0 / magnification,
-                                    (weightFinal[0] - 250.0 / magnification * weightFinal[1]) / weightFinal[2]});
-                } else {
-                    lineStart = convertCoordinate(
-                            new Double[]{weightFinal[0] / weightFinal[1], 250.0 / magnification});
-                    lineEnd = convertCoordinate(
-                            new Double[]{weightFinal[0] / weightFinal[1], -250.0 / magnification});
+                for (Double[] aWeight : weight) {// TODO - rename to weight
+                    Double[] lineStart, lineEnd;
+                    if (aWeight[2] != 0) {
+                        lineStart = convertCoordinate(
+                                new Double[]{-250.0 / magnification,
+                                        (aWeight[0] + 250.0 / magnification * aWeight[1]) / aWeight[2]});
+                        lineEnd = convertCoordinate(
+                                new Double[]{250.0 / magnification,
+                                        (aWeight[0] - 250.0 / magnification * aWeight[1]) / aWeight[2]});
+                    } else {
+                        lineStart = convertCoordinate(
+                                new Double[]{aWeight[0] / aWeight[1], 250.0 / magnification});
+                        lineEnd = convertCoordinate(
+                                new Double[]{aWeight[0] / aWeight[1], -250.0 / magnification});
+                    }
+                    g2.draw(new Line2D.Double(lineStart[0], lineStart[1], lineEnd[0], lineEnd[1]));
                 }
-                g2.draw(new Line2D.Double(lineStart[0], lineStart[1], lineEnd[0], lineEnd[1]));
             }
         }
 

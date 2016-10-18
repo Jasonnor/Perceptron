@@ -47,12 +47,12 @@ public class Perceptron {
     private ArrayList<Double[]> weights = new ArrayList<>();
     private ArrayList<Double> outputKinds = new ArrayList<>();
     private Point mouse;
+    private int maxTimes = 1000;
     private int magnification = 50;
     private double rate = 0.1;
     private double threshold = 0;
     private double minRange = -0.5;
     private double maxRange = 0.5;
-    private int maxTimes = 1000;
 
     private Perceptron() {
         loadButton.addActionListener(e -> {
@@ -218,25 +218,11 @@ public class Perceptron {
         });
     }
 
-    private void alertBackground(JTextField textField, boolean alert) {
-        if (alert)
-            textField.setBackground(Color.PINK);
-        else
-            textField.setBackground(Color.WHITE);
-    }
-
     private void loadFile(JFileChooser fileChooser) {
         File loadedFile = fileChooser.getSelectedFile();
         loadValue.setText(loadedFile.getPath());
         resetFrame();
-        input.clear();
-        trainData.clear();
-        testData.clear();
-        outputKinds.clear();
-        trainTableModel.setColumnCount(0);
-        trainTableModel.setRowCount(0);
-        testTableModel.setColumnCount(0);
-        testTableModel.setRowCount(0);
+        resetData();
         try (BufferedReader br = new BufferedReader(new FileReader(loadedFile))) {
             String line = br.readLine();
             while (line != null) {
@@ -294,6 +280,17 @@ public class Perceptron {
         } catch (IOException e1) {
             e1.printStackTrace();
         }
+    }
+
+    private void resetData() {
+        input.clear();
+        trainData.clear();
+        testData.clear();
+        outputKinds.clear();
+        trainTableModel.setColumnCount(0);
+        trainTableModel.setRowCount(0);
+        testTableModel.setColumnCount(0);
+        testTableModel.setRowCount(0);
     }
 
     private void startTrain() {
@@ -362,10 +359,11 @@ public class Perceptron {
         coordinatePanel.repaint();
     }
 
-    private static void resetFrame() {
-        SwingUtilities.updateComponentTreeUI(frame);
-        frame.pack();
-        frame.setLocationRelativeTo(null);
+    private void alertBackground(JTextField textField, boolean alert) {
+        if (alert)
+            textField.setBackground(Color.PINK);
+        else
+            textField.setBackground(Color.WHITE);
     }
 
     private Double getRandomNumber() {
@@ -380,12 +378,10 @@ public class Perceptron {
         return newPoint;
     }
 
-    private void createUIComponents() {
-        coordinatePanel = new GPanel();
-        zoomerSlider = new JSlider();
-        zoomerSlider.setBorder(
-                BorderFactory.createTitledBorder(null,
-                        Integer.toString(zoomerSlider.getValue()), CENTER, DEFAULT_POSITION));
+    private static void resetFrame() {
+        SwingUtilities.updateComponentTreeUI(frame);
+        frame.pack();
+        frame.setLocationRelativeTo(null);
     }
 
     private static void changeLAF(String name) {
@@ -403,6 +399,14 @@ public class Perceptron {
         } catch (ClassNotFoundException | InstantiationException | IllegalAccessException | UnsupportedLookAndFeelException e1) {
             System.out.println("Failed to load the skin!");
         }
+    }
+
+    private void createUIComponents() {
+        coordinatePanel = new GPanel();
+        zoomerSlider = new JSlider();
+        zoomerSlider.setBorder(
+                BorderFactory.createTitledBorder(null,
+                        Integer.toString(zoomerSlider.getValue()), CENTER, DEFAULT_POSITION));
     }
 
     public static void main(String[] args) {
@@ -454,7 +458,7 @@ public class Perceptron {
         // Main frame
         frame = new JFrame("Perceptron");
         frame.setContentPane(new Perceptron().layoutPanel);
-        frame.setIconImage(Toolkit.getDefaultToolkit().getImage("src/icon.png"));
+        frame.setIconImage(Toolkit.getDefaultToolkit().getImage("icon.png"));
         frame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         frame.setJMenuBar(menuBar);
         changeLAF("Nimbus");

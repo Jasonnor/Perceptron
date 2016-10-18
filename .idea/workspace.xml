@@ -1,5 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="ArtifactsWorkspaceSettings">
+    <artifacts-to-build>
+      <artifact name="Perceptron:jar" />
+    </artifacts-to-build>
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="88f2ab99-ce0f-4f40-bd16-da576e5d48c7" name="Default" comment="" />
     <ignored path="HW1_Perceptron.iws" />
@@ -25,24 +30,26 @@
       <file leaf-file-name="Perceptron.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Perceptron.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="557">
-              <caret line="38" column="29" selection-start-line="38" selection-start-column="29" selection-end-line="38" selection-end-column="29" />
+            <state relative-caret-position="1050">
+              <caret line="50" column="35" selection-start-line="50" selection-start-column="35" selection-end-line="50" selection-end-column="35" />
               <folding>
+                <element signature="class#3841:4577" expanded="false" />
                 <element signature="class#4645:5411" expanded="false" />
                 <element signature="class#5474:6223" expanded="false" />
                 <element signature="class#6287:7240" expanded="false" />
+                <element signature="class#7304:8256" expanded="false" />
+                <element signature="method#resetData#0;class#Perceptron#0" expanded="false" />
                 <element signature="method#startTrain#0;class#Perceptron#0" expanded="false" />
+                <element signature="method#trainPerceptron#0;class#Perceptron#0" expanded="false" />
+                <element signature="method#testPerceptron#0;class#Perceptron#0" expanded="false" />
+                <element signature="method#alertBackground#0;class#Perceptron#0" expanded="false" />
+                <element signature="method#getRandomNumber#0;class#Perceptron#0" expanded="false" />
+                <element signature="method#convertCoordinate#0;class#Perceptron#0" expanded="false" />
+                <element signature="method#resetFrame#0;class#Perceptron#0" expanded="false" />
+                <element signature="method#changeLAF#0;class#Perceptron#0" expanded="false" />
+                <element signature="method#createUIComponents#0;class#Perceptron#0" expanded="false" />
                 <element signature="method#main#0;class#Perceptron#0" expanded="false" />
-                <marker date="1476723921447" expanded="false" signature="5549:5568" ph=" { " />
-                <marker date="1476723921447" expanded="false" signature="5654:5673" ph=" { " />
-                <marker date="1476723921447" expanded="false" signature="6467:6486" ph=" { " />
-                <marker date="1476723921447" expanded="false" signature="6572:6591" ph=" { " />
-                <marker date="1476723921447" expanded="false" signature="7415:7429" ph=" }" />
-                <marker date="1476723921447" expanded="false" signature="8336:8474" ph="{...}" />
-                <marker date="1476723921447" expanded="false" signature="14063:14188" ph="{...}" />
-                <marker date="1476723921447" expanded="false" signature="14227:14333" ph="{...}" />
-                <marker date="1476723921447" expanded="false" signature="14393:14586" ph="{...}" />
-                <marker date="1476723921447" expanded="false" signature="14942:15588" ph="{...}" />
+                <element signature="class#GPanel#0;class#Perceptron#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -50,8 +57,11 @@
       </file>
       <file leaf-file-name="Perceptron.form" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Perceptron.form">
-          <provider selected="true" editor-type-id="ui-designer">
-            <state />
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
           </provider>
         </entry>
       </file>
@@ -61,6 +71,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Class" />
+        <option value="Interface" />
       </list>
     </option>
   </component>
@@ -145,8 +156,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
-      <pane id="PackagesPane" />
+      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -167,7 +177,8 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scratches" />
+      <pane id="Scope" />
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -175,15 +186,25 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="UI_DESIGNER_EDITOR_MODE.PaletteManager.WIDTH" value="143" />
     <property name="UI_DESIGNER_EDITOR_MODE.UIDesignerToolWindowManager.STATE" value="left" />
-    <property name="project.structure.last.edited" value="Modules" />
-    <property name="project.structure.proportion" value="0.0" />
+    <property name="project.structure.last.edited" value="Artifacts" />
+    <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/icon.png" />
+    <property name="settings.editor.selected.configurable" value="copyright" />
     <property name="settings.editor.splitter.proportion" value="0.2" />
     <property name="extract.method.default.visibility" value="private" />
+    <property name="GenerateAntBuildDialog.enableUiFormCompile" value="true" />
+    <property name="GenerateAntBuildDialog.forceTargetJdk" value="true" />
+    <property name="GenerateAntBuildDialog.backupFiles" value="true" />
+    <property name="GenerateAntBuildDialog.outputFileNameProperty" value="perceptron" />
   </component>
   <component name="RecentsManager">
+    <key name="ExtractSuperBase.RECENT_KEYS">
+      <recent name="" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Administrator\Dropbox\Programing\Neural Network\Perceptron" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\Administrator\Dropbox\Programing\Neural Network\HW1_Perceptron\src" />
     </key>
@@ -643,72 +664,47 @@
       <workItem from="1476582198053" duration="32063000" />
       <workItem from="1476625394003" duration="12530000" />
       <workItem from="1476670439829" duration="10805000" />
-      <workItem from="1476703237776" duration="17510000" />
+      <workItem from="1476703237776" duration="19455000" />
+      <workItem from="1476779420590" duration="585000" />
+      <workItem from="1476780477516" duration="3365000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="94045000" />
+    <option name="totallyTimeSpent" value="99940000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1696" height="1026" extended-state="6" />
+    <frame x="-8" y="-8" width="1696" height="1026" extended-state="7" />
     <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3286026" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3286026" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.14519651" sideWeight="0.50476193" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.14519651" sideWeight="0.50476193" order="8" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.23908296" sideWeight="0.4952381" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.23908296" sideWeight="0.4952381" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.14166667" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Inspection Results" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32969433" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3286026" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="WINDOWED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" x="616" y="277" width="450" height="456" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.35917032" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.35917032" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Dependency Viewer" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32969433" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Inspection Results" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32969433" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3286026" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
     </layout>
-    <layout-to-restore>
-      <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.14519651" sideWeight="0.50476193" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Inspection Results" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32969433" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="WINDOWED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" x="616" y="277" width="450" height="456" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.35917032" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3286026" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.23908296" sideWeight="0.4952381" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.14166667" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3293348" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="true" content_ui="tabs" />
-    </layout-to-restore>
   </component>
   <component name="Vcs.Log.UiProperties">
     <option name="RECENTLY_FILTERED_USER_GROUPS">
@@ -723,7 +719,7 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="70" />
+      <option name="time" value="75" />
     </breakpoint-manager>
     <watches-manager>
       <configuration name="Application">
@@ -746,21 +742,23 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
+            <element signature="class#3841:4577" expanded="false" />
             <element signature="class#4645:5411" expanded="false" />
             <element signature="class#5474:6223" expanded="false" />
             <element signature="class#6287:7240" expanded="false" />
+            <element signature="class#7304:8256" expanded="false" />
+            <element signature="method#resetData#0;class#Perceptron#0" expanded="false" />
             <element signature="method#startTrain#0;class#Perceptron#0" expanded="false" />
+            <element signature="method#trainPerceptron#0;class#Perceptron#0" expanded="false" />
+            <element signature="method#testPerceptron#0;class#Perceptron#0" expanded="false" />
+            <element signature="method#alertBackground#0;class#Perceptron#0" expanded="false" />
+            <element signature="method#getRandomNumber#0;class#Perceptron#0" expanded="false" />
+            <element signature="method#convertCoordinate#0;class#Perceptron#0" expanded="false" />
+            <element signature="method#resetFrame#0;class#Perceptron#0" expanded="false" />
+            <element signature="method#changeLAF#0;class#Perceptron#0" expanded="false" />
+            <element signature="method#createUIComponents#0;class#Perceptron#0" expanded="false" />
             <element signature="method#main#0;class#Perceptron#0" expanded="false" />
-            <marker date="1476723921447" expanded="false" signature="5549:5568" ph=" { " />
-            <marker date="1476723921447" expanded="false" signature="5654:5673" ph=" { " />
-            <marker date="1476723921447" expanded="false" signature="6467:6486" ph=" { " />
-            <marker date="1476723921447" expanded="false" signature="6572:6591" ph=" { " />
-            <marker date="1476723921447" expanded="false" signature="7415:7429" ph=" }" />
-            <marker date="1476723921447" expanded="false" signature="8336:8474" ph="{...}" />
-            <marker date="1476723921447" expanded="false" signature="14063:14188" ph="{...}" />
-            <marker date="1476723921447" expanded="false" signature="14227:14333" ph="{...}" />
-            <marker date="1476723921447" expanded="false" signature="14393:14586" ph="{...}" />
-            <marker date="1476723921447" expanded="false" signature="14942:15588" ph="{...}" />
+            <element signature="class#GPanel#0;class#Perceptron#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -778,21 +776,23 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
+            <element signature="class#3841:4577" expanded="false" />
             <element signature="class#4645:5411" expanded="false" />
             <element signature="class#5474:6223" expanded="false" />
             <element signature="class#6287:7240" expanded="false" />
+            <element signature="class#7304:8256" expanded="false" />
+            <element signature="method#resetData#0;class#Perceptron#0" expanded="false" />
             <element signature="method#startTrain#0;class#Perceptron#0" expanded="false" />
+            <element signature="method#trainPerceptron#0;class#Perceptron#0" expanded="false" />
+            <element signature="method#testPerceptron#0;class#Perceptron#0" expanded="false" />
+            <element signature="method#alertBackground#0;class#Perceptron#0" expanded="false" />
+            <element signature="method#getRandomNumber#0;class#Perceptron#0" expanded="false" />
+            <element signature="method#convertCoordinate#0;class#Perceptron#0" expanded="false" />
+            <element signature="method#resetFrame#0;class#Perceptron#0" expanded="false" />
+            <element signature="method#changeLAF#0;class#Perceptron#0" expanded="false" />
+            <element signature="method#createUIComponents#0;class#Perceptron#0" expanded="false" />
             <element signature="method#main#0;class#Perceptron#0" expanded="false" />
-            <marker date="1476723921447" expanded="false" signature="5549:5568" ph=" { " />
-            <marker date="1476723921447" expanded="false" signature="5654:5673" ph=" { " />
-            <marker date="1476723921447" expanded="false" signature="6467:6486" ph=" { " />
-            <marker date="1476723921447" expanded="false" signature="6572:6591" ph=" { " />
-            <marker date="1476723921447" expanded="false" signature="7415:7429" ph=" }" />
-            <marker date="1476723921447" expanded="false" signature="8336:8474" ph="{...}" />
-            <marker date="1476723921447" expanded="false" signature="14063:14188" ph="{...}" />
-            <marker date="1476723921447" expanded="false" signature="14227:14333" ph="{...}" />
-            <marker date="1476723921447" expanded="false" signature="14393:14586" ph="{...}" />
-            <marker date="1476723921447" expanded="false" signature="14942:15588" ph="{...}" />
+            <element signature="class#GPanel#0;class#Perceptron#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -810,21 +810,23 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
+            <element signature="class#3841:4577" expanded="false" />
             <element signature="class#4645:5411" expanded="false" />
             <element signature="class#5474:6223" expanded="false" />
             <element signature="class#6287:7240" expanded="false" />
+            <element signature="class#7304:8256" expanded="false" />
+            <element signature="method#resetData#0;class#Perceptron#0" expanded="false" />
             <element signature="method#startTrain#0;class#Perceptron#0" expanded="false" />
+            <element signature="method#trainPerceptron#0;class#Perceptron#0" expanded="false" />
+            <element signature="method#testPerceptron#0;class#Perceptron#0" expanded="false" />
+            <element signature="method#alertBackground#0;class#Perceptron#0" expanded="false" />
+            <element signature="method#getRandomNumber#0;class#Perceptron#0" expanded="false" />
+            <element signature="method#convertCoordinate#0;class#Perceptron#0" expanded="false" />
+            <element signature="method#resetFrame#0;class#Perceptron#0" expanded="false" />
+            <element signature="method#changeLAF#0;class#Perceptron#0" expanded="false" />
+            <element signature="method#createUIComponents#0;class#Perceptron#0" expanded="false" />
             <element signature="method#main#0;class#Perceptron#0" expanded="false" />
-            <marker date="1476723921447" expanded="false" signature="5549:5568" ph=" { " />
-            <marker date="1476723921447" expanded="false" signature="5654:5673" ph=" { " />
-            <marker date="1476723921447" expanded="false" signature="6467:6486" ph=" { " />
-            <marker date="1476723921447" expanded="false" signature="6572:6591" ph=" { " />
-            <marker date="1476723921447" expanded="false" signature="7415:7429" ph=" }" />
-            <marker date="1476723921447" expanded="false" signature="8336:8474" ph="{...}" />
-            <marker date="1476723921447" expanded="false" signature="14063:14188" ph="{...}" />
-            <marker date="1476723921447" expanded="false" signature="14227:14333" ph="{...}" />
-            <marker date="1476723921447" expanded="false" signature="14393:14586" ph="{...}" />
-            <marker date="1476723921447" expanded="false" signature="14942:15588" ph="{...}" />
+            <element signature="class#GPanel#0;class#Perceptron#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -842,21 +844,23 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
+            <element signature="class#3841:4577" expanded="false" />
             <element signature="class#4645:5411" expanded="false" />
             <element signature="class#5474:6223" expanded="false" />
             <element signature="class#6287:7240" expanded="false" />
+            <element signature="class#7304:8256" expanded="false" />
+            <element signature="method#resetData#0;class#Perceptron#0" expanded="false" />
             <element signature="method#startTrain#0;class#Perceptron#0" expanded="false" />
+            <element signature="method#trainPerceptron#0;class#Perceptron#0" expanded="false" />
+            <element signature="method#testPerceptron#0;class#Perceptron#0" expanded="false" />
+            <element signature="method#alertBackground#0;class#Perceptron#0" expanded="false" />
+            <element signature="method#getRandomNumber#0;class#Perceptron#0" expanded="false" />
+            <element signature="method#convertCoordinate#0;class#Perceptron#0" expanded="false" />
+            <element signature="method#resetFrame#0;class#Perceptron#0" expanded="false" />
+            <element signature="method#changeLAF#0;class#Perceptron#0" expanded="false" />
+            <element signature="method#createUIComponents#0;class#Perceptron#0" expanded="false" />
             <element signature="method#main#0;class#Perceptron#0" expanded="false" />
-            <marker date="1476723921447" expanded="false" signature="5549:5568" ph=" { " />
-            <marker date="1476723921447" expanded="false" signature="5654:5673" ph=" { " />
-            <marker date="1476723921447" expanded="false" signature="6467:6486" ph=" { " />
-            <marker date="1476723921447" expanded="false" signature="6572:6591" ph=" { " />
-            <marker date="1476723921447" expanded="false" signature="7415:7429" ph=" }" />
-            <marker date="1476723921447" expanded="false" signature="8336:8474" ph="{...}" />
-            <marker date="1476723921447" expanded="false" signature="14063:14188" ph="{...}" />
-            <marker date="1476723921447" expanded="false" signature="14227:14333" ph="{...}" />
-            <marker date="1476723921447" expanded="false" signature="14393:14586" ph="{...}" />
-            <marker date="1476723921447" expanded="false" signature="14942:15588" ph="{...}" />
+            <element signature="class#GPanel#0;class#Perceptron#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -874,21 +878,23 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
+            <element signature="class#3841:4577" expanded="false" />
             <element signature="class#4645:5411" expanded="false" />
             <element signature="class#5474:6223" expanded="false" />
             <element signature="class#6287:7240" expanded="false" />
+            <element signature="class#7304:8256" expanded="false" />
+            <element signature="method#resetData#0;class#Perceptron#0" expanded="false" />
             <element signature="method#startTrain#0;class#Perceptron#0" expanded="false" />
+            <element signature="method#trainPerceptron#0;class#Perceptron#0" expanded="false" />
+            <element signature="method#testPerceptron#0;class#Perceptron#0" expanded="false" />
+            <element signature="method#alertBackground#0;class#Perceptron#0" expanded="false" />
+            <element signature="method#getRandomNumber#0;class#Perceptron#0" expanded="false" />
+            <element signature="method#convertCoordinate#0;class#Perceptron#0" expanded="false" />
+            <element signature="method#resetFrame#0;class#Perceptron#0" expanded="false" />
+            <element signature="method#changeLAF#0;class#Perceptron#0" expanded="false" />
+            <element signature="method#createUIComponents#0;class#Perceptron#0" expanded="false" />
             <element signature="method#main#0;class#Perceptron#0" expanded="false" />
-            <marker date="1476723921447" expanded="false" signature="5549:5568" ph=" { " />
-            <marker date="1476723921447" expanded="false" signature="5654:5673" ph=" { " />
-            <marker date="1476723921447" expanded="false" signature="6467:6486" ph=" { " />
-            <marker date="1476723921447" expanded="false" signature="6572:6591" ph=" { " />
-            <marker date="1476723921447" expanded="false" signature="7415:7429" ph=" }" />
-            <marker date="1476723921447" expanded="false" signature="8336:8474" ph="{...}" />
-            <marker date="1476723921447" expanded="false" signature="14063:14188" ph="{...}" />
-            <marker date="1476723921447" expanded="false" signature="14227:14333" ph="{...}" />
-            <marker date="1476723921447" expanded="false" signature="14393:14586" ph="{...}" />
-            <marker date="1476723921447" expanded="false" signature="14942:15588" ph="{...}" />
+            <element signature="class#GPanel#0;class#Perceptron#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -906,21 +912,91 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
+            <element signature="class#3841:4577" expanded="false" />
             <element signature="class#4645:5411" expanded="false" />
             <element signature="class#5474:6223" expanded="false" />
             <element signature="class#6287:7240" expanded="false" />
+            <element signature="class#7304:8256" expanded="false" />
+            <element signature="method#resetData#0;class#Perceptron#0" expanded="false" />
             <element signature="method#startTrain#0;class#Perceptron#0" expanded="false" />
+            <element signature="method#trainPerceptron#0;class#Perceptron#0" expanded="false" />
+            <element signature="method#testPerceptron#0;class#Perceptron#0" expanded="false" />
+            <element signature="method#alertBackground#0;class#Perceptron#0" expanded="false" />
+            <element signature="method#getRandomNumber#0;class#Perceptron#0" expanded="false" />
+            <element signature="method#convertCoordinate#0;class#Perceptron#0" expanded="false" />
+            <element signature="method#resetFrame#0;class#Perceptron#0" expanded="false" />
+            <element signature="method#changeLAF#0;class#Perceptron#0" expanded="false" />
+            <element signature="method#createUIComponents#0;class#Perceptron#0" expanded="false" />
             <element signature="method#main#0;class#Perceptron#0" expanded="false" />
-            <marker date="1476723921447" expanded="false" signature="5549:5568" ph=" { " />
-            <marker date="1476723921447" expanded="false" signature="5654:5673" ph=" { " />
-            <marker date="1476723921447" expanded="false" signature="6467:6486" ph=" { " />
-            <marker date="1476723921447" expanded="false" signature="6572:6591" ph=" { " />
-            <marker date="1476723921447" expanded="false" signature="7415:7429" ph=" }" />
-            <marker date="1476723921447" expanded="false" signature="8336:8474" ph="{...}" />
-            <marker date="1476723921447" expanded="false" signature="14063:14188" ph="{...}" />
-            <marker date="1476723921447" expanded="false" signature="14227:14333" ph="{...}" />
-            <marker date="1476723921447" expanded="false" signature="14393:14586" ph="{...}" />
-            <marker date="1476723921447" expanded="false" signature="14942:15588" ph="{...}" />
+            <element signature="class#GPanel#0;class#Perceptron#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Perceptron.form">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Perceptron.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="class#3841:4577" expanded="false" />
+            <element signature="class#4645:5411" expanded="false" />
+            <element signature="class#5474:6223" expanded="false" />
+            <element signature="class#6287:7240" expanded="false" />
+            <element signature="class#7304:8256" expanded="false" />
+            <element signature="method#resetData#0;class#Perceptron#0" expanded="false" />
+            <element signature="method#startTrain#0;class#Perceptron#0" expanded="false" />
+            <element signature="method#trainPerceptron#0;class#Perceptron#0" expanded="false" />
+            <element signature="method#testPerceptron#0;class#Perceptron#0" expanded="false" />
+            <element signature="method#alertBackground#0;class#Perceptron#0" expanded="false" />
+            <element signature="method#getRandomNumber#0;class#Perceptron#0" expanded="false" />
+            <element signature="method#convertCoordinate#0;class#Perceptron#0" expanded="false" />
+            <element signature="method#resetFrame#0;class#Perceptron#0" expanded="false" />
+            <element signature="method#changeLAF#0;class#Perceptron#0" expanded="false" />
+            <element signature="method#createUIComponents#0;class#Perceptron#0" expanded="false" />
+            <element signature="method#main#0;class#Perceptron#0" expanded="false" />
+            <element signature="class#GPanel#0;class#Perceptron#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Perceptron.form">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Perceptron.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="class#3841:4577" expanded="false" />
+            <element signature="class#4645:5411" expanded="false" />
+            <element signature="class#5474:6223" expanded="false" />
+            <element signature="class#6287:7240" expanded="false" />
+            <element signature="class#7304:8256" expanded="false" />
+            <element signature="method#resetData#0;class#Perceptron#0" expanded="false" />
+            <element signature="method#startTrain#0;class#Perceptron#0" expanded="false" />
+            <element signature="method#trainPerceptron#0;class#Perceptron#0" expanded="false" />
+            <element signature="method#testPerceptron#0;class#Perceptron#0" expanded="false" />
+            <element signature="method#alertBackground#0;class#Perceptron#0" expanded="false" />
+            <element signature="method#getRandomNumber#0;class#Perceptron#0" expanded="false" />
+            <element signature="method#convertCoordinate#0;class#Perceptron#0" expanded="false" />
+            <element signature="method#resetFrame#0;class#Perceptron#0" expanded="false" />
+            <element signature="method#changeLAF#0;class#Perceptron#0" expanded="false" />
+            <element signature="method#createUIComponents#0;class#Perceptron#0" expanded="false" />
+            <element signature="method#main#0;class#Perceptron#0" expanded="false" />
+            <element signature="class#GPanel#0;class#Perceptron#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -963,14 +1039,14 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Perceptron.form">
-      <provider selected="true" editor-type-id="ui-designer">
-        <state />
-      </provider>
-      <provider editor-type-id="text-editor">
+      <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
+      </provider>
+      <provider editor-type-id="ui-designer">
+        <state />
       </provider>
     </entry>
     <entry file="jar://C:/Program Files/Java/jdk1.8.0_101/src.zip!/java/util/ArrayList.java">
@@ -981,26 +1057,30 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/Training.java" />
+    <entry file="file://$PROJECT_DIR$/src/Perceptron4.java" />
     <entry file="file://$PROJECT_DIR$/src/Perceptron.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="557">
-          <caret line="38" column="29" selection-start-line="38" selection-start-column="29" selection-end-line="38" selection-end-column="29" />
+        <state relative-caret-position="1050">
+          <caret line="50" column="35" selection-start-line="50" selection-start-column="35" selection-end-line="50" selection-end-column="35" />
           <folding>
+            <element signature="class#3841:4577" expanded="false" />
             <element signature="class#4645:5411" expanded="false" />
             <element signature="class#5474:6223" expanded="false" />
             <element signature="class#6287:7240" expanded="false" />
+            <element signature="class#7304:8256" expanded="false" />
+            <element signature="method#resetData#0;class#Perceptron#0" expanded="false" />
             <element signature="method#startTrain#0;class#Perceptron#0" expanded="false" />
+            <element signature="method#trainPerceptron#0;class#Perceptron#0" expanded="false" />
+            <element signature="method#testPerceptron#0;class#Perceptron#0" expanded="false" />
+            <element signature="method#alertBackground#0;class#Perceptron#0" expanded="false" />
+            <element signature="method#getRandomNumber#0;class#Perceptron#0" expanded="false" />
+            <element signature="method#convertCoordinate#0;class#Perceptron#0" expanded="false" />
+            <element signature="method#resetFrame#0;class#Perceptron#0" expanded="false" />
+            <element signature="method#changeLAF#0;class#Perceptron#0" expanded="false" />
+            <element signature="method#createUIComponents#0;class#Perceptron#0" expanded="false" />
             <element signature="method#main#0;class#Perceptron#0" expanded="false" />
-            <marker date="1476723921447" expanded="false" signature="5549:5568" ph=" { " />
-            <marker date="1476723921447" expanded="false" signature="5654:5673" ph=" { " />
-            <marker date="1476723921447" expanded="false" signature="6467:6486" ph=" { " />
-            <marker date="1476723921447" expanded="false" signature="6572:6591" ph=" { " />
-            <marker date="1476723921447" expanded="false" signature="7415:7429" ph=" }" />
-            <marker date="1476723921447" expanded="false" signature="8336:8474" ph="{...}" />
-            <marker date="1476723921447" expanded="false" signature="14063:14188" ph="{...}" />
-            <marker date="1476723921447" expanded="false" signature="14227:14333" ph="{...}" />
-            <marker date="1476723921447" expanded="false" signature="14393:14586" ph="{...}" />
-            <marker date="1476723921447" expanded="false" signature="14942:15588" ph="{...}" />
+            <element signature="class#GPanel#0;class#Perceptron#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1011,10 +1091,12 @@
       <state key="ArtifactsStructureConfigurable.UI">
         <settings>
           <artifact-editor />
+          <last-edited>Perceptron:jar</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>
                 <option value="0.2" />
+                <option value="0.5" />
               </list>
             </option>
           </splitter-proportions>

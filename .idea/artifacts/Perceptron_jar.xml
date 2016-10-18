@@ -1,0 +1,9 @@
+<component name="ArtifactManager">
+  <artifact type="jar" build-on-make="true" name="Perceptron:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/Perceptron_jar</output-path>
+    <root id="archive" name="Perceptron.jar">
+      <element id="module-output" name="Perceptron" />
+      <element id="file-copy" path="$PROJECT_DIR$/icon.png" />
+    </root>
+  </artifact>
+</component>

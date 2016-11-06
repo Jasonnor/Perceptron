@@ -6,9 +6,7 @@
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="88f2ab99-ce0f-4f40-bd16-da576e5d48c7" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-    </list>
+    <list default="true" id="88f2ab99-ce0f-4f40-bd16-da576e5d48c7" name="Default" comment="" />
     <ignored path="HW1_Perceptron.iws" />
     <ignored path=".idea/workspace.xml" />
     <ignored path="$PROJECT_DIR$/out/" />
@@ -32,11 +30,9 @@
       <file leaf-file-name="Perceptron.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Perceptron.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="317">
-              <caret line="413" column="38" selection-start-line="413" selection-start-column="38" selection-end-line="413" selection-end-column="38" />
+            <state relative-caret-position="-242">
+              <caret line="280" column="33" selection-start-line="280" selection-start-column="33" selection-end-line="280" selection-end-column="33" />
               <folding>
-                <element signature="e#3533#3774#0" expanded="true" />
-                <element signature="e#3773#3774#0" expanded="true" />
                 <element signature="class#3841:4577" expanded="false" />
                 <element signature="class#4645:5411" expanded="false" />
                 <element signature="class#5474:6223" expanded="false" />
@@ -54,16 +50,6 @@
                 <element signature="method#createUIComponents#0;class#Perceptron#0" expanded="false" />
                 <element signature="class#GPanel#0;class#Perceptron#0" expanded="false" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Perceptron.form" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Perceptron.form">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
             </state>
           </provider>
         </entry>
@@ -101,9 +87,10 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="y" value="23" />
+    <option name="x" value="-8" />
+    <option name="y" value="-8" />
     <option name="width" value="1696" />
-    <option name="height" value="873" />
+    <option name="height" value="1026" />
   </component>
   <component name="ProjectInspectionProfilesVisibleTreeState">
     <entry key="Project Default">
@@ -158,9 +145,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
-      <pane id="Scratches" />
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -181,6 +165,9 @@
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scope" />
+      <pane id="PackagesPane" />
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -671,14 +658,15 @@
       <workItem from="1476780477516" duration="4825000" />
       <workItem from="1476883301419" duration="121000" />
       <workItem from="1478056032417" duration="286000" />
+      <workItem from="1478397676430" duration="851000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="101807000" />
+    <option name="totallyTimeSpent" value="102658000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="23" width="1696" height="873" extended-state="0" />
+    <frame x="-8" y="-8" width="1696" height="1026" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -692,7 +680,7 @@
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.14150943" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.14107142" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -746,8 +734,6 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#3533#3774#0" expanded="true" />
-            <element signature="e#3773#3774#0" expanded="true" />
             <element signature="class#3841:4577" expanded="false" />
             <element signature="class#4645:5411" expanded="false" />
             <element signature="class#5474:6223" expanded="false" />
@@ -781,8 +767,6 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#3533#3774#0" expanded="true" />
-            <element signature="e#3773#3774#0" expanded="true" />
             <element signature="class#3841:4577" expanded="false" />
             <element signature="class#4645:5411" expanded="false" />
             <element signature="class#5474:6223" expanded="false" />
@@ -816,8 +800,6 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#3533#3774#0" expanded="true" />
-            <element signature="e#3773#3774#0" expanded="true" />
             <element signature="class#3841:4577" expanded="false" />
             <element signature="class#4645:5411" expanded="false" />
             <element signature="class#5474:6223" expanded="false" />
@@ -851,8 +833,6 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#3533#3774#0" expanded="true" />
-            <element signature="e#3773#3774#0" expanded="true" />
             <element signature="class#3841:4577" expanded="false" />
             <element signature="class#4645:5411" expanded="false" />
             <element signature="class#5474:6223" expanded="false" />
@@ -886,8 +866,6 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#3533#3774#0" expanded="true" />
-            <element signature="e#3773#3774#0" expanded="true" />
             <element signature="class#3841:4577" expanded="false" />
             <element signature="class#4645:5411" expanded="false" />
             <element signature="class#5474:6223" expanded="false" />
@@ -921,8 +899,6 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#3533#3774#0" expanded="true" />
-            <element signature="e#3773#3774#0" expanded="true" />
             <element signature="class#3841:4577" expanded="false" />
             <element signature="class#4645:5411" expanded="false" />
             <element signature="class#5474:6223" expanded="false" />
@@ -956,8 +932,6 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#3533#3774#0" expanded="true" />
-            <element signature="e#3773#3774#0" expanded="true" />
             <element signature="class#3841:4577" expanded="false" />
             <element signature="class#4645:5411" expanded="false" />
             <element signature="class#5474:6223" expanded="false" />
@@ -991,8 +965,6 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#3533#3774#0" expanded="true" />
-            <element signature="e#3773#3774#0" expanded="true" />
             <element signature="class#3841:4577" expanded="false" />
             <element signature="class#4645:5411" expanded="false" />
             <element signature="class#5474:6223" expanded="false" />
@@ -1026,8 +998,6 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#3533#3774#0" expanded="true" />
-            <element signature="e#3773#3774#0" expanded="true" />
             <element signature="class#3841:4577" expanded="false" />
             <element signature="class#4645:5411" expanded="false" />
             <element signature="class#5474:6223" expanded="false" />
@@ -1061,8 +1031,39 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#3533#3774#0" expanded="true" />
-            <element signature="e#3773#3774#0" expanded="true" />
+            <element signature="class#3841:4577" expanded="false" />
+            <element signature="class#4645:5411" expanded="false" />
+            <element signature="class#5474:6223" expanded="false" />
+            <element signature="class#6287:7240" expanded="false" />
+            <element signature="class#7304:8256" expanded="false" />
+            <element signature="method#resetData#0;class#Perceptron#0" expanded="false" />
+            <element signature="method#startTrain#0;class#Perceptron#0" expanded="false" />
+            <element signature="method#trainPerceptron#0;class#Perceptron#0" expanded="false" />
+            <element signature="method#testPerceptron#0;class#Perceptron#0" expanded="false" />
+            <element signature="method#alertBackground#0;class#Perceptron#0" expanded="false" />
+            <element signature="method#getRandomNumber#0;class#Perceptron#0" expanded="false" />
+            <element signature="method#convertCoordinate#0;class#Perceptron#0" expanded="false" />
+            <element signature="method#resetFrame#0;class#Perceptron#0" expanded="false" />
+            <element signature="method#changeLAF#0;class#Perceptron#0" expanded="false" />
+            <element signature="method#createUIComponents#0;class#Perceptron#0" expanded="false" />
+            <element signature="class#GPanel#0;class#Perceptron#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Perceptron.form">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Perceptron.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
             <element signature="class#3841:4577" expanded="false" />
             <element signature="class#4645:5411" expanded="false" />
             <element signature="class#5474:6223" expanded="false" />
@@ -1096,27 +1097,25 @@
     <entry file="jar://C:/Program Files/Java/jdk1.8.0_101/jre/lib/rt.jar!/sun/misc/FloatingDecimal.class" />
     <entry file="jar://C:/Program Files/Java/jdk1.8.0_101/src.zip!/java/util/function/Predicate.java" />
     <entry file="jar://C:/Program Files/Java/jdk1.8.0_101/src.zip!/java/util/function/Consumer.java" />
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_101/src.zip!/java/util/ArrayList.java" />
+    <entry file="file://$PROJECT_DIR$/src/Training.java" />
+    <entry file="file://$PROJECT_DIR$/src/Perceptron4.java" />
     <entry file="file://$PROJECT_DIR$/src/Perceptron.form">
+      <provider editor-type-id="ui-designer">
+        <state />
+      </provider>
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
+        <state relative-caret-position="-450">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
-      <provider editor-type-id="ui-designer">
-        <state />
-      </provider>
     </entry>
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_101/src.zip!/java/util/ArrayList.java" />
-    <entry file="file://$PROJECT_DIR$/src/Training.java" />
-    <entry file="file://$PROJECT_DIR$/src/Perceptron4.java" />
     <entry file="file://$PROJECT_DIR$/src/Perceptron.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="317">
-          <caret line="413" column="38" selection-start-line="413" selection-start-column="38" selection-end-line="413" selection-end-column="38" />
+        <state relative-caret-position="-242">
+          <caret line="280" column="33" selection-start-line="280" selection-start-column="33" selection-end-line="280" selection-end-column="33" />
           <folding>
-            <element signature="e#3533#3774#0" expanded="true" />
-            <element signature="e#3773#3774#0" expanded="true" />
             <element signature="class#3841:4577" expanded="false" />
             <element signature="class#4645:5411" expanded="false" />
             <element signature="class#5474:6223" expanded="false" />
